@@ -14,6 +14,23 @@
 		841A7BF221B3FEF500709888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841A7BF021B3FEF500709888 /* LaunchScreen.storyboard */; };
 		841A7BFD21B3FEF600709888 /* SuperMessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A7BFC21B3FEF600709888 /* SuperMessengerTests.swift */; };
 		841A7C0821B3FEF600709888 /* SuperMessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A7C0721B3FEF600709888 /* SuperMessengerUITests.swift */; };
+		841ECA7B21BAAC8D00433DDA /* background-seaNrocks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA7A21BAAC8D00433DDA /* background-seaNrocks.jpg */; };
+		841ECA7D21BAAD1F00433DDA /* background-seaPng.png in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA7C21BAAD1F00433DDA /* background-seaPng.png */; };
+		841ECA7F21BAAD2D00433DDA /* background-seaPng.png in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA7E21BAAD2D00433DDA /* background-seaPng.png */; };
+		841ECA8121BAADF200433DDA /* background-Rock.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA8021BAADF200433DDA /* background-Rock.jpeg */; };
+		84D626FB21BD497F00DCB6B5 /* SimpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D626FA21BD497F00DCB6B5 /* SimpButton.swift */; };
+		84D626FD21BD4F5500DCB6B5 /* SimpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */; };
+		84D626FF21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */; };
+		84D6270121BDBCB600DCB6B5 /* SM-LOGO-FST.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270021BDBCB600DCB6B5 /* SM-LOGO-FST.jpg */; };
+		84D6270321BDBD4D00DCB6B5 /* sm-logo-sec.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270221BDBD4D00DCB6B5 /* sm-logo-sec.jpeg */; };
+		84D6270521BDC3BA00DCB6B5 /* sm-final-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270421BDC3BA00DCB6B5 /* sm-final-logo.png */; };
+		84D6270721BDC3C600DCB6B5 /* sm-final-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270621BDC3C600DCB6B5 /* sm-final-logo.png */; };
+		84D6270921BDC3CF00DCB6B5 /* sm-final-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270821BDC3CF00DCB6B5 /* sm-final-logo.png */; };
+		84D6270F21BDC6B700DCB6B5 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270E21BDC6B700DCB6B5 /* Logo.png */; };
+		84FE7C4B21BA9D20003FC5A3 /* background-seaNrocks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84FE7C4A21BA9D20003FC5A3 /* background-seaNrocks.jpg */; };
+		97824C1D81ADBE3567280220 /* Pods_SuperMessengerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6FC7C6BDBE52841064E6B25 /* Pods_SuperMessengerTests.framework */; };
+		A01FF08D64E2E64D92908AD8 /* Pods_SuperMessengerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C012375E976489458272B49 /* Pods_SuperMessengerUITests.framework */; };
+		D40E8D714314546B5F79EFC5 /* Pods_SuperMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14330EF0F69B9D9FC9FAADAA /* Pods_SuperMessenger.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14330EF0F69B9D9FC9FAADAA /* Pods_SuperMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2265F765B7A1FEB583E69113 /* Pods-SuperMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMessenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperMessenger/Pods-SuperMessenger.release.xcconfig"; sourceTree = "<group>"; };
+		353017F1091009E3FE29A74D /* Pods-SuperMessengerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMessengerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperMessengerTests/Pods-SuperMessengerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		455918D7641F420404AD60E4 /* Pods-SuperMessengerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMessengerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperMessengerUITests/Pods-SuperMessengerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5A299268ECC3704183782C9B /* Pods-SuperMessengerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMessengerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperMessengerTests/Pods-SuperMessengerTests.release.xcconfig"; sourceTree = "<group>"; };
+		5C012375E976489458272B49 /* Pods_SuperMessengerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperMessengerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		841A7BE421B3FEF300709888 /* SuperMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841A7BE721B3FEF300709888 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		841A7BE921B3FEF400709888 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +70,25 @@
 		841A7C0321B3FEF600709888 /* SuperMessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperMessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		841A7C0721B3FEF600709888 /* SuperMessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperMessengerUITests.swift; sourceTree = "<group>"; };
 		841A7C0921B3FEF600709888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841ECA7A21BAAC8D00433DDA /* background-seaNrocks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background-seaNrocks.jpg"; path = "../background-seaNrocks.jpg"; sourceTree = "<group>"; };
+		841ECA7C21BAAD1F00433DDA /* background-seaPng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-seaPng.png"; sourceTree = "<group>"; };
+		841ECA7E21BAAD2D00433DDA /* background-seaPng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-seaPng.png"; sourceTree = "<group>"; };
+		841ECA8021BAADF200433DDA /* background-Rock.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-Rock.jpeg"; sourceTree = "<group>"; };
+		84D626FA21BD497F00DCB6B5 /* SimpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpButton.swift; sourceTree = "<group>"; };
+		84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpTextField.swift; sourceTree = "<group>"; };
+		84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SM-LOGO-FST.jpg"; sourceTree = "<group>"; };
+		84D6270021BDBCB600DCB6B5 /* SM-LOGO-FST.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SM-LOGO-FST.jpg"; sourceTree = "<group>"; };
+		84D6270221BDBD4D00DCB6B5 /* sm-logo-sec.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sm-logo-sec.jpeg"; sourceTree = "<group>"; };
+		84D6270421BDC3BA00DCB6B5 /* sm-final-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sm-final-logo.png"; sourceTree = "<group>"; };
+		84D6270621BDC3C600DCB6B5 /* sm-final-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sm-final-logo.png"; sourceTree = "<group>"; };
+		84D6270821BDC3CF00DCB6B5 /* sm-final-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sm-final-logo.png"; sourceTree = "<group>"; };
+		84D6270E21BDC6B700DCB6B5 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		84FE7C4A21BA9D20003FC5A3 /* background-seaNrocks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background-seaNrocks.jpg"; path = "../../background-seaNrocks.jpg"; sourceTree = "<group>"; };
+		84FE7C4C21BAA16A003FC5A3 /* background-seaNrocks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-seaNrocks.jpg"; sourceTree = "<group>"; };
+		84FE7C4D21BAA16B003FC5A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AAE15CCA826486E6A1050E1B /* Pods-SuperMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMessenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperMessenger/Pods-SuperMessenger.debug.xcconfig"; sourceTree = "<group>"; };
+		B664EA824A371B4A4E992237 /* Pods-SuperMessengerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMessengerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperMessengerUITests/Pods-SuperMessengerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E6FC7C6BDBE52841064E6B25 /* Pods_SuperMessengerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperMessengerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40E8D714314546B5F79EFC5 /* Pods_SuperMessenger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97824C1D81ADBE3567280220 /* Pods_SuperMessengerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,19 +112,65 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A01FF08D64E2E64D92908AD8 /* Pods_SuperMessengerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0456C903966A822B5176FD06 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AAE15CCA826486E6A1050E1B /* Pods-SuperMessenger.debug.xcconfig */,
+				2265F765B7A1FEB583E69113 /* Pods-SuperMessenger.release.xcconfig */,
+				353017F1091009E3FE29A74D /* Pods-SuperMessengerTests.debug.xcconfig */,
+				5A299268ECC3704183782C9B /* Pods-SuperMessengerTests.release.xcconfig */,
+				B664EA824A371B4A4E992237 /* Pods-SuperMessengerUITests.debug.xcconfig */,
+				455918D7641F420404AD60E4 /* Pods-SuperMessengerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		76240D43C84396FE13233090 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14330EF0F69B9D9FC9FAADAA /* Pods_SuperMessenger.framework */,
+				E6FC7C6BDBE52841064E6B25 /* Pods_SuperMessengerTests.framework */,
+				5C012375E976489458272B49 /* Pods_SuperMessengerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		841A7BDB21B3FEF300709888 = {
 			isa = PBXGroup;
 			children = (
+				84FE7C4921BA9A43003FC5A3 /* Images */,
+				84D6270621BDC3C600DCB6B5 /* sm-final-logo.png */,
+				84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */,
+				84D6270821BDC3CF00DCB6B5 /* sm-final-logo.png */,
+				841ECA7C21BAAD1F00433DDA /* background-seaPng.png */,
+				84FE7C4C21BAA16A003FC5A3 /* background-seaNrocks.jpg */,
 				841A7BE621B3FEF300709888 /* SuperMessenger */,
+				84FE7C4D21BAA16B003FC5A3 /* GoogleService-Info.plist */,
+				841ECA7A21BAAC8D00433DDA /* background-seaNrocks.jpg */,
+				841ECA7E21BAAD2D00433DDA /* background-seaPng.png */,
+				84D6270821BDC3CF00DCB6B5 /* sm-final-logo.png */,
+				84D6270221BDBD4D00DCB6B5 /* sm-logo-sec.jpeg */,
+				841ECA8021BAADF200433DDA /* background-Rock.jpeg */,
+				84D6270021BDBCB600DCB6B5 /* SM-LOGO-FST.jpg */,
+				841A7BE721B3FEF300709888 /* AppDelegate.swift */,
+				84D6270E21BDC6B700DCB6B5 /* Logo.png */,
+				841A7BE921B3FEF400709888 /* ViewController.swift */,
+				841A7BEB21B3FEF400709888 /* Main.storyboard */,
+				841A7BEE21B3FEF500709888 /* Assets.xcassets */,
+				841A7BF021B3FEF500709888 /* LaunchScreen.storyboard */,
+				841A7BF321B3FEF500709888 /* Info.plist */,
 				841A7BFB21B3FEF600709888 /* SuperMessengerTests */,
 				841A7C0621B3FEF600709888 /* SuperMessengerUITests */,
 				841A7BE521B3FEF300709888 /* Products */,
+				0456C903966A822B5176FD06 /* Pods */,
+				76240D43C84396FE13233090 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +187,7 @@
 		841A7BE621B3FEF300709888 /* SuperMessenger */ = {
 			isa = PBXGroup;
 			children = (
-				841A7BE721B3FEF300709888 /* AppDelegate.swift */,
-				841A7BE921B3FEF400709888 /* ViewController.swift */,
-				841A7BEB21B3FEF400709888 /* Main.storyboard */,
-				841A7BEE21B3FEF500709888 /* Assets.xcassets */,
-				841A7BF021B3FEF500709888 /* LaunchScreen.storyboard */,
-				841A7BF321B3FEF500709888 /* Info.plist */,
+				84D626F921BD492200DCB6B5 /* CustomViews */,
 			);
 			path = SuperMessenger;
 			sourceTree = "<group>";
@@ -125,6 +210,23 @@
 			path = SuperMessengerUITests;
 			sourceTree = "<group>";
 		};
+		84D626F921BD492200DCB6B5 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				84D626FA21BD497F00DCB6B5 /* SimpButton.swift */,
+				84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		84FE7C4921BA9A43003FC5A3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				84FE7C4A21BA9D20003FC5A3 /* background-seaNrocks.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +234,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 841A7C0C21B3FEF600709888 /* Build configuration list for PBXNativeTarget "SuperMessenger" */;
 			buildPhases = (
+				CE4BD342F69940758906D24D /* [CP] Check Pods Manifest.lock */,
 				841A7BE021B3FEF300709888 /* Sources */,
 				841A7BE121B3FEF300709888 /* Frameworks */,
 				841A7BE221B3FEF300709888 /* Resources */,
+				A404F45A6A7B53967314810B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +253,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 841A7C0F21B3FEF600709888 /* Build configuration list for PBXNativeTarget "SuperMessengerTests" */;
 			buildPhases = (
+				41D3ECAAE8AA6F2C7F6C289D /* [CP] Check Pods Manifest.lock */,
 				841A7BF421B3FEF500709888 /* Sources */,
 				841A7BF521B3FEF500709888 /* Frameworks */,
 				841A7BF621B3FEF500709888 /* Resources */,
@@ -167,6 +272,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 841A7C1221B3FEF600709888 /* Build configuration list for PBXNativeTarget "SuperMessengerUITests" */;
 			buildPhases = (
+				613AA7E85C0D334855814B73 /* [CP] Check Pods Manifest.lock */,
 				841A7BFF21B3FEF600709888 /* Sources */,
 				841A7C0021B3FEF600709888 /* Frameworks */,
 				841A7C0121B3FEF600709888 /* Resources */,
@@ -229,8 +335,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D6270721BDC3C600DCB6B5 /* sm-final-logo.png in Resources */,
+				841ECA8121BAADF200433DDA /* background-Rock.jpeg in Resources */,
+				841ECA7F21BAAD2D00433DDA /* background-seaPng.png in Resources */,
+				84D6270321BDBD4D00DCB6B5 /* sm-logo-sec.jpeg in Resources */,
+				84FE7C4B21BA9D20003FC5A3 /* background-seaNrocks.jpg in Resources */,
+				84D6270921BDC3CF00DCB6B5 /* sm-final-logo.png in Resources */,
 				841A7BF221B3FEF500709888 /* LaunchScreen.storyboard in Resources */,
+				84D6270521BDC3BA00DCB6B5 /* sm-final-logo.png in Resources */,
+				84D6270121BDBCB600DCB6B5 /* SM-LOGO-FST.jpg in Resources */,
+				84D6270F21BDC6B700DCB6B5 /* Logo.png in Resources */,
+				841ECA7D21BAAD1F00433DDA /* background-seaPng.png in Resources */,
+				841ECA7B21BAAC8D00433DDA /* background-seaNrocks.jpg in Resources */,
 				841A7BEF21B3FEF500709888 /* Assets.xcassets in Resources */,
+				84D626FF21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg in Resources */,
 				841A7BED21B3FEF400709888 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,12 +369,89 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		41D3ECAAE8AA6F2C7F6C289D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SuperMessengerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		613AA7E85C0D334855814B73 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SuperMessengerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A404F45A6A7B53967314810B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SuperMessenger/Pods-SuperMessenger-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperMessenger/Pods-SuperMessenger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE4BD342F69940758906D24D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SuperMessenger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		841A7BE021B3FEF300709888 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D626FD21BD4F5500DCB6B5 /* SimpTextField.swift in Sources */,
 				841A7BEA21B3FEF400709888 /* ViewController.swift in Sources */,
+				84D626FB21BD497F00DCB6B5 /* SimpButton.swift in Sources */,
 				841A7BE821B3FEF300709888 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +625,7 @@
 		};
 		841A7C0D21B3FEF600709888 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAE15CCA826486E6A1050E1B /* Pods-SuperMessenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -447,6 +643,7 @@
 		};
 		841A7C0E21B3FEF600709888 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2265F765B7A1FEB583E69113 /* Pods-SuperMessenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +661,7 @@
 		};
 		841A7C1021B3FEF600709888 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 353017F1091009E3FE29A74D /* Pods-SuperMessengerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -484,6 +682,7 @@
 		};
 		841A7C1121B3FEF600709888 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A299268ECC3704183782C9B /* Pods-SuperMessengerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -504,6 +703,7 @@
 		};
 		841A7C1321B3FEF600709888 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B664EA824A371B4A4E992237 /* Pods-SuperMessengerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +723,7 @@
 		};
 		841A7C1421B3FEF600709888 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 455918D7641F420404AD60E4 /* Pods-SuperMessengerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

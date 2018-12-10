@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SuperMessenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xi-cn-zpK" customClass="SimpButton" customModule="SuperMessenger" customModuleProvider="target">
+                                <rect key="frame" x="30" y="597" width="315" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zB0-oD-33F"/>
+                                </constraints>
+                                <state key="normal" title="Login"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xpd-ta-hW1" customClass="TextField" customModule="SuperMessenger" customModuleProvider="target">
+                                <rect key="frame" x="46" y="507" width="283" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gmI-ot-sLs"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vd5-5Q-AVF" customClass="TextField" customModule="SuperMessenger" customModuleProvider="target">
+                                <rect key="frame" x="46" y="447" width="283" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="y4D-K7-iU2"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="6fA-Av-Aa8">
+                                <rect key="frame" x="92.5" y="108.5" width="190" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="4cP-fx-lcq"/>
+                                    <constraint firstAttribute="width" constant="190" id="R4P-SL-0Bm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SuperMessenger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="qPu-SN-5u7">
+                                <rect key="frame" x="36" y="315" width="303" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="ldO-J6-AWB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6fA-Av-Aa8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-130" id="30r-X6-ngd"/>
+                            <constraint firstItem="qPu-SN-5u7" firstAttribute="top" secondItem="6fA-Av-Aa8" secondAttribute="bottom" constant="16.5" id="4yn-af-3r6"/>
+                            <constraint firstItem="vd5-5Q-AVF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="Bgp-SJ-wVZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xpd-ta-hW1" secondAttribute="trailing" constant="30" id="CJ2-9R-IiF"/>
+                            <constraint firstItem="6fA-Av-Aa8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DKf-9a-ZLF"/>
+                            <constraint firstItem="Xpd-ta-hW1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="E2p-MS-YHb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xpd-ta-hW1" secondAttribute="trailing" constant="30" id="JJC-hb-41Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vd5-5Q-AVF" secondAttribute="trailing" constant="30" id="JRa-mr-87g"/>
+                            <constraint firstItem="1xi-cn-zpK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="NIe-fm-uys"/>
+                            <constraint firstItem="Xpd-ta-hW1" firstAttribute="top" secondItem="vd5-5Q-AVF" secondAttribute="bottom" constant="10" id="OgB-Vq-CS4"/>
+                            <constraint firstItem="Xpd-ta-hW1" firstAttribute="top" secondItem="vd5-5Q-AVF" secondAttribute="bottom" constant="49" id="OuI-jR-M7t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qPu-SN-5u7" secondAttribute="trailing" constant="20" id="Ow6-Ka-AmM"/>
+                            <constraint firstItem="vd5-5Q-AVF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Qic-xr-WGQ"/>
+                            <constraint firstItem="Xpd-ta-hW1" firstAttribute="top" secondItem="vd5-5Q-AVF" secondAttribute="bottom" constant="10" id="Veg-Mm-HBM"/>
+                            <constraint firstItem="Xpd-ta-hW1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="XjA-UD-m79"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1xi-cn-zpK" secondAttribute="trailing" constant="30" id="XrV-k8-HNG"/>
+                            <constraint firstItem="1xi-cn-zpK" firstAttribute="top" secondItem="Xpd-ta-hW1" secondAttribute="bottom" constant="40" id="bEc-U8-lVl"/>
+                            <constraint firstItem="qPu-SN-5u7" firstAttribute="top" secondItem="6fA-Av-Aa8" secondAttribute="bottom" constant="16.5" id="cTu-vU-UAK"/>
+                            <constraint firstItem="1xi-cn-zpK" firstAttribute="top" secondItem="Xpd-ta-hW1" secondAttribute="bottom" constant="40" id="ciB-dU-GsP"/>
+                            <constraint firstItem="vd5-5Q-AVF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="e3P-39-e2F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qPu-SN-5u7" secondAttribute="trailing" constant="20" id="i73-Q5-vG5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vd5-5Q-AVF" secondAttribute="trailing" constant="30" id="lma-fe-NGp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xpd-ta-hW1" secondAttribute="trailing" constant="30" id="lsn-HC-v0g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1xi-cn-zpK" secondAttribute="bottom" constant="20" id="ltO-yy-YMB"/>
+                            <constraint firstItem="Xpd-ta-hW1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="plR-FY-SGU"/>
+                            <constraint firstItem="qPu-SN-5u7" firstAttribute="top" secondItem="6fA-Av-Aa8" secondAttribute="bottom" constant="16.5" id="ytJ-HF-ENr"/>
+                            <constraint firstItem="qPu-SN-5u7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="z8b-2h-4c4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vd5-5Q-AVF" secondAttribute="trailing" constant="30" id="zNT-mQ-qUg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginBottomConstraint" destination="ltO-yy-YMB" id="h8W-Vi-mn6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo.png" width="512" height="512"/>
+    </resources>
+</document>
