@@ -1,0 +1,6 @@
+framework module Pods_SuperMessengerUITests {
+  umbrella header "Pods-SuperMessengerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
