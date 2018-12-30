@@ -14,19 +14,14 @@
 		841A7BF221B3FEF500709888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841A7BF021B3FEF500709888 /* LaunchScreen.storyboard */; };
 		841A7BFD21B3FEF600709888 /* SuperMessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A7BFC21B3FEF600709888 /* SuperMessengerTests.swift */; };
 		841A7C0821B3FEF600709888 /* SuperMessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A7C0721B3FEF600709888 /* SuperMessengerUITests.swift */; };
-		841ECA7B21BAAC8D00433DDA /* background-seaNrocks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA7A21BAAC8D00433DDA /* background-seaNrocks.jpg */; };
-		841ECA7D21BAAD1F00433DDA /* background-seaPng.png in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA7C21BAAD1F00433DDA /* background-seaPng.png */; };
 		841ECA7F21BAAD2D00433DDA /* background-seaPng.png in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA7E21BAAD2D00433DDA /* background-seaPng.png */; };
 		841ECA8121BAADF200433DDA /* background-Rock.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA8021BAADF200433DDA /* background-Rock.jpeg */; };
 		84D626FB21BD497F00DCB6B5 /* SimpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D626FA21BD497F00DCB6B5 /* SimpButton.swift */; };
 		84D626FD21BD4F5500DCB6B5 /* SimpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */; };
 		84D626FF21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */; };
-		84D6270121BDBCB600DCB6B5 /* SM-LOGO-FST.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270021BDBCB600DCB6B5 /* SM-LOGO-FST.jpg */; };
-		84D6270321BDBD4D00DCB6B5 /* sm-logo-sec.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270221BDBD4D00DCB6B5 /* sm-logo-sec.jpeg */; };
-		84D6270521BDC3BA00DCB6B5 /* sm-final-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270421BDC3BA00DCB6B5 /* sm-final-logo.png */; };
-		84D6270721BDC3C600DCB6B5 /* sm-final-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270621BDC3C600DCB6B5 /* sm-final-logo.png */; };
 		84D6270921BDC3CF00DCB6B5 /* sm-final-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270821BDC3CF00DCB6B5 /* sm-final-logo.png */; };
 		84D6270F21BDC6B700DCB6B5 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270E21BDC6B700DCB6B5 /* Logo.png */; };
+		84D6271121C181B900DCB6B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84FE7C4D21BAA16B003FC5A3 /* GoogleService-Info.plist */; };
 		84FE7C4B21BA9D20003FC5A3 /* background-seaNrocks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84FE7C4A21BA9D20003FC5A3 /* background-seaNrocks.jpg */; };
 		97824C1D81ADBE3567280220 /* Pods_SuperMessengerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6FC7C6BDBE52841064E6B25 /* Pods_SuperMessengerTests.framework */; };
 		A01FF08D64E2E64D92908AD8 /* Pods_SuperMessengerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C012375E976489458272B49 /* Pods_SuperMessengerUITests.framework */; };
@@ -70,17 +65,12 @@
 		841A7C0321B3FEF600709888 /* SuperMessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperMessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		841A7C0721B3FEF600709888 /* SuperMessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperMessengerUITests.swift; sourceTree = "<group>"; };
 		841A7C0921B3FEF600709888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		841ECA7A21BAAC8D00433DDA /* background-seaNrocks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background-seaNrocks.jpg"; path = "../background-seaNrocks.jpg"; sourceTree = "<group>"; };
-		841ECA7C21BAAD1F00433DDA /* background-seaPng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-seaPng.png"; sourceTree = "<group>"; };
 		841ECA7E21BAAD2D00433DDA /* background-seaPng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-seaPng.png"; sourceTree = "<group>"; };
 		841ECA8021BAADF200433DDA /* background-Rock.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-Rock.jpeg"; sourceTree = "<group>"; };
 		84D626FA21BD497F00DCB6B5 /* SimpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpButton.swift; sourceTree = "<group>"; };
 		84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpTextField.swift; sourceTree = "<group>"; };
 		84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SM-LOGO-FST.jpg"; sourceTree = "<group>"; };
-		84D6270021BDBCB600DCB6B5 /* SM-LOGO-FST.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SM-LOGO-FST.jpg"; sourceTree = "<group>"; };
-		84D6270221BDBD4D00DCB6B5 /* sm-logo-sec.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sm-logo-sec.jpeg"; sourceTree = "<group>"; };
 		84D6270421BDC3BA00DCB6B5 /* sm-final-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sm-final-logo.png"; sourceTree = "<group>"; };
-		84D6270621BDC3C600DCB6B5 /* sm-final-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sm-final-logo.png"; sourceTree = "<group>"; };
 		84D6270821BDC3CF00DCB6B5 /* sm-final-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sm-final-logo.png"; sourceTree = "<group>"; };
 		84D6270E21BDC6B700DCB6B5 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		84FE7C4A21BA9D20003FC5A3 /* background-seaNrocks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background-seaNrocks.jpg"; path = "../../background-seaNrocks.jpg"; sourceTree = "<group>"; };
@@ -146,31 +136,18 @@
 			isa = PBXGroup;
 			children = (
 				84FE7C4921BA9A43003FC5A3 /* Images */,
-				84D6270621BDC3C600DCB6B5 /* sm-final-logo.png */,
-				84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */,
-				84D6270821BDC3CF00DCB6B5 /* sm-final-logo.png */,
-				841ECA7C21BAAD1F00433DDA /* background-seaPng.png */,
 				84FE7C4C21BAA16A003FC5A3 /* background-seaNrocks.jpg */,
+				84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */,
 				841A7BE621B3FEF300709888 /* SuperMessenger */,
 				84FE7C4D21BAA16B003FC5A3 /* GoogleService-Info.plist */,
-				841ECA7A21BAAC8D00433DDA /* background-seaNrocks.jpg */,
-				841ECA7E21BAAD2D00433DDA /* background-seaPng.png */,
-				84D6270821BDC3CF00DCB6B5 /* sm-final-logo.png */,
-				84D6270221BDBD4D00DCB6B5 /* sm-logo-sec.jpeg */,
-				841ECA8021BAADF200433DDA /* background-Rock.jpeg */,
-				84D6270021BDBCB600DCB6B5 /* SM-LOGO-FST.jpg */,
-				841A7BE721B3FEF300709888 /* AppDelegate.swift */,
-				84D6270E21BDC6B700DCB6B5 /* Logo.png */,
-				841A7BE921B3FEF400709888 /* ViewController.swift */,
-				841A7BEB21B3FEF400709888 /* Main.storyboard */,
 				841A7BEE21B3FEF500709888 /* Assets.xcassets */,
-				841A7BF021B3FEF500709888 /* LaunchScreen.storyboard */,
 				841A7BF321B3FEF500709888 /* Info.plist */,
 				841A7BFB21B3FEF600709888 /* SuperMessengerTests */,
 				841A7C0621B3FEF600709888 /* SuperMessengerUITests */,
 				841A7BE521B3FEF300709888 /* Products */,
 				0456C903966A822B5176FD06 /* Pods */,
 				76240D43C84396FE13233090 /* Frameworks */,
+				84D6271021BEED1C00DCB6B5 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,7 +164,9 @@
 		841A7BE621B3FEF300709888 /* SuperMessenger */ = {
 			isa = PBXGroup;
 			children = (
-				84D626F921BD492200DCB6B5 /* CustomViews */,
+				84A116A521C27B1F007DE2EC /* Models */,
+				84A116A321C27A5F007DE2EC /* Views */,
+				84A116A221C27A03007DE2EC /* Controllers */,
 			);
 			path = SuperMessenger;
 			sourceTree = "<group>";
@@ -210,6 +189,44 @@
 			path = SuperMessengerUITests;
 			sourceTree = "<group>";
 		};
+		84A116A221C27A03007DE2EC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				841A7BE921B3FEF400709888 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84A116A321C27A5F007DE2EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84A116A421C27AB4007DE2EC /* Images */,
+				84D626F921BD492200DCB6B5 /* CustomViews */,
+				841A7BEB21B3FEF400709888 /* Main.storyboard */,
+				841A7BF021B3FEF500709888 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		84A116A421C27AB4007DE2EC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				841ECA7E21BAAD2D00433DDA /* background-seaPng.png */,
+				84D6270821BDC3CF00DCB6B5 /* sm-final-logo.png */,
+				841ECA8021BAADF200433DDA /* background-Rock.jpeg */,
+				84D6270E21BDC6B700DCB6B5 /* Logo.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		84A116A521C27B1F007DE2EC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				841A7BE721B3FEF300709888 /* AppDelegate.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		84D626F921BD492200DCB6B5 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +234,14 @@
 				84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		84D6271021BEED1C00DCB6B5 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				84D6270421BDC3BA00DCB6B5 /* sm-final-logo.png */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		84FE7C4921BA9A43003FC5A3 /* Images */ = {
@@ -239,6 +264,7 @@
 				841A7BE121B3FEF300709888 /* Frameworks */,
 				841A7BE221B3FEF300709888 /* Resources */,
 				A404F45A6A7B53967314810B /* [CP] Embed Pods Frameworks */,
+				FF4B764B3AA58BF1CF455B86 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -335,18 +361,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D6270721BDC3C600DCB6B5 /* sm-final-logo.png in Resources */,
 				841ECA8121BAADF200433DDA /* background-Rock.jpeg in Resources */,
 				841ECA7F21BAAD2D00433DDA /* background-seaPng.png in Resources */,
-				84D6270321BDBD4D00DCB6B5 /* sm-logo-sec.jpeg in Resources */,
 				84FE7C4B21BA9D20003FC5A3 /* background-seaNrocks.jpg in Resources */,
 				84D6270921BDC3CF00DCB6B5 /* sm-final-logo.png in Resources */,
 				841A7BF221B3FEF500709888 /* LaunchScreen.storyboard in Resources */,
-				84D6270521BDC3BA00DCB6B5 /* sm-final-logo.png in Resources */,
-				84D6270121BDBCB600DCB6B5 /* SM-LOGO-FST.jpg in Resources */,
+				84D6271121C181B900DCB6B5 /* GoogleService-Info.plist in Resources */,
 				84D6270F21BDC6B700DCB6B5 /* Logo.png in Resources */,
-				841ECA7D21BAAD1F00433DDA /* background-seaPng.png in Resources */,
-				841ECA7B21BAAC8D00433DDA /* background-seaNrocks.jpg in Resources */,
 				841A7BEF21B3FEF500709888 /* Assets.xcassets in Resources */,
 				84D626FF21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg in Resources */,
 				841A7BED21B3FEF400709888 /* Main.storyboard in Resources */,
@@ -413,11 +434,47 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SuperMessenger/Pods-SuperMessenger-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/CarbonKit/CarbonKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/KILabel/KILabel.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarbonKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KILabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -440,6 +497,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF4B764B3AA58BF1CF455B86 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SuperMessenger/Pods-SuperMessenger-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAnonymousAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAnonymousAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperMessenger/Pods-SuperMessenger-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -629,6 +720,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				COMPRESS_PNG_FILES = YES;
 				INFOPLIST_FILE = SuperMessenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -636,6 +728,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = forColman.SuperMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_PNG_TEXT = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -647,6 +740,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				COMPRESS_PNG_FILES = YES;
 				INFOPLIST_FILE = SuperMessenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -654,6 +748,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = forColman.SuperMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_PNG_TEXT = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
