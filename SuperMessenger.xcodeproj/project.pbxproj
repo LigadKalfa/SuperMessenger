@@ -16,6 +16,10 @@
 		841A7C0821B3FEF600709888 /* SuperMessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A7C0721B3FEF600709888 /* SuperMessengerUITests.swift */; };
 		841ECA7F21BAAD2D00433DDA /* background-seaPng.png in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA7E21BAAD2D00433DDA /* background-seaPng.png */; };
 		841ECA8121BAADF200433DDA /* background-Rock.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA8021BAADF200433DDA /* background-Rock.jpeg */; };
+		849AAFF621DAD9ED00EEE905 /* ChatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAFF521DAD9ED00EEE905 /* ChatsController.swift */; };
+		849AAFF821DAD9FE00EEE905 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAFF721DAD9FE00EEE905 /* ProfileController.swift */; };
+		849AAFFA21DADA2200EEE905 /* RequesrsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAFF921DADA2200EEE905 /* RequesrsController.swift */; };
+		849AAFFC21DADA5C00EEE905 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAFFB21DADA5C00EEE905 /* FriendsController.swift */; };
 		84D626FB21BD497F00DCB6B5 /* SimpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D626FA21BD497F00DCB6B5 /* SimpButton.swift */; };
 		84D626FD21BD4F5500DCB6B5 /* SimpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */; };
 		84D626FF21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */; };
@@ -67,6 +71,10 @@
 		841A7C0921B3FEF600709888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		841ECA7E21BAAD2D00433DDA /* background-seaPng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-seaPng.png"; sourceTree = "<group>"; };
 		841ECA8021BAADF200433DDA /* background-Rock.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-Rock.jpeg"; sourceTree = "<group>"; };
+		849AAFF521DAD9ED00EEE905 /* ChatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsController.swift; sourceTree = "<group>"; };
+		849AAFF721DAD9FE00EEE905 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		849AAFF921DADA2200EEE905 /* RequesrsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequesrsController.swift; sourceTree = "<group>"; };
+		849AAFFB21DADA5C00EEE905 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
 		84D626FA21BD497F00DCB6B5 /* SimpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpButton.swift; sourceTree = "<group>"; };
 		84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpTextField.swift; sourceTree = "<group>"; };
 		84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SM-LOGO-FST.jpg"; sourceTree = "<group>"; };
@@ -193,6 +201,10 @@
 			isa = PBXGroup;
 			children = (
 				841A7BE921B3FEF400709888 /* ViewController.swift */,
+				849AAFF521DAD9ED00EEE905 /* ChatsController.swift */,
+				849AAFF721DAD9FE00EEE905 /* ProfileController.swift */,
+				849AAFF921DADA2200EEE905 /* RequesrsController.swift */,
+				849AAFFB21DADA5C00EEE905 /* FriendsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -541,9 +553,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D626FD21BD4F5500DCB6B5 /* SimpTextField.swift in Sources */,
+				849AAFFC21DADA5C00EEE905 /* FriendsController.swift in Sources */,
+				849AAFFA21DADA2200EEE905 /* RequesrsController.swift in Sources */,
 				841A7BEA21B3FEF400709888 /* ViewController.swift in Sources */,
 				84D626FB21BD497F00DCB6B5 /* SimpButton.swift in Sources */,
 				841A7BE821B3FEF300709888 /* AppDelegate.swift in Sources */,
+				849AAFF621DAD9ED00EEE905 /* ChatsController.swift in Sources */,
+				849AAFF821DAD9FE00EEE905 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
