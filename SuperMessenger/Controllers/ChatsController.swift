@@ -15,6 +15,7 @@ class ChatsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.title = "New title"
         // Do any additional setup after loading the view.
     }
     

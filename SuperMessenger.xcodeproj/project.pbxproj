@@ -10,7 +10,6 @@
 		841A7BE821B3FEF300709888 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A7BE721B3FEF300709888 /* AppDelegate.swift */; };
 		841A7BEA21B3FEF400709888 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A7BE921B3FEF400709888 /* ViewController.swift */; };
 		841A7BED21B3FEF400709888 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841A7BEB21B3FEF400709888 /* Main.storyboard */; };
-		841A7BEF21B3FEF500709888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841A7BEE21B3FEF500709888 /* Assets.xcassets */; };
 		841A7BF221B3FEF500709888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841A7BF021B3FEF500709888 /* LaunchScreen.storyboard */; };
 		841A7BFD21B3FEF600709888 /* SuperMessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A7BFC21B3FEF600709888 /* SuperMessengerTests.swift */; };
 		841A7C0821B3FEF600709888 /* SuperMessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A7C0721B3FEF600709888 /* SuperMessengerUITests.swift */; };
@@ -20,6 +19,7 @@
 		849AAFF821DAD9FE00EEE905 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAFF721DAD9FE00EEE905 /* ProfileController.swift */; };
 		849AAFFA21DADA2200EEE905 /* RequesrsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAFF921DADA2200EEE905 /* RequesrsController.swift */; };
 		849AAFFC21DADA5C00EEE905 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAFFB21DADA5C00EEE905 /* FriendsController.swift */; };
+		84B88F1821DC13EA00768D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B88F1721DC13EA00768D7F /* Assets.xcassets */; };
 		84D626FB21BD497F00DCB6B5 /* SimpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D626FA21BD497F00DCB6B5 /* SimpButton.swift */; };
 		84D626FD21BD4F5500DCB6B5 /* SimpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */; };
 		84D626FF21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */; };
@@ -60,7 +60,6 @@
 		841A7BE721B3FEF300709888 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		841A7BE921B3FEF400709888 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		841A7BEC21B3FEF400709888 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		841A7BEE21B3FEF500709888 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		841A7BF121B3FEF500709888 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		841A7BF321B3FEF500709888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		841A7BF821B3FEF600709888 /* SuperMessengerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperMessengerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +74,7 @@
 		849AAFF721DAD9FE00EEE905 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		849AAFF921DADA2200EEE905 /* RequesrsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequesrsController.swift; sourceTree = "<group>"; };
 		849AAFFB21DADA5C00EEE905 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
+		84B88F1721DC13EA00768D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84D626FA21BD497F00DCB6B5 /* SimpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpButton.swift; sourceTree = "<group>"; };
 		84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpTextField.swift; sourceTree = "<group>"; };
 		84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SM-LOGO-FST.jpg"; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 				84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */,
 				841A7BE621B3FEF300709888 /* SuperMessenger */,
 				84FE7C4D21BAA16B003FC5A3 /* GoogleService-Info.plist */,
-				841A7BEE21B3FEF500709888 /* Assets.xcassets */,
+				84B88F1721DC13EA00768D7F /* Assets.xcassets */,
 				841A7BF321B3FEF500709888 /* Info.plist */,
 				841A7BFB21B3FEF600709888 /* SuperMessengerTests */,
 				841A7C0621B3FEF600709888 /* SuperMessengerUITests */,
@@ -373,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B88F1821DC13EA00768D7F /* Assets.xcassets in Resources */,
 				841ECA8121BAADF200433DDA /* background-Rock.jpeg in Resources */,
 				841ECA7F21BAAD2D00433DDA /* background-seaPng.png in Resources */,
 				84FE7C4B21BA9D20003FC5A3 /* background-seaNrocks.jpg in Resources */,
@@ -380,7 +381,6 @@
 				841A7BF221B3FEF500709888 /* LaunchScreen.storyboard in Resources */,
 				84D6271121C181B900DCB6B5 /* GoogleService-Info.plist in Resources */,
 				84D6270F21BDC6B700DCB6B5 /* Logo.png in Resources */,
-				841A7BEF21B3FEF500709888 /* Assets.xcassets in Resources */,
 				84D626FF21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg in Resources */,
 				841A7BED21B3FEF400709888 /* Main.storyboard in Resources */,
 			);

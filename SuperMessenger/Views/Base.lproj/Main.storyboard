@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9OQ-xF-gnf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -114,7 +114,7 @@
                         <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Q85-di-lDj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Friends" id="gFQ-EB-MdA"/>
+                    <tabBarItem key="tabBarItem" title="Friend" image="Friends" selectedImage="FriendsChecked" id="gFQ-EB-MdA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAf-6a-9vr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,7 +130,7 @@
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Nka-cY-w0o"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Requests" id="rUC-8i-uQ4"/>
+                    <tabBarItem key="tabBarItem" title="Requests" image="FriendRequest" selectedImage="FriendRequestChecked" id="rUC-8i-uQ4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szy-GX-Fic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -143,14 +143,70 @@
                     <view key="view" contentMode="scaleToFill" id="aoW-Ok-BgS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="Vta-AS-vga">
+                                <rect key="frame" x="87.5" y="108" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="T0H-ab-8nf"/>
+                                    <constraint firstAttribute="height" constant="200" id="UvS-SU-yb3"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T0c-1r-mUe" customClass="TextField" customModule="SuperMessenger" customModuleProvider="target">
+                                <rect key="frame" x="30" y="378" width="315" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7zf-jS-MYZ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="eOe-Zb-guc"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Status" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MSB-Ga-oUX" customClass="TextField" customModule="SuperMessenger" customModuleProvider="target">
+                                <rect key="frame" x="30" y="448" width="315" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="3yV-n6-WBk"/>
+                                    <constraint firstAttribute="height" constant="50" id="Qq4-be-A3N"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYw-Cp-aLM" customClass="SimpButton" customModule="SuperMessenger" customModuleProvider="target">
+                                <rect key="frame" x="30" y="518" width="315" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7yt-e3-oxF"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="zG6-6c-g9A"/>
+                                </constraints>
+                                <state key="normal" title="Save Changes"/>
+                                <connections>
+                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pd8-4Q-J8G"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="T0c-1r-mUe" firstAttribute="leading" secondItem="EiC-fo-g3E" secondAttribute="leading" constant="30" id="82y-Ms-lwQ"/>
+                            <constraint firstItem="QYw-Cp-aLM" firstAttribute="centerX" secondItem="aoW-Ok-BgS" secondAttribute="centerX" id="9v5-g4-lMs"/>
+                            <constraint firstItem="MSB-Ga-oUX" firstAttribute="top" secondItem="Vta-AS-vga" secondAttribute="bottom" constant="140" id="CXN-7D-Yeq"/>
+                            <constraint firstItem="Vta-AS-vga" firstAttribute="centerX" secondItem="aoW-Ok-BgS" secondAttribute="centerX" id="F1p-dJ-ncF"/>
+                            <constraint firstItem="QYw-Cp-aLM" firstAttribute="leading" secondItem="EiC-fo-g3E" secondAttribute="leading" constant="30" id="JHB-Kx-mI3"/>
+                            <constraint firstItem="EiC-fo-g3E" firstAttribute="trailing" secondItem="MSB-Ga-oUX" secondAttribute="trailing" constant="30" id="K6P-2K-Jhg"/>
+                            <constraint firstItem="MSB-Ga-oUX" firstAttribute="top" secondItem="T0c-1r-mUe" secondAttribute="bottom" constant="20" id="RDJ-pL-XJH"/>
+                            <constraint firstItem="MSB-Ga-oUX" firstAttribute="centerX" secondItem="aoW-Ok-BgS" secondAttribute="centerX" id="Ssy-xn-27K"/>
+                            <constraint firstItem="MSB-Ga-oUX" firstAttribute="leading" secondItem="EiC-fo-g3E" secondAttribute="leading" constant="30" id="TfG-Nr-yHV"/>
+                            <constraint firstItem="EiC-fo-g3E" firstAttribute="trailing" secondItem="T0c-1r-mUe" secondAttribute="trailing" constant="30" id="Xev-Y0-8FE"/>
+                            <constraint firstItem="T0c-1r-mUe" firstAttribute="centerX" secondItem="aoW-Ok-BgS" secondAttribute="centerX" id="Zth-a1-Alw"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="QYw-Cp-aLM" secondAttribute="bottom" constant="50" id="aNr-1o-BMF"/>
+                            <constraint firstItem="EiC-fo-g3E" firstAttribute="trailing" secondItem="QYw-Cp-aLM" secondAttribute="trailing" constant="30" id="kBz-KA-uG1"/>
+                            <constraint firstItem="QYw-Cp-aLM" firstAttribute="top" secondItem="MSB-Ga-oUX" secondAttribute="bottom" constant="20" id="pP8-7L-7De"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EiC-fo-g3E"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="vhv-i9-iyH"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="ProfileChecked" id="vhv-i9-iyH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agU-25-OVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2793" y="1611"/>
+            <point key="canvasLocation" x="2792.8000000000002" y="1610.6446776611695"/>
         </scene>
         <!--Chats Controller-->
         <scene sceneID="TCn-1J-qUr">
@@ -192,8 +248,9 @@
         <!--Chats-->
         <scene sceneID="1S5-7x-rXo">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CwV-PK-vbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5dY-gQ-vlj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chats" id="b2L-cW-8ma"/>
+                    <tabBarItem key="tabBarItem" title="Chats" image="Chat" selectedImage="ChatChecked" id="b2L-cW-8ma"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ved-jb-EAF">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -204,7 +261,6 @@
                         <segue destination="S30-MA-s7G" kind="relationship" relationship="rootViewController" id="Vf5-0f-zm7"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CwV-PK-vbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2792.8000000000002" y="-682.3088455772114"/>
         </scene>
@@ -235,10 +291,18 @@ Aw
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8MR-r7-2Cw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="994" y="134"/>
+            <point key="canvasLocation" x="92" y="-269"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Chat" width="32" height="32"/>
+        <image name="ChatChecked" width="30" height="30"/>
+        <image name="FriendRequest" width="64" height="64"/>
+        <image name="FriendRequestChecked" width="64" height="64"/>
+        <image name="Friends" width="30" height="30"/>
+        <image name="FriendsChecked" width="32" height="32"/>
         <image name="Logo.png" width="512" height="512"/>
+        <image name="Profile" width="64" height="64"/>
+        <image name="ProfileChecked" width="64" height="64"/>
     </resources>
 </document>
