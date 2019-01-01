@@ -23,6 +23,9 @@
                                     <constraint firstAttribute="height" constant="50" id="zB0-oD-33F"/>
                                 </constraints>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Km4-YK-0TH"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xpd-ta-hW1" customClass="TextField" customModule="SuperMessenger" customModuleProvider="target">
                                 <rect key="frame" x="30" y="507" width="315" height="50"/>
@@ -94,6 +97,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBottomConstraint" destination="ltO-yy-YMB" id="h8W-Vi-mn6"/>
+                        <segue destination="8lB-8S-QJW" kind="show" identifier="goHome" id="Fpi-UG-Zoy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -203,6 +207,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwV-PK-vbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2792.8000000000002" y="-682.3088455772114"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0kk-Lh-rV8">
+            <objects>
+                <viewController id="8lB-8S-QJW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="duo-rc-6fa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUR-8l-nlU" customClass="KILabel">
+                                <rect key="frame" x="166" y="292" width="76" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <string key="label" base64-UTF8="YES">
+Aw
+</string>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jwP-vi-qrO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8MR-r7-2Cw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="994" y="134"/>
         </scene>
     </scenes>
     <resources>
