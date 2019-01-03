@@ -15,10 +15,11 @@
 		841A7C0821B3FEF600709888 /* SuperMessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A7C0721B3FEF600709888 /* SuperMessengerUITests.swift */; };
 		841ECA7F21BAAD2D00433DDA /* background-seaPng.png in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA7E21BAAD2D00433DDA /* background-seaPng.png */; };
 		841ECA8121BAADF200433DDA /* background-Rock.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA8021BAADF200433DDA /* background-Rock.jpeg */; };
-		849AAFF621DAD9ED00EEE905 /* ChatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAFF521DAD9ED00EEE905 /* ChatsController.swift */; };
-		849AAFF821DAD9FE00EEE905 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAFF721DAD9FE00EEE905 /* ProfileController.swift */; };
-		849AAFFA21DADA2200EEE905 /* RequesrsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAFF921DADA2200EEE905 /* RequesrsController.swift */; };
-		849AAFFC21DADA5C00EEE905 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AAFFB21DADA5C00EEE905 /* FriendsController.swift */; };
+		843B65FA21DD5E500045883B /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B65F921DD5E500045883B /* ChatsViewController.swift */; };
+		843B65FD21DD5EDB0045883B /* FreindsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B65FC21DD5EDB0045883B /* FreindsViewController.swift */; };
+		843B65FF21DD5F010045883B /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B65FE21DD5F010045883B /* RequestsViewController.swift */; };
+		843B660321DD62B70045883B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B660221DD62B70045883B /* ProfileViewController.swift */; };
+		84559DBC21DE54DF00412AA3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84559DBB21DE54DF00412AA3 /* RegisterViewController.swift */; };
 		84B88F1821DC13EA00768D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B88F1721DC13EA00768D7F /* Assets.xcassets */; };
 		84D626FB21BD497F00DCB6B5 /* SimpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D626FA21BD497F00DCB6B5 /* SimpButton.swift */; };
 		84D626FD21BD4F5500DCB6B5 /* SimpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */; };
@@ -70,10 +71,11 @@
 		841A7C0921B3FEF600709888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		841ECA7E21BAAD2D00433DDA /* background-seaPng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-seaPng.png"; sourceTree = "<group>"; };
 		841ECA8021BAADF200433DDA /* background-Rock.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-Rock.jpeg"; sourceTree = "<group>"; };
-		849AAFF521DAD9ED00EEE905 /* ChatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsController.swift; sourceTree = "<group>"; };
-		849AAFF721DAD9FE00EEE905 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
-		849AAFF921DADA2200EEE905 /* RequesrsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequesrsController.swift; sourceTree = "<group>"; };
-		849AAFFB21DADA5C00EEE905 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
+		843B65F921DD5E500045883B /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		843B65FC21DD5EDB0045883B /* FreindsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsViewController.swift; sourceTree = "<group>"; };
+		843B65FE21DD5F010045883B /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
+		843B660221DD62B70045883B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		84559DBB21DE54DF00412AA3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		84B88F1721DC13EA00768D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84D626FA21BD497F00DCB6B5 /* SimpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpButton.swift; sourceTree = "<group>"; };
 		84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpTextField.swift; sourceTree = "<group>"; };
@@ -201,10 +203,11 @@
 			isa = PBXGroup;
 			children = (
 				841A7BE921B3FEF400709888 /* ViewController.swift */,
-				849AAFF521DAD9ED00EEE905 /* ChatsController.swift */,
-				849AAFF721DAD9FE00EEE905 /* ProfileController.swift */,
-				849AAFF921DADA2200EEE905 /* RequesrsController.swift */,
-				849AAFFB21DADA5C00EEE905 /* FriendsController.swift */,
+				843B65F921DD5E500045883B /* ChatsViewController.swift */,
+				843B65FC21DD5EDB0045883B /* FreindsViewController.swift */,
+				843B65FE21DD5F010045883B /* RequestsViewController.swift */,
+				843B660221DD62B70045883B /* ProfileViewController.swift */,
+				84559DBB21DE54DF00412AA3 /* RegisterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -552,14 +555,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84559DBC21DE54DF00412AA3 /* RegisterViewController.swift in Sources */,
+				843B65FF21DD5F010045883B /* RequestsViewController.swift in Sources */,
 				84D626FD21BD4F5500DCB6B5 /* SimpTextField.swift in Sources */,
-				849AAFFC21DADA5C00EEE905 /* FriendsController.swift in Sources */,
-				849AAFFA21DADA2200EEE905 /* RequesrsController.swift in Sources */,
 				841A7BEA21B3FEF400709888 /* ViewController.swift in Sources */,
+				843B65FD21DD5EDB0045883B /* FreindsViewController.swift in Sources */,
 				84D626FB21BD497F00DCB6B5 /* SimpButton.swift in Sources */,
 				841A7BE821B3FEF300709888 /* AppDelegate.swift in Sources */,
-				849AAFF621DAD9ED00EEE905 /* ChatsController.swift in Sources */,
-				849AAFF821DAD9FE00EEE905 /* ProfileController.swift in Sources */,
+				843B660321DD62B70045883B /* ProfileViewController.swift in Sources */,
+				843B65FA21DD5E500045883B /* ChatsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
