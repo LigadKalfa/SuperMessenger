@@ -26,7 +26,8 @@
 		84D626FF21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */; };
 		84D6270921BDC3CF00DCB6B5 /* sm-final-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270821BDC3CF00DCB6B5 /* sm-final-logo.png */; };
 		84D6270F21BDC6B700DCB6B5 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270E21BDC6B700DCB6B5 /* Logo.png */; };
-		84D6271121C181B900DCB6B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84FE7C4D21BAA16B003FC5A3 /* GoogleService-Info.plist */; };
+		84E4D2BB21DF6AC200544AC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84E4D2BA21DF6AC200544AC5 /* GoogleService-Info.plist */; };
+		84E4D2BD21DF6E0B00544AC5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4D2BC21DF6E0B00544AC5 /* LoginViewController.swift */; };
 		84FE7C4B21BA9D20003FC5A3 /* background-seaNrocks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84FE7C4A21BA9D20003FC5A3 /* background-seaNrocks.jpg */; };
 		97824C1D81ADBE3567280220 /* Pods_SuperMessengerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6FC7C6BDBE52841064E6B25 /* Pods_SuperMessengerTests.framework */; };
 		A01FF08D64E2E64D92908AD8 /* Pods_SuperMessengerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C012375E976489458272B49 /* Pods_SuperMessengerUITests.framework */; };
@@ -83,9 +84,10 @@
 		84D6270421BDC3BA00DCB6B5 /* sm-final-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sm-final-logo.png"; sourceTree = "<group>"; };
 		84D6270821BDC3CF00DCB6B5 /* sm-final-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sm-final-logo.png"; sourceTree = "<group>"; };
 		84D6270E21BDC6B700DCB6B5 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		84E4D2BA21DF6AC200544AC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84E4D2BC21DF6E0B00544AC5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84FE7C4A21BA9D20003FC5A3 /* background-seaNrocks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background-seaNrocks.jpg"; path = "../../background-seaNrocks.jpg"; sourceTree = "<group>"; };
 		84FE7C4C21BAA16A003FC5A3 /* background-seaNrocks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-seaNrocks.jpg"; sourceTree = "<group>"; };
-		84FE7C4D21BAA16B003FC5A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AAE15CCA826486E6A1050E1B /* Pods-SuperMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMessenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperMessenger/Pods-SuperMessenger.debug.xcconfig"; sourceTree = "<group>"; };
 		B664EA824A371B4A4E992237 /* Pods-SuperMessengerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMessengerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperMessengerUITests/Pods-SuperMessengerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6FC7C6BDBE52841064E6B25 /* Pods_SuperMessengerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperMessengerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,8 +151,8 @@
 				84FE7C4C21BAA16A003FC5A3 /* background-seaNrocks.jpg */,
 				84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */,
 				841A7BE621B3FEF300709888 /* SuperMessenger */,
-				84FE7C4D21BAA16B003FC5A3 /* GoogleService-Info.plist */,
 				84B88F1721DC13EA00768D7F /* Assets.xcassets */,
+				84E4D2BA21DF6AC200544AC5 /* GoogleService-Info.plist */,
 				841A7BF321B3FEF500709888 /* Info.plist */,
 				841A7BFB21B3FEF600709888 /* SuperMessengerTests */,
 				841A7C0621B3FEF600709888 /* SuperMessengerUITests */,
@@ -208,6 +210,7 @@
 				843B65FE21DD5F010045883B /* RequestsViewController.swift */,
 				843B660221DD62B70045883B /* ProfileViewController.swift */,
 				84559DBB21DE54DF00412AA3 /* RegisterViewController.swift */,
+				84E4D2BC21DF6E0B00544AC5 /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -279,7 +282,7 @@
 				841A7BE121B3FEF300709888 /* Frameworks */,
 				841A7BE221B3FEF300709888 /* Resources */,
 				A404F45A6A7B53967314810B /* [CP] Embed Pods Frameworks */,
-				FF4B764B3AA58BF1CF455B86 /* [CP] Copy Pods Resources */,
+				D4072558B9E99DF4F200617E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -382,8 +385,8 @@
 				84FE7C4B21BA9D20003FC5A3 /* background-seaNrocks.jpg in Resources */,
 				84D6270921BDC3CF00DCB6B5 /* sm-final-logo.png in Resources */,
 				841A7BF221B3FEF500709888 /* LaunchScreen.storyboard in Resources */,
-				84D6271121C181B900DCB6B5 /* GoogleService-Info.plist in Resources */,
 				84D6270F21BDC6B700DCB6B5 /* Logo.png in Resources */,
+				84E4D2BB21DF6AC200544AC5 /* GoogleService-Info.plist in Resources */,
 				84D626FF21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg in Resources */,
 				841A7BED21B3FEF400709888 /* Main.storyboard in Resources */,
 			);
@@ -451,17 +454,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SuperMessenger/Pods-SuperMessenger-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
-				"${BUILT_PRODUCTS_DIR}/CarbonKit/CarbonKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/KILabel/KILabel.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
@@ -473,17 +474,15 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarbonKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KILabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
@@ -514,14 +513,16 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FF4B764B3AA58BF1CF455B86 /* [CP] Copy Pods Resources */ = {
+		D4072558B9E99DF4F200617E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SuperMessenger/Pods-SuperMessenger-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAnonymousAuthUI.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
@@ -532,8 +533,10 @@
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAnonymousAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
@@ -563,6 +566,7 @@
 				84D626FB21BD497F00DCB6B5 /* SimpButton.swift in Sources */,
 				841A7BE821B3FEF300709888 /* AppDelegate.swift in Sources */,
 				843B660321DD62B70045883B /* ProfileViewController.swift in Sources */,
+				84E4D2BD21DF6E0B00544AC5 /* LoginViewController.swift in Sources */,
 				843B65FA21DD5E500045883B /* ChatsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

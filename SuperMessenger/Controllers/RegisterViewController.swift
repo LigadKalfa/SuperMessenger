@@ -90,21 +90,24 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         }else if (PasswordTextField.text != RenterPasswordTextField.text){
             WarrningLabel.text = "Passwords not maching"
         }else{
-            Auth.auth().createUser(withEmail: EmailTextField.text!, password: PasswordTextField.text!) { (user, error) in
+            let email = EmailTextField.text!
+            let password = PasswordTextField.text!
+            let fullName = FullNmaeTextField.text!
+            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                 if(error != nil){
                     self.WarrningLabel.text = "Error occured"
                 }else{
                     if let userid = user?.user.uid{
-                        self.createUser(email: self.EmailTextField.text!, password: self.PasswordTextField.text!, userid: userid)
+                        self.createUser(email: email, fullname: fullName, userid: userid)
                     }
                 }
             }
         }
     }
     
-    func createUser(email:String, password : String, userid : String) {
+    func createUser(email:String, fullname : String, userid : String) {
         let userref = ref.child("users").child(userid)
-        userref.setValue(["jj" : "ii"])
+        userref.setValue(["email" : email, "fullName" : fullname, "image" : "", "status" : ""])
         
     }
     
@@ -159,4 +162,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func BackToLoginPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
