@@ -11,20 +11,30 @@ import Firebase
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var ProfileImage: UIImageView!
-    
     @IBOutlet weak var FullNameTextField: TextField!
     @IBOutlet weak var StatusTextField: TextField!
-    //var user = Auth.auth().currentUser
+    
+    @IBOutlet weak var SeveConstraint: NSLayoutConstraint!
+    
+    var user = Auth.auth().currentUser
+    
+    let backgroundImageView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setBackGround()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
         let picGesture = UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView))
-        
+        user = Auth.auth().currentUser
         ProfileImage.addGestureRecognizer(picGesture)
         ProfileImage.isUserInteractionEnabled = true
-        // Do any additional setup after loading the view.
     }
     
     @objc func handleSelectProfileImageView(){
@@ -57,4 +67,46 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
         dismiss(animated: true, completion: nil)
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification){
+        
+        if let info = notification.userInfo{
+            
+            let rect: CGRect = info["UIKeyboardFrameEndUserInfoKey"] as! CGRect
+            
+            self.view.layoutIfNeeded()
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                self.ProfileImage.isHidden = true
+                self.SeveConstraint.constant = rect.height + 20
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification){
+        UIView.animate(withDuration: 0.25, animations: {
+            self.ProfileImage.isHidden = false
+            self.SeveConstraint.constant =  60
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func setBackGround(){
+        view.addSubview(backgroundImageView)
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        backgroundImageView.image = UIImage(named: "background-Rock.jpeg")
+        
+        view.sendSubviewToBack(backgroundImageView)
+    }
+    
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
+    }
+    
 }

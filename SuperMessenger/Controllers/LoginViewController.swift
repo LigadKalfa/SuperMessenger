@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
             
             UIView.animate(withDuration: 0.25, animations: {
                 self.IconImage.isHidden = true
-                self.JoinConstraint.constant = rect.height + 20
+                self.JoinConstraint.constant = rect.height
                 self.view.layoutIfNeeded()
             })
         }
@@ -76,9 +76,7 @@ class LoginViewController: UIViewController {
             if (error != nil){
                 print("Login Eror")
             }else{
-                print("logon success")
-                
-                //self.performSegue(withIdentifier: "goToChat", sender: self)
+                self.performSegue(withIdentifier: "FromLoginToTabBar", sender: self)
             }
         }
     }

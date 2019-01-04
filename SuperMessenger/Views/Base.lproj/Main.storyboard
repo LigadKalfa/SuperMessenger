@@ -197,6 +197,7 @@
                     <connections>
                         <outlet property="FullNameTextField" destination="kvI-Er-nED" id="zXB-il-yxe"/>
                         <outlet property="ProfileImage" destination="eWU-hb-AnT" id="vB3-LZ-2E0"/>
+                        <outlet property="SeveConstraint" destination="mbY-oY-XMG" id="jWk-sd-h5I"/>
                         <outlet property="StatusTextField" destination="CKe-Jg-whT" id="I1j-YM-9rl"/>
                     </connections>
                 </viewController>
@@ -449,6 +450,7 @@ Aw
                         <outlet property="IconImage" destination="QP1-Bg-19g" id="3TY-n9-faX"/>
                         <outlet property="JoinConstraint" destination="5Am-ar-h9c" id="gJp-cc-7hX"/>
                         <outlet property="PasswordTextField" destination="uaE-Y9-fwv" id="FJm-RS-f81"/>
+                        <segue destination="9OQ-xF-gnf" kind="show" identifier="FromLoginToTabBar" id="uLO-xA-mEx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCd-lZ-DKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -573,6 +575,7 @@ Aw
                         <outlet property="RegisrerButtonConstrain" destination="Ee0-zb-HXs" id="tKJ-EY-QI6"/>
                         <outlet property="RenterPasswordTextField" destination="9Sv-uH-8jq" id="FYs-c6-0lt"/>
                         <outlet property="WarrningLabel" destination="eTb-ee-17Z" id="sK8-hP-qE4"/>
+                        <segue destination="9OQ-xF-gnf" kind="show" identifier="FromRegisterToTabBar" id="GG9-q5-hA7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ef-mK-1ro" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -611,4 +614,7 @@ Aw
         <image name="Profile" width="64" height="64"/>
         <image name="ProfileChecked" width="64" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="GG9-q5-hA7"/>
+    </inferredMetricsTieBreakers>
 </document>

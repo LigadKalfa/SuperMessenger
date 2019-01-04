@@ -99,6 +99,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
                 }else{
                     if let userid = user?.user.uid{
                         self.createUser(email: email, fullname: fullName, userid: userid)
+                        self.performSegue(withIdentifier: "FromRegisterToTabBar", sender: self)
                     }
                 }
             }
