@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginController.swift
 //  SuperMessenger
 //
 //  Created by admin on 02/12/2018.
@@ -62,6 +62,7 @@ class ViewController: UIViewController {
         
         // The var which we gonna design as the auth view controller
         let authViewController = authUI!.authViewController()
+        
         present(authViewController, animated: true, completion: nil)
     }
 }
@@ -76,3 +77,5 @@ extension ViewController: FUIAuthDelegate{
         performSegue(withIdentifier: "goHome", sender: self)
     }
 }
+
+
