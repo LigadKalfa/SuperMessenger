@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = UINavigationController(rootViewController: allChatsController)
         ////////////////////////////////////////////
         FirebaseApp.configure()
+
         
         //let authUI = FUIAuth.defaultAuthUI()
         //authUI?.delegate = (self as! FUIAuthDelegate);
