@@ -18,12 +18,14 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var PasswordTextField: TextField!
     @IBOutlet weak var RenterPasswordTextField: TextField!
     @IBOutlet weak var RegisrerButtonConstrain: NSLayoutConstraint!
-    @IBOutlet weak var WarrningLabel: UILabel!
+    
     var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setBackGround()
+        
         ref = Database.database().reference()
         let picGesture = UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView))
         
@@ -48,7 +50,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
             
             UIView.animate(withDuration: 0.25, animations: {
                 self.ProfileImage.isHidden = true
-                self.RegisrerButtonConstrain.constant = rect.height + 20
+                self.RegisrerButtonConstrain.constant = rect.height + 10
                 self.view.layoutIfNeeded()
             })
         }
@@ -57,7 +59,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     @objc func keyboardWillHide(notification: NSNotification){
         UIView.animate(withDuration: 0.25, animations: {
             self.ProfileImage.isHidden = false
-            self.RegisrerButtonConstrain.constant =  60
+            self.RegisrerButtonConstrain.constant =  20
             self.view.layoutIfNeeded()
         })
     }
@@ -81,35 +83,63 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBAction func RegisterPressed(_ sender: Any) {
         //validaton
+        IJProgressView.shared.showProgressView()
         if (!isValidUserName(Input: FullNmaeTextField.text)){
-            WarrningLabel.text = "Enter your full name"
+            alertError(error: "Enter your full name")
         }else if(!isValidEmail(testStr: EmailTextField.text)){
-            WarrningLabel.text = "Email not valid"
+            alertError(error: "Email not valid")
         }else if (!isPasswordValid(password: PasswordTextField.text)){
-            WarrningLabel.text = "Password must have 8 cahars"
+            alertError(error: "Password must have 8 cahars")
         }else if (PasswordTextField.text != RenterPasswordTextField.text){
-            WarrningLabel.text = "Passwords not maching"
+            alertError(error: "Passwords not maching")
         }else{
             let email = EmailTextField.text!
             let password = PasswordTextField.text!
             let fullName = FullNmaeTextField.text!
             Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                 if(error != nil){
-                    self.WarrningLabel.text = "Error occured"
+                    self.alertError(error: "Error occured")
                 }else{
                     if let userid = user?.user.uid{
                         self.createUser(email: email, fullname: fullName, userid: userid)
                         self.performSegue(withIdentifier: "FromRegisterToTabBar", sender: self)
+                    }else{
+                        IJProgressView.shared.hideProgressView()
                     }
                 }
             }
         }
     }
     
-    func createUser(email:String, fullname : String, userid : String) {
+    func alertError(error : String){
+        let alert = UIAlertController(title: error, message: nil , preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        IJProgressView.shared.hideProgressView()
+        self.present(alert, animated: true)
+    }
+    
+    func createUser(email:String, fullname : String, userid : String){
         let userref = ref.child("users").child(userid)
-        userref.setValue(["email" : email, "fullName" : fullname, "image" : "", "status" : ""])
-        
+        userref.setValue(["email" : email, "fullName" : fullname, "image" : "", "status" : ""]){
+            (error:Error?, ref:DatabaseReference) in
+            if error != nil {
+                self.alertError(error: "Create accaunt error")
+            }
+        }
+
+        // Upload Image
+        let storageRef = Storage.storage().reference()
+        let userImageRef = storageRef.child("ProfileImages/\(userid).png")
+        //SystemUser.currentUser = User(userID: userid, email: email, userFullName: fullname, progileImage: ProfileImage.image!)
+        SystemUser.currentUser = UserInfo(_userUID: userid, _email: email, _fullName: fullname, _profileImageUrl: nil)
+        if let uploadData = ProfileImage.image!.pngData(){
+            userImageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    self.alertError(error: "Can't upload image")
+                }
+                IJProgressView.shared.hideProgressView()
+            }
+        }
     }
     
     func isValidEmail(testStr:String?) -> Bool {

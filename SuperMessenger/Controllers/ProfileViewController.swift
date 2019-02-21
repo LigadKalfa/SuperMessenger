@@ -16,14 +16,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak var SeveConstraint: NSLayoutConstraint!
     
-    var user = Auth.auth().currentUser
-    
-    let backgroundImageView = UIImageView()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setBackGround()
+        getUserInfo()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -32,10 +29,25 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         view.addGestureRecognizer(tap)
         
         let picGesture = UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView))
-        user = Auth.auth().currentUser
+        
         ProfileImage.addGestureRecognizer(picGesture)
         ProfileImage.isUserInteractionEnabled = true
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sing Out", style: .plain, target: self, action: #selector(handleSingOut))
     }
+    
+    @objc func handleSingOut(){
+        
+    }
+    
+    func getUserInfo(){
+        FullNameTextField.text = SystemUser.currentUser?.fullName
+        //ProfileImage.image = SystemUser.currentUser?.ProfileImage
+        StatusTextField.text = SystemUser.currentUser?.status
+        
+    }
+    
+    
     
     @objc func handleSelectProfileImageView(){
         let picker = UIImagePickerController()
@@ -92,21 +104,19 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         })
     }
     
-    func setBackGround(){
-        view.addSubview(backgroundImageView)
-        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
-        backgroundImageView.image = UIImage(named: "background-Rock.jpeg")
-        
-        view.sendSubviewToBack(backgroundImageView)
-    }
-    
     @objc func dismissKeyboard(){
         view.endEditing(true)
     }
     
+    @IBAction func SavePressed(_ sender: Any) {
+        
+        let fullname = FullNameTextField.text!
+        let status = StatusTextField.text!
+        let profileImage = ProfileImage.image!
+        
+        SystemUser.currentUser?.fullName = fullname
+        SystemUser.currentUser?.status = status
+        //SystemUser.currentUser?.ProfileImage = profileImage
+        //SystemUser.currentUser?.save()
+    }
 }

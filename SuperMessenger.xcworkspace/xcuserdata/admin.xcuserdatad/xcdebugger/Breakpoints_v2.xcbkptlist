@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SuperMessenger/Controllers/RegisterViewController.swift"
-            timestampString = "568296769.592757"
+            filePath = "SuperMessenger/Controllers/GLobalControlerFunctons.swift"
+            timestampString = "568498989.059464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "createUser(email:fullname:userid:)"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "LoadBarStart(view:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,77 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SuperMessenger/Controllers/RegisterViewController.swift"
-            timestampString = "568296769.593353"
+            filePath = "SuperMessenger/Controllers/LoginViewController.swift"
+            timestampString = "569357140.207353"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "RegisterPressed(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SuperMessenger.RegisterViewController.RegisterPressed(Any) -&gt; ()"
-                  moduleName = "SuperMessenger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SuperMessenger/SuperMessenger/Controllers/RegisterViewController.swift"
-                  timestampString = "568298668.517862"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "5581">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SuperMessenger.RegisterViewController.RegisterPressed(Any) -&gt; ()"
-                  moduleName = "SuperMessenger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SuperMessenger/SuperMessenger/Controllers/RegisterViewController.swift"
-                  timestampString = "568298668.522356"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
-                  offsetFromSymbolStart = "69">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SuperMessenger/Controllers/RegisterViewController.swift"
-            timestampString = "568296769.593792"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "RegisterPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SuperMessenger/Controllers/RegisterViewController.swift"
-            timestampString = "568296769.594208"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "RegisterPressed(_:)"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "LogInPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

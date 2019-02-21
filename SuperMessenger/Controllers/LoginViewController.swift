@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var IconImage: UIImageView!
@@ -16,11 +17,16 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var PasswordTextField: TextField!
     @IBOutlet weak var JoinConstraint: NSLayoutConstraint!
     
+    var userID : String = ""
+    
     let backgroundImageView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackGround()
+        
+        //userID = UserDefaults.standard.string(forKey: "currUserID") ?? ""
+        //print(Auth.auth().currentUser!.uid)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -72,16 +78,32 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func LogInPressed(_ sender: Any) {
-        Auth.auth().signIn(withEmail: EmailTextField.text! , password: PasswordTextField.text!) { (user, error) in
+        
+        let email = self.EmailTextField.text!
+        let password = self.PasswordTextField.text!
+        
+        IJProgressView.shared.showProgressView()
+
+        Auth.auth().signIn(withEmail:  email, password: password) { (user, error) in
             if (error != nil){
-                print("Login Eror")
+                self.alertError(error: "email or password is wrong")
+                UIApplication.shared.endIgnoringInteractionEvents()
             }else{
-                self.performSegue(withIdentifier: "FromLoginToTabBar", sender: self)
+                //SystemUser.currentUser = User(userID: user!.user.uid)
+                self.performSegue(withIdentifier: "FromLoginToTabBar", sender: self)                
+                UserDefaults.standard.set(user!.user.uid, forKey: "currUserID")
+                IJProgressView.shared.hideProgressView()
             }
         }
     }
     
     
+    func alertError(error : String){
+        let alert = UIAlertController(title: error, message: nil , preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        IJProgressView.shared.hideProgressView()
+        self.present(alert, animated: true)
+    }
 }
 
 
