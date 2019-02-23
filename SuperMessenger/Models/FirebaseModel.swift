@@ -13,8 +13,7 @@ import UIKit
 
 class FirebaseModel {
     var databaseRef: DatabaseReference!
-    lazy var storageRef = Storage.storage().reference(forURL:
-        "gs://org-tourus-acb4d.appspot.com")
+    lazy var storageRef = Storage.storage().reference(forURL: "gs://supermessenger-kalpich.appspot.com")
     
     init() {
         FirebaseApp.configure()
@@ -23,7 +22,7 @@ class FirebaseModel {
     
     //MARK:- UserFunctons
     
-    func addUserInfo(_ userInfo:UserInfo, _ image:UIImage?, _ completionBlock:@escaping (Bool) -> Void = {_  in}) {
+    func addUserInfo(_ userInfo:UserInfo, _ image:UIImage?, _ completionBlock:@escaping (Bool) -> Void) {
         if image != nil {
             saveImage(folderName: consts.names.profileImagesFolderName, image: image!, userID: userInfo.userUID) { (url:String?) in
                 if url != nil {
@@ -34,7 +33,7 @@ class FirebaseModel {
             }
         }
         else {
-        self.databaseRef!.child(consts.names.userInfoTableName).child(userInfo.userUID).setValue(userInfo.toJson())
+            self.databaseRef!.child(consts.names.userInfoTableName).child(userInfo.userUID).setValue(userInfo.toJson())
             completionBlock(true)
         }
     }
@@ -84,14 +83,14 @@ class FirebaseModel {
         })
     }
     
-    func signUp(_ email:String, _ password:String,_ fullName:String, _ callback:@escaping (Bool) -> Void) {
+    func signUp(_ email:String, _ password:String,_ fullName:String,_ image:UIImage? ,_ callback:@escaping (Bool) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             if authResult?.user != nil {
                 
                 let email = authResult!.user.email!
                 
                 let userInfo = UserInfo(_userUID: authResult!.user.uid, _email: email, _fullName:fullName, _profileImageUrl:nil)
-                self.addUserInfo(userInfo, nil, { (val) in
+                self.addUserInfo(userInfo, image, { (val) in
                     callback(true)
                 })
             }

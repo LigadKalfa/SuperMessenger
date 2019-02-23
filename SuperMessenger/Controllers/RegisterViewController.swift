@@ -19,25 +19,26 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var RenterPasswordTextField: TextField!
     @IBOutlet weak var RegisrerButtonConstrain: NSLayoutConstraint!
     
-    var ref: DatabaseReference!
+    //var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setBackGround()
         
-        ref = Database.database().reference()
+        //ref = Database.database().reference()
         let picGesture = UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView))
         
         ProfileImage.addGestureRecognizer(picGesture)
         ProfileImage.isUserInteractionEnabled = true
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
     }
 
     @objc func keyboardWillShow(notification: NSNotification){
@@ -96,50 +97,26 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
             let email = EmailTextField.text!
             let password = PasswordTextField.text!
             let fullName = FullNmaeTextField.text!
-            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-                if(error != nil){
-                    self.alertError(error: "Error occured")
+            let image : UIImage? = ProfileImage.image
+            
+            MainModel.instance.signUp(email, password, fullName, image, {(res) in
+                if(res){
+                    self.performSegue(withIdentifier: "FromRegisterToTabBar", sender: self)
+                    IJProgressView.shared.hideProgressView()
                 }else{
-                    if let userid = user?.user.uid{
-                        self.createUser(email: email, fullname: fullName, userid: userid)
-                        self.performSegue(withIdentifier: "FromRegisterToTabBar", sender: self)
-                    }else{
-                        IJProgressView.shared.hideProgressView()
-                    }
+                    self.alertError(error: "Error occured")
+                    IJProgressView.shared.hideProgressView()
                 }
-            }
+            })
         }
     }
+   
     
     func alertError(error : String){
         let alert = UIAlertController(title: error, message: nil , preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         IJProgressView.shared.hideProgressView()
         self.present(alert, animated: true)
-    }
-    
-    func createUser(email:String, fullname : String, userid : String){
-        let userref = ref.child("users").child(userid)
-        userref.setValue(["email" : email, "fullName" : fullname, "image" : "", "status" : ""]){
-            (error:Error?, ref:DatabaseReference) in
-            if error != nil {
-                self.alertError(error: "Create accaunt error")
-            }
-        }
-
-        // Upload Image
-        let storageRef = Storage.storage().reference()
-        let userImageRef = storageRef.child("ProfileImages/\(userid).png")
-        //SystemUser.currentUser = User(userID: userid, email: email, userFullName: fullname, progileImage: ProfileImage.image!)
-        SystemUser.currentUser = UserInfo(_userUID: userid, _email: email, _fullName: fullname, _profileImageUrl: nil)
-        if let uploadData = ProfileImage.image!.pngData(){
-            userImageRef.putData(uploadData, metadata: nil) { (metadata, error) in
-                if error != nil {
-                    self.alertError(error: "Can't upload image")
-                }
-                IJProgressView.shared.hideProgressView()
-            }
-        }
     }
     
     func isValidEmail(testStr:String?) -> Bool {

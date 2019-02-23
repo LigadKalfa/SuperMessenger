@@ -16,6 +16,8 @@ class MainModel {
     var firebaseModel = FirebaseModel();
     //var sqlModel = SqlModel();
     
+    var User:UserInfo? = nil
+    
     private init(){
     }
     
@@ -24,65 +26,40 @@ class MainModel {
         firebaseModel.signIn(email, password, callback)
     }
     
-    func signUp(_ email:String, _ password:String, _ fullName:String, _ callback:@escaping (Bool)->Void)
+    func signUp(_ email:String, _ password:String, _ fullName:String,_ image:UIImage?, _ callback:@escaping (Bool)->Void)
     {
-        firebaseModel.signUp(email, password, fullName, callback)
+        firebaseModel.signUp(email, password, fullName, image, callback)
     }
     
     func signOut(_ callback:@escaping () -> Void) {
         firebaseModel.signOut(callback)
     }
     
-    func getUserInfo(_ uid:String, callback:@escaping (UserInfo?) -> Void) -> UserInfo? {
-        var currUser:UserInfo? = nil
-        
-        firebaseModel.getUserInfo(uid) { (info:UserInfo?) in
-            if(info != nil) {
-//                var lastUpdated = UserInfo.getLastUpdateDate(database: self.sqlModel.database)
-//                lastUpdated += 1;
+//    func getUserInfo(_ uid:String, callback:@escaping (UserInfo?) -> Void) -> UserInfo? {
+//        var currUser:UserInfo? = nil
 //
-//                UserInfo.addNew(database: self.sqlModel.database, info: info!)
-//
-//                if (info!.timestamp > lastUpdated) {
-//                    lastUpdated = info!.timestamp
-//                    UserInfo.setLastUpdateDate(database: self.sqlModel.database, date: lastUpdated)
-//                    self.getUserInfoFromLocalAndNotify(uid, callback)
-//                }
-                currUser = info
-            }
-        }
-        return currUser
-        //getUserInfoFromLocalAndNotify(uid, callback)
-    }
-    
-//    private func getUserInfoFromLocalAndNotify(_ uid:String, _ callback:@escaping (UserInfo?) -> Void) {
-//        let info = UserInfo.get(database: self.sqlModel.database, userId: uid)
-//        if(info != nil) {
-//            callback(info)
-//            NotificationModel.userInfoNotification.notify(data: info!)
-//        }
-//    }
-    
-    func getImage(_ url:String, _ callback:@escaping (UIImage?)->Void){
-//        //1. try to get the image from local store
-//        let _url = URL(string: url)
-//        let localImageName = _url!.lastPathComponent
-//        if let image = self.getImageFromFile(name: localImageName){
-//            callback(image)
-//            print("got image from cache \(localImageName)")
-//        }else{
-//            //2. get the image from Firebase
-//            firebaseModel.getImage(url){(image:UIImage?) in
-//                if (image != nil){
-//                    //3. save the image localy
-//                    self.saveImageToFile(image: image!, name: localImageName)
-//                }
-//                //4. return the image to the user
-//                callback(image)
-//                print("got image from firebase \(localImageName)")
+//        firebaseModel.getUserInfo(uid) { (info:UserInfo?) in
+//            if(info != nil) {
+//                currUser = info
 //            }
 //        }
+//        return currUser
+//        //getUserInfoFromLocalAndNotify(uid, callback)
+//    }
+
+    
+    func getUserInfo(_ uid:String, callback:@escaping (UserInfo?) -> Void) {
         
+        firebaseModel.getUserInfo(uid) { (info:UserInfo?) in
+                callback(info)
+        }
+    }
+    
+    func saveUserInfo(_ userInfo:UserInfo, _ image:UIImage?, _ completionBlock:@escaping (Bool) -> Void){
+        firebaseModel.addUserInfo(userInfo, image, completionBlock)
+    }
+    
+    func getImage(_ url:String, _ callback:@escaping (UIImage?)->Void){
         firebaseModel.getImage(url){(image:UIImage?) in
             callback(image)
         }
@@ -90,8 +67,8 @@ class MainModel {
     
     func saveImageToFile(image:UIImage, name:String){
         if let data = image.jpegData(compressionQuality: 0.8) {
-            let filename = getDocumentsDirectory().appendingPathComponent(name)
-            try? data.write(to: filename)
+            //let filename = getDocumentsDirectory().appendingPathComponent(name)
+            //try? data.write(to: filename)
         }
     }
     

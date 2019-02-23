@@ -29,8 +29,8 @@ class UserInfo {
         userUID = _uid
         fullName = json["fullName"] as! String
         email = json["email"] as! String
-        profileImageUrl = json["email"] as? String
-        status = json["email"] as! String
+        profileImageUrl = json["profileImageUrl"] as? String
+        status = json["status"] as! String
     }
     
     func toJson() -> [String:Any] {

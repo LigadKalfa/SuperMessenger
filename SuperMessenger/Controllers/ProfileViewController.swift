@@ -16,7 +16,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak var SeveConstraint: NSLayoutConstraint!
     
-
+    var userProfileData : UserInfo? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,13 +42,28 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func getUserInfo(){
-        FullNameTextField.text = SystemUser.currentUser?.fullName
-        //ProfileImage.image = SystemUser.currentUser?.ProfileImage
-        StatusTextField.text = SystemUser.currentUser?.status
+        IJProgressView.shared.showProgressView()
+        MainModel.instance.getUserInfo(MainModel.instance.currentUser()!.uid, callback: {(user) in
         
+            if(user != nil){
+                self.userProfileData = user
+                let imageURL = self.userProfileData!.profileImageUrl!
+                MainModel.instance.getImage(imageURL, {(image) in
+                    self.updateView(user: self.userProfileData!, image : image!)
+                    IJProgressView.shared.hideProgressView()
+                })
+            }else{
+                //ToDo - Alert Error
+                IJProgressView.shared.hideProgressView()
+            }
+        })        
     }
     
-    
+    func updateView(user:UserInfo, image:UIImage){
+        self.FullNameTextField.text = user.fullName
+        self.StatusTextField.text = user.status
+        self.ProfileImage.image = image
+    }
     
     @objc func handleSelectProfileImageView(){
         let picker = UIImagePickerController()
@@ -109,14 +125,20 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func SavePressed(_ sender: Any) {
+        IJProgressView.shared.showProgressView()
         
-        let fullname = FullNameTextField.text!
-        let status = StatusTextField.text!
-        let profileImage = ProfileImage.image!
+        userProfileData?.status = self.StatusTextField.text!
+        userProfileData?.fullName = self.FullNameTextField.text!
         
-        SystemUser.currentUser?.fullName = fullname
-        SystemUser.currentUser?.status = status
-        //SystemUser.currentUser?.ProfileImage = profileImage
-        //SystemUser.currentUser?.save()
+        MainModel.instance.saveUserInfo(userProfileData!, ProfileImage.image!, {(res) in
+            if(res){
+                //ToDo - Alert Succsess
+                IJProgressView.shared.hideProgressView()
+            }else{
+                //ToDo - Alert Error
+                IJProgressView.shared.hideProgressView()
+            }
+        })
+
     }
 }
