@@ -10,6 +10,8 @@ import UIKit
 
 class ChatsViewController: UITableViewController {
 
+   // var window: UIWindow?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,15 @@ class ChatsViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.makeKeyAndVisible()
+//
+//        let layout = UICollectionViewFlowLayout()
+//        let allChatsController = AllChatsController(collectionViewLayout: layout)
+//        window?.rootViewController = UINavigationController(rootViewController: allChatsController)
+        
     }
 
     // MARK: - Table view data source

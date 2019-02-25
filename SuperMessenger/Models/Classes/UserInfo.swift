@@ -43,28 +43,5 @@ class UserInfo {
         
         return json
     }
-    
-//    func save(){
-//        IJProgressView.shared.showProgressView()
-//        let ref = Database.database().reference()
-//        let userref = ref.child("users").child(userUID)
-//        userref.setValue(["email" : Email, "fullName" : FullName, "status" : Status])
-//
-//        let storageRef = Storage.storage().reference()
-//        let userImageRef = storageRef.child("ProfileImages/\(userUID).png")
-//
-//        if let uploadData = ProfileImage.pngData(){
-//            userImageRef.putData(uploadData, metadata: nil) { (metadata, error) in
-//                if error != nil {
-//                    print(error as Any)
-//                    IJProgressView.shared.hideProgressView()
-//                }else{
-//                    IJProgressView.shared.hideProgressView()
-//                }
-//            }
-//        }
-//    }
-    
-    
 }
 

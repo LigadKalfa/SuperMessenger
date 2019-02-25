@@ -9,12 +9,21 @@
 import UIKit
 import Firebase
 
-class FreindsViewController: UITableViewController {
+class FreindsViewController: UITableViewController, UISearchBarDelegate  {
 
     var users = [User]()
     var usersToDisplay = [User]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let searchController = UISearchController(searchResultsController: nil)
+//        searchController.searchResultsUpdater = self
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.searchBar.placeholder = "Search Freindes"
+//        navigationItem.searchController = searchController
+//        definesPresentationContext = true
         
         getFreinds()
         
@@ -24,9 +33,37 @@ class FreindsViewController: UITableViewController {
         tableView.register(UINib(nibName: "FriendCell", bundle: nil), forCellReuseIdentifier: "FriendCell")
         
         self.tableView.reloadData()
+        setuoNavBar()
         //usersToDisplay = users.filter { $0.FullName.contains("ich")}
     }
 
+    func updateSearchResults(for searchController: UISearchController) {
+        // TODO
+    }
+    
+    func setuoNavBar(){
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Freindes"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        searchController.searchBar.scopeButtonTitles = ["My Friends", "Find Friends"]
+        searchController.searchBar.delegate = self
+
+    }
+    
+    func searchBarSearchButtonClicked( searchBar: UISearchBar!){
+        print("123")
+    }
+//
+//    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+//        println("searchText \(searchText)")
+//    }
+//
+//    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+//        println("searchText \(searchBar.text)")
+//    }
+    
     // MARK: - Table view data source
 
     func getFreinds(){

@@ -238,35 +238,6 @@
             </objects>
             <point key="canvasLocation" x="1455" y="359"/>
         </scene>
-        <!--Chats-->
-        <scene sceneID="hCy-FC-eTp">
-            <objects>
-                <tableViewController id="ll0-Va-von" customClass="ChatsViewController" customModule="SuperMessenger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jl8-he-vhc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ndL-t7-kBu">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ndL-t7-kBu" id="sQe-pm-Kd4">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ll0-Va-von" id="Sdp-ll-07p"/>
-                            <outlet property="delegate" destination="ll0-Va-von" id="5bU-Yt-Zs7"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Chats" id="CoM-YB-8kp"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pmh-gQ-iR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3916" y="-764.16791604197908"/>
-        </scene>
         <!--Friends-->
         <scene sceneID="puQ-IM-jTi">
             <objects>
@@ -337,7 +308,7 @@ Aw
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ll0-Va-von" kind="relationship" relationship="rootViewController" id="DRY-jb-9YQ"/>
+                        <segue destination="mWA-P8-5ba" kind="relationship" relationship="rootViewController" id="7pD-K9-aiz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7jk-0b-mtF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -362,6 +333,41 @@ Aw
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjn-N2-bX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2976.8000000000002" y="-62.518740629685162"/>
+        </scene>
+        <!--All Chats Controller-->
+        <scene sceneID="WtK-PH-k8t">
+            <objects>
+                <collectionViewController id="mWA-P8-5ba" customClass="AllChatsController" customModule="SuperMessenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bng-DH-i7G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PGt-dw-b4Y">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="B1D-xh-v6l">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="mWA-P8-5ba" id="I19-3Q-g9Q"/>
+                            <outlet property="delegate" destination="mWA-P8-5ba" id="Uer-Jd-l06"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="S3M-jT-pRq"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MGG-Iy-YO1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3820" y="-764"/>
         </scene>
         <!--FriendRequest-->
         <scene sceneID="8ut-2F-Tfw">

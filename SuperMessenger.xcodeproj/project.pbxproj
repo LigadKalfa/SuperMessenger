@@ -14,7 +14,6 @@
 		841A7C0821B3FEF600709888 /* SuperMessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A7C0721B3FEF600709888 /* SuperMessengerUITests.swift */; };
 		841ECA7F21BAAD2D00433DDA /* background-seaPng.png in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA7E21BAAD2D00433DDA /* background-seaPng.png */; };
 		841ECA8121BAADF200433DDA /* background-Rock.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA8021BAADF200433DDA /* background-Rock.jpeg */; };
-		843B65FA21DD5E500045883B /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B65F921DD5E500045883B /* ChatsViewController.swift */; };
 		843B65FD21DD5EDB0045883B /* FreindsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B65FC21DD5EDB0045883B /* FreindsViewController.swift */; };
 		843B65FF21DD5F010045883B /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B65FE21DD5F010045883B /* RequestsViewController.swift */; };
 		843B660321DD62B70045883B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B660221DD62B70045883B /* ProfileViewController.swift */; };
@@ -91,7 +90,6 @@
 		841A7C0921B3FEF600709888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		841ECA7E21BAAD2D00433DDA /* background-seaPng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-seaPng.png"; sourceTree = "<group>"; };
 		841ECA8021BAADF200433DDA /* background-Rock.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-Rock.jpeg"; sourceTree = "<group>"; };
-		843B65F921DD5E500045883B /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		843B65FC21DD5EDB0045883B /* FreindsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsViewController.swift; sourceTree = "<group>"; };
 		843B65FE21DD5F010045883B /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		843B660221DD62B70045883B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 				847F47B821DE836000A68020 /* AllChatsController.swift */,
 				847FDB6721E1204F00E60DBC /* ExtensionAllChatsController.swift */,
 				8452435321E2971B002611BD /* ChatLogController.swift */,
-				843B65F921DD5E500045883B /* ChatsViewController.swift */,
 				843B65FC21DD5EDB0045883B /* FreindsViewController.swift */,
 				843B65FE21DD5F010045883B /* RequestsViewController.swift */,
 				843B660221DD62B70045883B /* ProfileViewController.swift */,
@@ -664,7 +661,6 @@
 				847FDB8E21E12B3500E60DBC /* SuperMessenger.xcdatamodeld in Sources */,
 				843B660321DD62B70045883B /* ProfileViewController.swift in Sources */,
 				84E4D2BD21DF6E0B00544AC5 /* LoginViewController.swift in Sources */,
-				843B65FA21DD5E500045883B /* ChatsViewController.swift in Sources */,
 				84EBFB83221F280A00DC86D5 /* FriendCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
