@@ -17,15 +17,31 @@ target 'SuperMessenger' do
     # Pods for testing
   end
 
-pod 'SVProgressHUD'
-pod 'Firebase/Core'
-pod 'Firebase/Auth'
-pod 'Firebase/Database'
-pod 'Firebase/Storage'
-pod 'FirebaseUI'
-pod 'Toast-Swift', '~> 4.0.0'
-pod 'SDWebImage', '~> 4.0'
-pod 'KILabel', '1.0.0'
-pod 'CarbonKit'
+#pod 'SVProgressHUD'
+#pod 'Firebase/Core'
+#pod 'Firebase/Auth'
+#pod 'Firebase/Database'
+#pod 'Firebase/Storage'
+#pod 'FirebaseUI'
+#pod 'Toast-Swift', '~> 4.0.0'
+#pod 'SDWebImage', '~> 4.0'
+#pod 'KILabel', '1.0.0'
+#pod 'CarbonKit'
+#pod 'ChameleonFramework'
+
+    pod 'Firebase'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
+    pod 'SVProgressHUD'
+    pod 'FirebaseUI'
+    pod 'Firebase/Core'
 
 end
+
+#post_install do |installer|
+#    installer.pods_project.targets.each do |target|
+#        target.build_configurations.each do |config|
+#           config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS'] = 'NO'
+#        end
+#    end
+#end

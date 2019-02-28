@@ -9,12 +9,14 @@
 import Foundation
 import UIKit
 
-class AllChatsController: UICollectionViewController, UICollectionViewDelegateFlowLayout{
+class AllChatsController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     private let cellId = "cellId"
     
     var messages: [Message]?
-        
+
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
