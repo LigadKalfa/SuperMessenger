@@ -28,7 +28,11 @@
 		847FDB6821E1204F00E60DBC /* ExtensionAllChatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847FDB6721E1204F00E60DBC /* ExtensionAllChatsController.swift */; };
 		847FDB6A21E1221000E60DBC /* boy.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 847FDB6921E1221000E60DBC /* boy.jpeg */; };
 		847FDB8E21E12B3500E60DBC /* SuperMessenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 847FDB8C21E12B3500E60DBC /* SuperMessenger.xcdatamodeld */; };
+		848F10162227247100BB3A51 /* AddFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F10142227247100BB3A51 /* AddFriendCell.swift */; };
+		848F10172227247200BB3A51 /* AddFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848F10152227247100BB3A51 /* AddFriendCell.xib */; };
 		84B88F1821DC13EA00768D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B88F1721DC13EA00768D7F /* Assets.xcassets */; };
+		84CB471522345841008A7CEA /* FriendRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB471322345841008A7CEA /* FriendRequestCell.swift */; };
+		84CB471622345841008A7CEA /* FriendRequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CB471422345841008A7CEA /* FriendRequestCell.xib */; };
 		84D43AA8221DDD4700B81DC1 /* Mama.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 84D43AA7221DDD4700B81DC1 /* Mama.jpeg */; };
 		84D43AAA221DDDF400B81DC1 /* Pops.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 84D43AA9221DDDF300B81DC1 /* Pops.jpeg */; };
 		84D626FB21BD497F00DCB6B5 /* SimpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D626FA21BD497F00DCB6B5 /* SimpButton.swift */; };
@@ -88,6 +92,7 @@
 		841A7C0321B3FEF600709888 /* SuperMessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperMessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		841A7C0721B3FEF600709888 /* SuperMessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperMessengerUITests.swift; sourceTree = "<group>"; };
 		841A7C0921B3FEF600709888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841C23AA22356F5800B5CA0A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		841ECA7E21BAAD2D00433DDA /* background-seaPng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-seaPng.png"; sourceTree = "<group>"; };
 		841ECA8021BAADF200433DDA /* background-Rock.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-Rock.jpeg"; sourceTree = "<group>"; };
 		843B65FC21DD5EDB0045883B /* FreindsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +109,11 @@
 		847FDB6721E1204F00E60DBC /* ExtensionAllChatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAllChatsController.swift; sourceTree = "<group>"; };
 		847FDB6921E1221000E60DBC /* boy.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boy.jpeg; sourceTree = "<group>"; };
 		847FDB8D21E12B3500E60DBC /* SuperMessenger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SuperMessenger.xcdatamodel; sourceTree = "<group>"; };
+		848F10142227247100BB3A51 /* AddFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendCell.swift; sourceTree = "<group>"; };
+		848F10152227247100BB3A51 /* AddFriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFriendCell.xib; sourceTree = "<group>"; };
 		84B88F1721DC13EA00768D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84CB471322345841008A7CEA /* FriendRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendRequestCell.swift; path = SuperMessenger/Views/CustomViews/FriendRequestCell/FriendRequestCell.swift; sourceTree = SOURCE_ROOT; };
+		84CB471422345841008A7CEA /* FriendRequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FriendRequestCell.xib; path = SuperMessenger/Views/CustomViews/FriendRequestCell/FriendRequestCell.xib; sourceTree = SOURCE_ROOT; };
 		84D43AA7221DDD4700B81DC1 /* Mama.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mama.jpeg; sourceTree = "<group>"; };
 		84D43AA9221DDDF300B81DC1 /* Pops.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Pops.jpeg; sourceTree = "<group>"; };
 		84D626FA21BD497F00DCB6B5 /* SimpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpButton.swift; sourceTree = "<group>"; };
@@ -175,6 +184,7 @@
 		76240D43C84396FE13233090 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				841C23AA22356F5800B5CA0A /* libsqlite3.0.tbd */,
 				14330EF0F69B9D9FC9FAADAA /* Pods_SuperMessenger.framework */,
 				E6FC7C6BDBE52841064E6B25 /* Pods_SuperMessengerTests.framework */,
 				5C012375E976489458272B49 /* Pods_SuperMessengerUITests.framework */,
@@ -247,6 +257,24 @@
 			path = CoreDataModel;
 			sourceTree = "<group>";
 		};
+		848F1019222724D000BB3A51 /* AddFriendCell */ = {
+			isa = PBXGroup;
+			children = (
+				848F10142227247100BB3A51 /* AddFriendCell.swift */,
+				848F10152227247100BB3A51 /* AddFriendCell.xib */,
+			);
+			path = AddFriendCell;
+			sourceTree = "<group>";
+		};
+		848F101A222724FE00BB3A51 /* FriendCell */ = {
+			isa = PBXGroup;
+			children = (
+				84EBFB81221F280A00DC86D5 /* FriendCell.swift */,
+				84EBFB82221F280A00DC86D5 /* FriendCell.xib */,
+			);
+			path = FriendCell;
+			sourceTree = "<group>";
+		};
 		84A116A221C27A03007DE2EC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,8 +294,8 @@
 		84A116A321C27A5F007DE2EC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				84A116A421C27AB4007DE2EC /* Images */,
 				84D626F921BD492200DCB6B5 /* CustomViews */,
+				84A116A421C27AB4007DE2EC /* Images */,
 				841A7BEB21B3FEF400709888 /* Main.storyboard */,
 				841A7BF021B3FEF500709888 /* LaunchScreen.storyboard */,
 			);
@@ -308,11 +336,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		84CB471222343D96008A7CEA /* FriendRequestCell */ = {
+			isa = PBXGroup;
+			children = (
+				84CB471322345841008A7CEA /* FriendRequestCell.swift */,
+				84CB471422345841008A7CEA /* FriendRequestCell.xib */,
+			);
+			name = FriendRequestCell;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		84D626F921BD492200DCB6B5 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				84EBFB81221F280A00DC86D5 /* FriendCell.swift */,
-				84EBFB82221F280A00DC86D5 /* FriendCell.xib */,
+				84CB471222343D96008A7CEA /* FriendRequestCell */,
+				848F1019222724D000BB3A51 /* AddFriendCell */,
+				848F101A222724FE00BB3A51 /* FriendCell */,
 				84D626FA21BD497F00DCB6B5 /* SimpButton.swift */,
 				84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */,
 			);
@@ -453,7 +492,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D43AAA221DDDF400B81DC1 /* Pops.jpeg in Resources */,
+				84CB471622345841008A7CEA /* FriendRequestCell.xib in Resources */,
 				84B88F1821DC13EA00768D7F /* Assets.xcassets in Resources */,
+				848F10172227247200BB3A51 /* AddFriendCell.xib in Resources */,
 				841ECA8121BAADF200433DDA /* background-Rock.jpeg in Resources */,
 				841ECA7F21BAAD2D00433DDA /* background-seaPng.png in Resources */,
 				847FDB6A21E1221000E60DBC /* boy.jpeg in Resources */,
@@ -654,10 +695,12 @@
 				84D626FD21BD4F5500DCB6B5 /* SimpTextField.swift in Sources */,
 				847FDB5E21DF7B4200E60DBC /* BaseCellModel.swift in Sources */,
 				847F47BB21DE92F600A68020 /* ExtensionsToSwift3+.swift in Sources */,
+				848F10162227247100BB3A51 /* AddFriendCell.swift in Sources */,
 				843B65FD21DD5EDB0045883B /* FreindsViewController.swift in Sources */,
 				84D626FB21BD497F00DCB6B5 /* SimpButton.swift in Sources */,
 				841A7BE821B3FEF300709888 /* AppDelegate.swift in Sources */,
 				847FDB6821E1204F00E60DBC /* ExtensionAllChatsController.swift in Sources */,
+				84CB471522345841008A7CEA /* FriendRequestCell.swift in Sources */,
 				847FDB8E21E12B3500E60DBC /* SuperMessenger.xcdatamodeld in Sources */,
 				843B660321DD62B70045883B /* ProfileViewController.swift in Sources */,
 				84E4D2BD21DF6E0B00544AC5 /* LoginViewController.swift in Sources */,

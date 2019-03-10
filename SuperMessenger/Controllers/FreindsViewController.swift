@@ -7,96 +7,117 @@
 //
 
 import UIKit
-import Firebase
 
-class FreindsViewController: UITableViewController, UISearchBarDelegate  {
+//UISearchBarDelegate ,UISearchControllerDelegate, AddFriendCellDelegate
+class FreindsViewController: UITableViewController {
 
-    var users = [User]()
-    var usersToDisplay = [User]()
+    let searchController = UISearchController(searchResultsController: nil)
+    var allUsersInfo = [UserInfo]()
     
+    var didRequestsGeted : Bool = false
+    var didFriendsGeted : Bool = false
+    var didSentedRequestsGeted : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let searchController = UISearchController(searchResultsController: nil)
-//        searchController.searchResultsUpdater = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 81
+        
+        tableView.register(UINib(nibName: "AddFriendCell", bundle: nil), forCellReuseIdentifier: "AddFriendCell")
+        getAllUsersInfo()
+    }
+
+    // MARK: - Table view data source
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allUsersInfo.count
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let currUser = allUsersInfo[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddFriendCell", for: indexPath) as! AddFriendCell
+        cell.setCell(user: currUser)
+        //cell.delegate = self
+        
+        //Chek if Image Exist
+        if let userImage = self.allUsersInfo[indexPath.row].profileImage {
+            cell.ProfileImage.image = userImage
+            self.tableView.reloadRows(at: [indexPath] , with: UITableView.RowAnimation.none)
+        }else{
+            if let imageUrl = currUser.profileImageUrl {
+                MainModel.instance.getImage(imageUrl, { (profileImage : UIImage?) in
+                    self.allUsersInfo[indexPath.row].profileImage = profileImage
+                    cell.ProfileImage.image = profileImage
+                    self.tableView.reloadRows(at: [indexPath] , with: UITableView.RowAnimation.none)
+                })
+            }
+        }
+        return cell
+    }
+    
+    
+    func getAllUsersInfo(){
+        MainModel.instance.getAllUsersInfo(callback: {(users:[UserInfo]?) in
+            if let allUsers =  users {
+                self.allUsersInfo = allUsers
+                
+                // dont show users requested 
+                SystemUser.setUserFriendRequest { (res) in
+                    if res {
+                        for user in SystemUser.userFriendRequest{
+                            self.allUsersInfo = self.allUsersInfo.filter{ $0.userUID != user.userUID}
+                        }
+                    }
+                    self.didRequestsGeted = true
+                    self.updateTabel()
+                }
+                SystemUser.setUserSentedFriendRequest { (res) in
+                    self.didSentedRequestsGeted = true
+                    self.updateTabel()
+                }
+                SystemUser.setUserFriends { (res) in
+                    self.didFriendsGeted = true
+                    self.updateTabel()
+                }
+            }
+        })
+    }
+    
+    func updateTabel(){
+        if(didRequestsGeted && didFriendsGeted && didSentedRequestsGeted){
+            self.tableView.reloadData()
+        }
+    }
+}
+
+
+//    func setupSearchBar(){
+//
 //        searchController.obscuresBackgroundDuringPresentation = false
 //        searchController.searchBar.placeholder = "Search Freindes"
 //        navigationItem.searchController = searchController
 //        definesPresentationContext = true
-        
-        getFreinds()
-        
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 81
-        
-        tableView.register(UINib(nibName: "FriendCell", bundle: nil), forCellReuseIdentifier: "FriendCell")
-        
-        self.tableView.reloadData()
-        setuoNavBar()
-        //usersToDisplay = users.filter { $0.FullName.contains("ich")}
-    }
-
-    func updateSearchResults(for searchController: UISearchController) {
-        // TODO
-    }
-    
-    func setuoNavBar(){
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Freindes"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-        searchController.searchBar.scopeButtonTitles = ["My Friends", "Find Friends"]
-        searchController.searchBar.delegate = self
-
-    }
-    
-    func searchBarSearchButtonClicked( searchBar: UISearchBar!){
-        print("123")
-    }
+//        searchController.searchBar.scopeButtonTitles = ["Add Friends", "Friend req"]
+//        searchController.searchBar.delegate = self
 //
-//    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-//        println("searchText \(searchText)")
 //    }
 //
-//    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-//        println("searchText \(searchBar.text)")
+//    func searchBarSearchButtonClicked( _ searchBar: UISearchBar){
+//        print(searchController.searchBar.text!)
 //    }
-    
-    // MARK: - Table view data source
-
-    func getFreinds(){
-        Database.database().reference().child("users").observe(.childAdded, with: {(snapshot) in
-            print(snapshot)
-            if (snapshot.value as? [String : AnyObject]) != nil{
-                //self.createAndAppendFriend(userID: snapshot.key)
-            }
-        }, withCancel: nil)
-    }
-// TO-DO
-//    func createAndAppendFriend(userID : String){
-//        let user = User(userID: userID)
 //
-//        DispatchQueue.main.async {
-//            self.users.append(user)
-//            self.tableView.reloadData()
-//        }
+//    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+//        print(searchController.searchBar.selectedScopeButtonIndex)
+//        //print(searchController.searchBar.scopeButtonTitles![selectedScope])
 //    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return users.count
-    }
+//
+//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+//        print("Show all")
+//    }
 
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! FriendCell
-        let rowUser = users[indexPath.row]
-        //cell.FullNameLabel.text = rowUser.fullName
-        //cell.StatusLabel.text = rowUser.status
-        //cell.ProfileImage.image = rowUser.ProfileImage
-        
-        return cell
-    }
-}
+//    func updateTableView(user : UserInfo) {
+//        let index = allUsersInfo.firstIndex(where: {$0.userUID == user.userUID})
+//        self.tableView.reloadData()
+//    }

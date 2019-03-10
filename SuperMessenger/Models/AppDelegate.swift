@@ -16,29 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
-    /*func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        ////////////////////////////////////////////
-        //window = UIWindow(frame: UIScreen.main.bounds)
-        //window?.makeKeyAndVisible()
-        
-        let layout = UICollectionViewFlowLayout()
-        let allChatsController = AllChatsController(collectionViewLayout: layout)
-        window?.rootViewController = UINavigationController(rootViewController: allChatsController)
-        ////////////////////////////////////////////
-        FirebaseApp.configure()
-
-        
-        let authUI = FUIAuth.defaultAuthUI()
-        authUI?.delegate = (self as! FUIAuthDelegate);
-        
-        return true
-    }*/
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool{
         // Override point for customization after application launch.
-        //FirebaseApp.configure()
-        
+            
         return true
     }
     

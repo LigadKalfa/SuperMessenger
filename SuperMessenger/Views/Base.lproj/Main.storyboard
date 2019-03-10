@@ -9,105 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SuperMessenger" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xi-cn-zpK" customClass="SimpButton" customModule="SuperMessenger" customModuleProvider="target">
-                                <rect key="frame" x="30" y="597" width="315" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="zB0-oD-33F"/>
-                                </constraints>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Km4-YK-0TH"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xpd-ta-hW1" customClass="TextField" customModule="SuperMessenger" customModuleProvider="target">
-                                <rect key="frame" x="30" y="507" width="315" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="gmI-ot-sLs"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vd5-5Q-AVF" customClass="TextField" customModule="SuperMessenger" customModuleProvider="target">
-                                <rect key="frame" x="30" y="447" width="315" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="y4D-K7-iU2"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="email"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="6fA-Av-Aa8">
-                                <rect key="frame" x="92.5" y="108.5" width="190" height="190"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="190" id="4cP-fx-lcq"/>
-                                    <constraint firstAttribute="width" constant="190" id="R4P-SL-0Bm"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SuperMessenger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="qPu-SN-5u7">
-                                <rect key="frame" x="36" y="315" width="303" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="ldO-J6-AWB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="21"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="6fA-Av-Aa8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-130" id="30r-X6-ngd"/>
-                            <constraint firstItem="qPu-SN-5u7" firstAttribute="top" secondItem="6fA-Av-Aa8" secondAttribute="bottom" constant="16.5" id="4yn-af-3r6"/>
-                            <constraint firstItem="vd5-5Q-AVF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="Bgp-SJ-wVZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Xpd-ta-hW1" secondAttribute="trailing" constant="30" id="CJ2-9R-IiF"/>
-                            <constraint firstItem="6fA-Av-Aa8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DKf-9a-ZLF"/>
-                            <constraint firstItem="Xpd-ta-hW1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="E2p-MS-YHb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Xpd-ta-hW1" secondAttribute="trailing" constant="30" id="JJC-hb-41Z"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vd5-5Q-AVF" secondAttribute="trailing" constant="30" id="JRa-mr-87g"/>
-                            <constraint firstItem="1xi-cn-zpK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="NIe-fm-uys"/>
-                            <constraint firstItem="Xpd-ta-hW1" firstAttribute="top" secondItem="vd5-5Q-AVF" secondAttribute="bottom" constant="10" id="OgB-Vq-CS4"/>
-                            <constraint firstItem="Xpd-ta-hW1" firstAttribute="top" secondItem="vd5-5Q-AVF" secondAttribute="bottom" constant="49" id="OuI-jR-M7t"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qPu-SN-5u7" secondAttribute="trailing" constant="20" id="Ow6-Ka-AmM"/>
-                            <constraint firstItem="vd5-5Q-AVF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Qic-xr-WGQ"/>
-                            <constraint firstItem="Xpd-ta-hW1" firstAttribute="top" secondItem="vd5-5Q-AVF" secondAttribute="bottom" constant="10" id="Veg-Mm-HBM"/>
-                            <constraint firstItem="Xpd-ta-hW1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="XjA-UD-m79"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1xi-cn-zpK" secondAttribute="trailing" constant="30" id="XrV-k8-HNG"/>
-                            <constraint firstItem="1xi-cn-zpK" firstAttribute="top" secondItem="Xpd-ta-hW1" secondAttribute="bottom" constant="40" id="bEc-U8-lVl"/>
-                            <constraint firstItem="qPu-SN-5u7" firstAttribute="top" secondItem="6fA-Av-Aa8" secondAttribute="bottom" constant="16.5" id="cTu-vU-UAK"/>
-                            <constraint firstItem="1xi-cn-zpK" firstAttribute="top" secondItem="Xpd-ta-hW1" secondAttribute="bottom" constant="40" id="ciB-dU-GsP"/>
-                            <constraint firstItem="vd5-5Q-AVF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="e3P-39-e2F"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qPu-SN-5u7" secondAttribute="trailing" constant="20" id="i73-Q5-vG5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vd5-5Q-AVF" secondAttribute="trailing" constant="30" id="lma-fe-NGp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xpd-ta-hW1" secondAttribute="trailing" constant="30" id="lsn-HC-v0g"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1xi-cn-zpK" secondAttribute="bottom" constant="20" id="ltO-yy-YMB"/>
-                            <constraint firstItem="Xpd-ta-hW1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="plR-FY-SGU"/>
-                            <constraint firstItem="qPu-SN-5u7" firstAttribute="top" secondItem="6fA-Av-Aa8" secondAttribute="bottom" constant="16.5" id="ytJ-HF-ENr"/>
-                            <constraint firstItem="qPu-SN-5u7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="z8b-2h-4c4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vd5-5Q-AVF" secondAttribute="trailing" constant="30" id="zNT-mQ-qUg"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <connections>
-                        <outlet property="loginBottomConstraint" destination="ltO-yy-YMB" id="h8W-Vi-mn6"/>
-                        <segue destination="8lB-8S-QJW" kind="show" identifier="goHome" id="Fpi-UG-Zoy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2905" y="-224"/>
-        </scene>
         <!--Friends requestes-->
         <scene sceneID="uBZ-Tj-tRP">
             <objects>
-                <tableViewController id="rdv-JK-roO" customClass="FreindsViewController" customModule="SuperMessenger" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="rdv-JK-roO" customClass="RequestsViewController" customModule="SuperMessenger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Toy-HN-Sie">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,7 +88,6 @@
                                 <state key="normal" title="Save Changes"/>
                                 <connections>
                                     <action selector="SavePressed:" destination="aim-Mc-2RM" eventType="touchUpInside" id="uz8-FC-TS7"/>
-                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nda-FT-hou"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -211,6 +115,7 @@
                         <outlet property="ProfileImage" destination="eWU-hb-AnT" id="vB3-LZ-2E0"/>
                         <outlet property="SeveConstraint" destination="mbY-oY-XMG" id="jWk-sd-h5I"/>
                         <outlet property="StatusTextField" destination="CKe-Jg-whT" id="I1j-YM-9rl"/>
+                        <segue destination="Xhg-dh-vsu" kind="presentation" identifier="FromProfileToLogIn" modalPresentationStyle="fullScreen" id="6Ld-Cw-O1G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAY-Mr-KyC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -266,35 +171,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ml0-6l-gUu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3916" y="-62.518740629685162"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="0kk-Lh-rV8">
-            <objects>
-                <viewController id="8lB-8S-QJW" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="duo-rc-6fa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUR-8l-nlU" customClass="KILabel">
-                                <rect key="frame" x="166" y="270" width="76" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <string key="label" base64-UTF8="YES">
-Aw
-</string>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="jwP-vi-qrO"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8MR-r7-2Cw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2044" y="-223"/>
         </scene>
         <!--Chats-->
         <scene sceneID="QHq-0Y-c83">
@@ -420,7 +296,6 @@ Aw
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="LogInPressed:" destination="Xhg-dh-vsu" eventType="touchUpInside" id="R0U-Oe-YHg"/>
-                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HJ9-VE-ggX"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uaE-Y9-fwv" customClass="TextField" customModule="SuperMessenger" customModuleProvider="target">
@@ -448,7 +323,6 @@ Aw
                                 </constraints>
                                 <state key="normal" title="Join To SupperMessenger"/>
                                 <connections>
-                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bx1-5N-wu0"/>
                                     <segue destination="aXn-mg-izs" kind="presentation" id="smU-RG-JU2"/>
                                 </connections>
                             </button>
@@ -474,6 +348,7 @@ Aw
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="new-2q-i6b"/>
                     </view>
+                    <navigationItem key="navigationItem" id="60q-Vd-MLI"/>
                     <connections>
                         <outlet property="EmailTextField" destination="xPB-pL-KTj" id="Y7q-Py-5ue"/>
                         <outlet property="IconImage" destination="QP1-Bg-19g" id="3TY-n9-faX"/>
@@ -536,7 +411,6 @@ Aw
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="RegisterPressed:" destination="aXn-mg-izs" eventType="touchUpInside" id="y4B-Yy-iaL"/>
-                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TYf-wm-6aj"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Renter Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Sv-uH-8jq" customClass="TextField" customModule="SuperMessenger" customModuleProvider="target">

@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
+        checkIfLogedIn()
     }
     
     @objc func keyboardWillShow(notification: NSNotification){
@@ -87,14 +87,35 @@ class LoginViewController: UIViewController {
         
         MainModel.instance.signIn(email, password, { (res) in
             if(res){
-                self.performSegue(withIdentifier: "FromLoginToTabBar", sender: self)
-                IJProgressView.shared.hideProgressView()
+                SystemUser.setCurrUserInfo({ (did) in
+                    if did {
+                        self.performSegue(withIdentifier: "FromLoginToTabBar", sender: self)
+                        IJProgressView.shared.hideProgressView()
+                    }else{
+                        self.alertError(error: "Error occured")
+                        IJProgressView.shared.hideProgressView()
+                    }
+                })
             }else{
                 self.alertError(error: "email or password is wrong")
                 UIApplication.shared.endIgnoringInteractionEvents()
                 IJProgressView.shared.hideProgressView()
             }
         })
+    }
+    
+    func checkIfLogedIn() {
+        if (MainModel.instance.currentUser() != nil) {
+            SystemUser.setCurrUserInfo({ (did) in
+                if did {
+                    self.performSegue(withIdentifier: "FromLoginToTabBar", sender: self)
+                    IJProgressView.shared.hideProgressView()
+                }else{
+                    self.alertError(error: "Error occured")
+                    IJProgressView.shared.hideProgressView()
+                }
+            }) 
+        }
     }
     
     func alertError(error : String){
