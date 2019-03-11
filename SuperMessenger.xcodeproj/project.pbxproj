@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84120BF6222863CB00A6C59D /* SuperMessenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84120BF4222863CA00A6C59D /* SuperMessenger.xcdatamodeld */; };
 		841A7BE821B3FEF300709888 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A7BE721B3FEF300709888 /* AppDelegate.swift */; };
 		841A7BED21B3FEF400709888 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841A7BEB21B3FEF400709888 /* Main.storyboard */; };
 		841A7BF221B3FEF500709888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841A7BF021B3FEF500709888 /* LaunchScreen.storyboard */; };
@@ -27,13 +28,11 @@
 		847FDB6221DF88D300E60DBC /* someProfile.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 847FDB6121DF88D300E60DBC /* someProfile.jpeg */; };
 		847FDB6821E1204F00E60DBC /* ExtensionAllChatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847FDB6721E1204F00E60DBC /* ExtensionAllChatsController.swift */; };
 		847FDB6A21E1221000E60DBC /* boy.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 847FDB6921E1221000E60DBC /* boy.jpeg */; };
-		847FDB8E21E12B3500E60DBC /* SuperMessenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 847FDB8C21E12B3500E60DBC /* SuperMessenger.xcdatamodeld */; };
 		84B88F1821DC13EA00768D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B88F1721DC13EA00768D7F /* Assets.xcassets */; };
 		84D43AA8221DDD4700B81DC1 /* Mama.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 84D43AA7221DDD4700B81DC1 /* Mama.jpeg */; };
 		84D43AAA221DDDF400B81DC1 /* Pops.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 84D43AA9221DDDF300B81DC1 /* Pops.jpeg */; };
 		84D626FB21BD497F00DCB6B5 /* SimpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D626FA21BD497F00DCB6B5 /* SimpButton.swift */; };
 		84D626FD21BD4F5500DCB6B5 /* SimpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */; };
-		84D626FF21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */; };
 		84D6270921BDC3CF00DCB6B5 /* sm-final-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270821BDC3CF00DCB6B5 /* sm-final-logo.png */; };
 		84D6270F21BDC6B700DCB6B5 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270E21BDC6B700DCB6B5 /* Logo.png */; };
 		84D6271121C181B900DCB6B5 /* (null) in Resources */ = {isa = PBXBuildFile; };
@@ -77,6 +76,7 @@
 		455918D7641F420404AD60E4 /* Pods-SuperMessengerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMessengerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperMessengerUITests/Pods-SuperMessengerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5A299268ECC3704183782C9B /* Pods-SuperMessengerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMessengerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperMessengerTests/Pods-SuperMessengerTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C012375E976489458272B49 /* Pods_SuperMessengerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperMessengerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84120BF5222863CA00A6C59D /* SuperMessenger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SuperMessenger.xcdatamodel; sourceTree = "<group>"; };
 		841A7BE421B3FEF300709888 /* SuperMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841A7BE721B3FEF300709888 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		841A7BEC21B3FEF400709888 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,13 +103,11 @@
 		847FDB6121DF88D300E60DBC /* someProfile.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = someProfile.jpeg; sourceTree = SOURCE_ROOT; };
 		847FDB6721E1204F00E60DBC /* ExtensionAllChatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAllChatsController.swift; sourceTree = "<group>"; };
 		847FDB6921E1221000E60DBC /* boy.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boy.jpeg; sourceTree = "<group>"; };
-		847FDB8D21E12B3500E60DBC /* SuperMessenger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SuperMessenger.xcdatamodel; sourceTree = "<group>"; };
 		84B88F1721DC13EA00768D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84D43AA7221DDD4700B81DC1 /* Mama.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mama.jpeg; sourceTree = "<group>"; };
 		84D43AA9221DDDF300B81DC1 /* Pops.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Pops.jpeg; sourceTree = "<group>"; };
 		84D626FA21BD497F00DCB6B5 /* SimpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpButton.swift; sourceTree = "<group>"; };
 		84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpTextField.swift; sourceTree = "<group>"; };
-		84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SM-LOGO-FST.jpg"; sourceTree = "<group>"; };
 		84D6270421BDC3BA00DCB6B5 /* sm-final-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sm-final-logo.png"; sourceTree = "<group>"; };
 		84D6270821BDC3CF00DCB6B5 /* sm-final-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sm-final-logo.png"; sourceTree = "<group>"; };
 		84D6270E21BDC6B700DCB6B5 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 			children = (
 				84FE7C4921BA9A43003FC5A3 /* Images */,
 				84FE7C4C21BAA16A003FC5A3 /* background-seaNrocks.jpg */,
-				84D626FE21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg */,
 				841A7BE621B3FEF300709888 /* SuperMessenger */,
 				84B88F1721DC13EA00768D7F /* Assets.xcassets */,
 				84E4D2BA21DF6AC200544AC5 /* GoogleService-Info.plist */,
@@ -242,7 +239,7 @@
 		847FDB8F21E12B5800E60DBC /* CoreDataModel */ = {
 			isa = PBXGroup;
 			children = (
-				847FDB8C21E12B3500E60DBC /* SuperMessenger.xcdatamodeld */,
+				84120BF4222863CA00A6C59D /* SuperMessenger.xcdatamodeld */,
 			);
 			path = CoreDataModel;
 			sourceTree = "<group>";
@@ -293,13 +290,13 @@
 		84A116A521C27B1F007DE2EC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				847FDB8F21E12B5800E60DBC /* CoreDataModel */,
 				84EBFB7C221F275F00DC86D5 /* Classes */,
 				84EBFB84221F285C00DC86D5 /* FirebaseModel.swift */,
 				84EBFB85221F285C00DC86D5 /* GlobalVariables.swift */,
 				84EBFB86221F285C00DC86D5 /* IJProgressView.swift */,
 				84EBFB87221F285C00DC86D5 /* MainModel.swift */,
 				84EBFB8E221F2DBC00DC86D5 /* Consts.swift */,
-				847FDB8F21E12B5800E60DBC /* CoreDataModel */,
 				847F47BA21DE92F600A68020 /* ExtensionsToSwift3+.swift */,
 				841A7BE721B3FEF300709888 /* AppDelegate.swift */,
 				847FDB5D21DF7B4200E60DBC /* BaseCellModel.swift */,
@@ -354,8 +351,8 @@
 				841A7BE021B3FEF300709888 /* Sources */,
 				841A7BE121B3FEF300709888 /* Frameworks */,
 				841A7BE221B3FEF300709888 /* Resources */,
-				D4072558B9E99DF4F200617E /* [CP] Copy Pods Resources */,
-				AA31E5B68DD9B4544E7EBD3D /* [CP] Embed Pods Frameworks */,
+				A8B867E7656DE6F559FB4788 /* [CP] Embed Pods Frameworks */,
+				7BA9D63F8A84C5CB99A62B8D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -466,7 +463,6 @@
 				847FDB6221DF88D300E60DBC /* someProfile.jpeg in Resources */,
 				84D6270F21BDC6B700DCB6B5 /* Logo.png in Resources */,
 				84E4D2BB21DF6AC200544AC5 /* GoogleService-Info.plist in Resources */,
-				84D626FF21BDBCA600DCB6B5 /* SM-LOGO-FST.jpg in Resources */,
 				841A7BED21B3FEF400709888 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,17 +520,49 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AA31E5B68DD9B4544E7EBD3D /* [CP] Embed Pods Frameworks */ = {
+		7BA9D63F8A84C5CB99A62B8D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SuperMessenger/Pods-SuperMessenger-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAnonymousAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAnonymousAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperMessenger/Pods-SuperMessenger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8B867E7656DE6F559FB4788 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SuperMessenger/Pods-SuperMessenger-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -551,11 +579,9 @@
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -594,44 +620,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D4072558B9E99DF4F200617E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SuperMessenger/Pods-SuperMessenger-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAnonymousAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseEmailAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAnonymousAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseEmailAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperMessenger/Pods-SuperMessenger-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -658,7 +646,7 @@
 				84D626FB21BD497F00DCB6B5 /* SimpButton.swift in Sources */,
 				841A7BE821B3FEF300709888 /* AppDelegate.swift in Sources */,
 				847FDB6821E1204F00E60DBC /* ExtensionAllChatsController.swift in Sources */,
-				847FDB8E21E12B3500E60DBC /* SuperMessenger.xcdatamodeld in Sources */,
+				84120BF6222863CB00A6C59D /* SuperMessenger.xcdatamodeld in Sources */,
 				843B660321DD62B70045883B /* ProfileViewController.swift in Sources */,
 				84E4D2BD21DF6E0B00544AC5 /* LoginViewController.swift in Sources */,
 				84EBFB83221F280A00DC86D5 /* FriendCell.swift in Sources */,
@@ -996,16 +984,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		847FDB8C21E12B3500E60DBC /* SuperMessenger.xcdatamodeld */ = {
+		84120BF4222863CA00A6C59D /* SuperMessenger.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				847FDB8D21E12B3500E60DBC /* SuperMessenger.xcdatamodel */,
+				84120BF5222863CA00A6C59D /* SuperMessenger.xcdatamodel */,
 			);
-			currentVersion = 847FDB8D21E12B3500E60DBC /* SuperMessenger.xcdatamodel */;
-			name = SuperMessenger.xcdatamodeld;
-			path = "../New Group/SuperMessenger.xcdatamodeld";
+			currentVersion = 84120BF5222863CA00A6C59D /* SuperMessenger.xcdatamodel */;
+			path = SuperMessenger.xcdatamodeld;
 			sourceTree = "<group>";
-			usesTabs = 0;
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */

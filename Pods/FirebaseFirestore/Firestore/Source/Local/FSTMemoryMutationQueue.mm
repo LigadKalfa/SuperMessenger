@@ -22,18 +22,16 @@
 
 #import "Firestore/Protos/objc/firestore/local/Mutation.pbobjc.h"
 #import "Firestore/Source/Core/FSTQuery.h"
+#import "Firestore/Source/Local/FSTDocumentReference.h"
 #import "Firestore/Source/Local/FSTMemoryPersistence.h"
 #import "Firestore/Source/Model/FSTMutation.h"
 #import "Firestore/Source/Model/FSTMutationBatch.h"
+#import "Firestore/third_party/Immutable/FSTImmutableSortedSet.h"
 
-#include "Firestore/core/src/firebase/firestore/immutable/sorted_set.h"
-#include "Firestore/core/src/firebase/firestore/local/document_reference.h"
 #include "Firestore/core/src/firebase/firestore/model/document_key.h"
 #include "Firestore/core/src/firebase/firestore/model/resource_path.h"
 #include "Firestore/core/src/firebase/firestore/util/hard_assert.h"
 
-using firebase::firestore::immutable::SortedSet;
-using firebase::firestore::local::DocumentReference;
 using firebase::firestore::model::BatchId;
 using firebase::firestore::model::DocumentKey;
 using firebase::firestore::model::DocumentKeySet;
@@ -65,8 +63,14 @@ static const NSComparator NumberComparator = ^NSComparisonResult(NSNumber *left,
  */
 @property(nonatomic, strong, readonly) NSMutableArray<FSTMutationBatch *> *queue;
 
+/** An ordered mapping between documents and the mutation batch IDs. */
+@property(nonatomic, strong) FSTImmutableSortedSet<FSTDocumentReference *> *batchesByDocumentKey;
+
 /** The next value to use when assigning sequential IDs to each mutation batch. */
 @property(nonatomic, assign) BatchId nextBatchID;
+
+/** The highest acknowledged mutation in the queue. */
+@property(nonatomic, assign) BatchId highestAcknowledgedBatchID;
 
 /**
  * The last received stream token from the server, used to acknowledge which responses the client
@@ -77,20 +81,19 @@ static const NSComparator NumberComparator = ^NSComparisonResult(NSNumber *left,
 
 @end
 
-using DocumentReferenceSet = SortedSet<DocumentReference, DocumentReference::ByKey>;
-
 @implementation FSTMemoryMutationQueue {
   FSTMemoryPersistence *_persistence;
-  /** An ordered mapping between documents and the mutation batch IDs. */
-  DocumentReferenceSet _batchesByDocumentKey;
 }
 
 - (instancetype)initWithPersistence:(FSTMemoryPersistence *)persistence {
   if (self = [super init]) {
     _persistence = persistence;
     _queue = [NSMutableArray array];
+    _batchesByDocumentKey =
+        [FSTImmutableSortedSet setWithComparator:FSTDocumentReferenceComparatorByKey];
 
     _nextBatchID = 1;
+    _highestAcknowledgedBatchID = kFSTBatchIDUnknown;
   }
   return self;
 }
@@ -101,10 +104,13 @@ using DocumentReferenceSet = SortedSet<DocumentReference, DocumentReference::ByK
   // Note: The queue may be shutdown / started multiple times, since we maintain the queue for the
   // duration of the app session in case a user logs out / back in. To behave like the
   // LevelDB-backed MutationQueue (and accommodate tests that expect as much), we reset nextBatchID
-  // if the queue is empty.
+  // and highestAcknowledgedBatchID if the queue is empty.
   if (self.isEmpty) {
     self.nextBatchID = 1;
+    self.highestAcknowledgedBatchID = kFSTBatchIDUnknown;
   }
+  HARD_ASSERT(self.highestAcknowledgedBatchID < self.nextBatchID,
+              "highestAcknowledgedBatchID must be less than the nextBatchID");
 }
 
 - (BOOL)isEmpty {
@@ -113,10 +119,16 @@ using DocumentReferenceSet = SortedSet<DocumentReference, DocumentReference::ByK
   return self.queue.count == 0;
 }
 
+- (BatchId)highestAcknowledgedBatchID {
+  return _highestAcknowledgedBatchID;
+}
+
 - (void)acknowledgeBatch:(FSTMutationBatch *)batch streamToken:(nullable NSData *)streamToken {
   NSMutableArray<FSTMutationBatch *> *queue = self.queue;
 
   BatchId batchID = batch.batchID;
+  HARD_ASSERT(batchID > self.highestAcknowledgedBatchID,
+              "Mutation batchIDs must be acknowledged in order");
 
   NSInteger batchIndex = [self indexOfExistingBatchID:batchID action:@"acknowledged"];
   HARD_ASSERT(batchIndex == 0, "Can only acknowledge the first batch in the mutation queue");
@@ -126,6 +138,7 @@ using DocumentReferenceSet = SortedSet<DocumentReference, DocumentReference::ByK
   HARD_ASSERT(batchID == check.batchID, "Queue ordering failure: expected batch %s, got batch %s",
               batchID, check.batchID);
 
+  self.highestAcknowledgedBatchID = batchID;
   self.lastStreamToken = streamToken;
 }
 
@@ -149,9 +162,12 @@ using DocumentReferenceSet = SortedSet<DocumentReference, DocumentReference::ByK
   [queue addObject:batch];
 
   // Track references by document key.
+  FSTImmutableSortedSet<FSTDocumentReference *> *references = self.batchesByDocumentKey;
   for (FSTMutation *mutation in batch.mutations) {
-    _batchesByDocumentKey = _batchesByDocumentKey.insert(DocumentReference{mutation.key, batchID});
+    references = [references
+        setByAddingObject:[[FSTDocumentReference alloc] initWithKey:mutation.key ID:batchID]];
   }
+  self.batchesByDocumentKey = references;
 
   return batch;
 }
@@ -172,7 +188,9 @@ using DocumentReferenceSet = SortedSet<DocumentReference, DocumentReference::ByK
 - (nullable FSTMutationBatch *)nextMutationBatchAfterBatchID:(BatchId)batchID {
   NSMutableArray<FSTMutationBatch *> *queue = self.queue;
 
-  BatchId nextBatchID = batchID + 1;
+  // All batches with batchID <= self.highestAcknowledgedBatchID have been acknowledged so the
+  // first unacknowledged batch after batchID will have a batchID larger than both of these values.
+  BatchId nextBatchID = MAX(batchID, self.highestAcknowledgedBatchID) + 1;
 
   // The requested batchID may still be out of range so normalize it to the start of the queue.
   NSInteger rawIndex = [self indexOfBatchID:nextBatchID];
@@ -186,32 +204,41 @@ using DocumentReferenceSet = SortedSet<DocumentReference, DocumentReference::ByK
 
 - (NSArray<FSTMutationBatch *> *)allMutationBatchesAffectingDocumentKey:
     (const DocumentKey &)documentKey {
+  FSTDocumentReference *start = [[FSTDocumentReference alloc] initWithKey:documentKey ID:0];
+
   NSMutableArray<FSTMutationBatch *> *result = [NSMutableArray array];
+  FSTDocumentReferenceBlock block = ^(FSTDocumentReference *reference, BOOL *stop) {
+    if (![documentKey isEqualToKey:reference.key]) {
+      *stop = YES;
+      return;
+    }
 
-  DocumentReference start{documentKey, 0};
-  for (const auto &reference : _batchesByDocumentKey.values_from(start)) {
-    if (documentKey != reference.key()) break;
-
-    FSTMutationBatch *batch = [self lookupMutationBatch:reference.ref_id()];
+    FSTMutationBatch *batch = [self lookupMutationBatch:reference.ID];
     HARD_ASSERT(batch, "Batches in the index must exist in the main table");
     [result addObject:batch];
-  }
+  };
 
+  [self.batchesByDocumentKey enumerateObjectsFrom:start to:nil usingBlock:block];
   return result;
 }
 
 - (NSArray<FSTMutationBatch *> *)allMutationBatchesAffectingDocumentKeys:
     (const DocumentKeySet &)documentKeys {
   // First find the set of affected batch IDs.
-  std::set<BatchId> batchIDs;
+  __block std::set<BatchId> batchIDs;
   for (const DocumentKey &key : documentKeys) {
-    DocumentReference start{key, 0};
+    FSTDocumentReference *start = [[FSTDocumentReference alloc] initWithKey:key ID:0];
 
-    for (const auto &reference : _batchesByDocumentKey.values_from(start)) {
-      if (key != reference.key()) break;
+    FSTDocumentReferenceBlock block = ^(FSTDocumentReference *reference, BOOL *stop) {
+      if (![key isEqualToKey:reference.key]) {
+        *stop = YES;
+        return;
+      }
 
-      batchIDs.insert(reference.ref_id());
-    }
+      batchIDs.insert(reference.ID);
+    };
+
+    [self.batchesByDocumentKey enumerateObjectsFrom:start to:nil usingBlock:block];
   }
 
   return [self allMutationBatchesWithBatchIDs:batchIDs];
@@ -229,25 +256,28 @@ using DocumentReferenceSet = SortedSet<DocumentReference, DocumentReference::ByK
   if (!DocumentKey::IsDocumentKey(startPath)) {
     startPath = startPath.Append("");
   }
-  DocumentReference start{DocumentKey{startPath}, 0};
+  FSTDocumentReference *start =
+      [[FSTDocumentReference alloc] initWithKey:DocumentKey{startPath} ID:0];
 
   // Find unique batchIDs referenced by all documents potentially matching the query.
-  std::set<BatchId> uniqueBatchIDs;
-  for (const auto &reference : _batchesByDocumentKey.values_from(start)) {
-    const ResourcePath &rowKeyPath = reference.key().path();
+  __block std::set<BatchId> uniqueBatchIDs;
+  FSTDocumentReferenceBlock block = ^(FSTDocumentReference *reference, BOOL *stop) {
+    const ResourcePath &rowKeyPath = reference.key.path();
     if (!prefix.IsPrefixOf(rowKeyPath)) {
-      break;
+      *stop = YES;
+      return;
     }
 
     // Rows with document keys more than one segment longer than the query path can't be matches.
     // For example, a query on 'rooms' can't match the document /rooms/abc/messages/xyx.
     // TODO(mcg): we'll need a different scanner when we implement ancestor queries.
     if (rowKeyPath.size() != immediateChildrenPathLength) {
-      continue;
+      return;
     }
 
-    uniqueBatchIDs.insert(reference.ref_id());
+    uniqueBatchIDs.insert(reference.ID);
   };
+  [self.batchesByDocumentKey enumerateObjectsFrom:start to:nil usingBlock:block];
 
   return [self allMutationBatchesWithBatchIDs:uniqueBatchIDs];
 }
@@ -281,18 +311,20 @@ using DocumentReferenceSet = SortedSet<DocumentReference, DocumentReference::ByK
   [queue removeObjectAtIndex:0];
 
   // Remove entries from the index too.
+  FSTImmutableSortedSet<FSTDocumentReference *> *references = self.batchesByDocumentKey;
   for (FSTMutation *mutation in batch.mutations) {
     const DocumentKey &key = mutation.key;
     [_persistence.referenceDelegate removeMutationReference:key];
 
-    DocumentReference reference{key, batchID};
-    _batchesByDocumentKey = _batchesByDocumentKey.erase(reference);
+    FSTDocumentReference *reference = [[FSTDocumentReference alloc] initWithKey:key ID:batchID];
+    references = [references setByRemovingObject:reference];
   }
+  self.batchesByDocumentKey = references;
 }
 
 - (void)performConsistencyCheck {
   if (self.queue.count == 0) {
-    HARD_ASSERT(_batchesByDocumentKey.empty(),
+    HARD_ASSERT([self.batchesByDocumentKey isEmpty],
                 "Document leak -- detected dangling mutation references when queue is empty.");
   }
 }
@@ -302,11 +334,12 @@ using DocumentReferenceSet = SortedSet<DocumentReference, DocumentReference::ByK
 - (BOOL)containsKey:(const DocumentKey &)key {
   // Create a reference with a zero ID as the start position to find any document reference with
   // this key.
-  DocumentReference reference{key, 0};
+  FSTDocumentReference *reference = [[FSTDocumentReference alloc] initWithKey:key ID:0];
 
-  auto range = _batchesByDocumentKey.values_from(reference);
-  auto begin = range.begin();
-  return begin != range.end() && begin->key() == key;
+  NSEnumerator<FSTDocumentReference *> *enumerator =
+      [self.batchesByDocumentKey objectEnumeratorFrom:reference];
+  FSTDocumentReference *_Nullable firstReference = [enumerator nextObject];
+  return firstReference && firstReference.key == reference.key;
 }
 
 #pragma mark - Helpers
@@ -351,7 +384,7 @@ using DocumentReferenceSet = SortedSet<DocumentReference, DocumentReference::ByK
 - (size_t)byteSizeWithSerializer:(FSTLocalSerializer *)serializer {
   size_t count = 0;
   for (FSTMutationBatch *batch in self.queue) {
-    count += [[serializer encodedMutationBatch:batch] serializedSize];
+    count += [[[serializer encodedMutationBatch:batch] data] length];
   };
   return count;
 }

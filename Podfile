@@ -29,12 +29,12 @@ target 'SuperMessenger' do
 #pod 'CarbonKit'
 #pod 'ChameleonFramework'
 
-    pod 'Firebase'
-    pod 'Firebase/Auth'
-    pod 'Firebase/Database'
-    pod 'SVProgressHUD'
-    pod 'FirebaseUI'
-    pod 'Firebase/Core'
+   pod 'Firebase'
+   pod 'Firebase/Auth'
+   pod 'Firebase/Database'
+   pod 'SVProgressHUD'
+   pod 'FirebaseUI'
+   pod 'Firebase/Core'
 
 end
 

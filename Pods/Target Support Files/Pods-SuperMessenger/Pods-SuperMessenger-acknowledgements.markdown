@@ -34,7 +34,7 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-## BoringSSL-GRPC
+## BoringSSL
 
 BoringSSL is a fork of OpenSSL. As such, large parts of it fall under OpenSSL
 licensing. Files that are completely new have a Google copyright and an ISC
@@ -333,11 +333,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Firebase
 
-Copyright 2019 Google
+Copyright 2018 Google
 
 ## FirebaseAnalytics
 
-Copyright 2019 Google
+Copyright 2018 Google
 
 ## FirebaseAuth
 
@@ -1371,7 +1371,7 @@ Copyright 2019 Google
 
 ## FirebaseInstanceID
 
-Copyright 2019 Google
+Copyright 2018 Google
 
 ## FirebaseStorage
 
@@ -1993,7 +1993,7 @@ Copyright 2019 Google
 
 ## GoogleAppMeasurement
 
-Copyright 2019 Google
+Copyright 2018 Google
 
 ## GoogleSignIn
 

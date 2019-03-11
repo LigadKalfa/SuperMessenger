@@ -34,6 +34,8 @@ using firebase::firestore::model::SnapshotVersion;
 
 NS_ASSUME_NONNULL_BEGIN
 
+const BatchId kFSTBatchIDUnknown = -1;
+
 @implementation FSTMutationBatch
 
 - (instancetype)initWithBatchID:(BatchId)batchID

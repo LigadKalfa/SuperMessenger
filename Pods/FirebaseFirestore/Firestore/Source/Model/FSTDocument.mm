@@ -88,18 +88,6 @@ NS_ASSUME_NONNULL_BEGIN
                                      state:state];
 }
 
-+ (instancetype)documentWithData:(FSTObjectValue *)data
-                             key:(DocumentKey)key
-                         version:(SnapshotVersion)version
-                           state:(FSTDocumentState)state
-                           proto:(GCFSDocument *)proto {
-  return [[FSTDocument alloc] initWithData:data
-                                       key:std::move(key)
-                                   version:std::move(version)
-                                     state:state
-                                     proto:proto];
-}
-
 - (instancetype)initWithData:(FSTObjectValue *)data
                          key:(DocumentKey)key
                      version:(SnapshotVersion)version
@@ -108,21 +96,6 @@ NS_ASSUME_NONNULL_BEGIN
   if (self) {
     _data = data;
     _documentState = state;
-    _proto = nil;
-  }
-  return self;
-}
-
-- (instancetype)initWithData:(FSTObjectValue *)data
-                         key:(DocumentKey)key
-                     version:(SnapshotVersion)version
-                       state:(FSTDocumentState)state
-                       proto:(GCFSDocument *)proto {
-  self = [super initWithKey:std::move(key) version:std::move(version)];
-  if (self) {
-    _data = data;
-    _documentState = state;
-    _proto = proto;
   }
   return self;
 }
@@ -180,8 +153,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)documentWithKey:(DocumentKey)key
                         version:(SnapshotVersion)version
           hasCommittedMutations:(BOOL)committedMutations {
-  FSTDeletedDocument *deletedDocument = [[FSTDeletedDocument alloc] initWithKey:std::move(key)
-                                                                        version:std::move(version)];
+  FSTDeletedDocument *deletedDocument =
+      [[FSTDeletedDocument alloc] initWithKey:std::move(key) version:std::move(version)];
 
   if (deletedDocument) {
     deletedDocument->_hasCommittedMutations = committedMutations;
@@ -265,7 +238,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 const NSComparator FSTDocumentComparatorByKey =
     ^NSComparisonResult(FSTMaybeDocument *doc1, FSTMaybeDocument *doc2) {
-      return CompareKeys(doc1.key, doc2.key);
+      return [doc1.key compare:doc2.key];
     };
 
 NS_ASSUME_NONNULL_END

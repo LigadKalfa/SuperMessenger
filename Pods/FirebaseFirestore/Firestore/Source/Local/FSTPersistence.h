@@ -17,17 +17,18 @@
 #import <Foundation/Foundation.h>
 
 #include "Firestore/core/src/firebase/firestore/auth/user.h"
-#include "Firestore/core/src/firebase/firestore/local/query_cache.h"
-#include "Firestore/core/src/firebase/firestore/local/reference_set.h"
-#include "Firestore/core/src/firebase/firestore/local/remote_document_cache.h"
 #include "Firestore/core/src/firebase/firestore/model/document_key.h"
 #include "Firestore/core/src/firebase/firestore/model/types.h"
 #include "Firestore/core/src/firebase/firestore/util/hard_assert.h"
 #include "Firestore/core/src/firebase/firestore/util/status.h"
 
+@class FSTDocumentKey;
 @class FSTQueryData;
+@class FSTReferenceSet;
 @protocol FSTMutationQueue;
+@protocol FSTQueryCache;
 @protocol FSTReferenceDelegate;
+@protocol FSTRemoteDocumentCache;
 
 struct FSTTransactionRunner;
 
@@ -65,6 +66,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @protocol FSTPersistence <NSObject>
 
+/**
+ * Starts persistent storage, opening the database or similar.
+ *
+ * @return A Status object that will be populated with an error message if startup fails.
+ */
+- (firebase::firestore::util::Status)start;
+
 /** Releases any resources held during eager shutdown. */
 - (void)shutdown;
 
@@ -79,10 +87,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (id<FSTMutationQueue>)mutationQueueForUser:(const firebase::firestore::auth::User &)user;
 
 /** Creates an FSTQueryCache representing the persisted cache of queries. */
-- (firebase::firestore::local::QueryCache *)queryCache;
+- (id<FSTQueryCache>)queryCache;
 
 /** Creates an FSTRemoteDocumentCache representing the persisted cache of remote documents. */
-- (firebase::firestore::local::RemoteDocumentCache *)remoteDocumentCache;
+- (id<FSTRemoteDocumentCache>)remoteDocumentCache;
 
 @property(nonatomic, readonly, assign) const FSTTransactionRunner &run;
 
@@ -116,13 +124,13 @@ NS_ASSUME_NONNULL_BEGIN
  * Implementations that care about sequence numbers are responsible for generating them and making
  * them available.
  */
-@protocol FSTReferenceDelegate <NSObject>
+@protocol FSTReferenceDelegate
 
 /**
  * Registers an FSTReferenceSet of documents that should be considered 'referenced' and not eligible
  * for removal during garbage collection.
  */
-- (void)addInMemoryPins:(firebase::firestore::local::ReferenceSet *)set;
+- (void)addInMemoryPins:(FSTReferenceSet *)set;
 
 /**
  * Notify the delegate that a target was removed.

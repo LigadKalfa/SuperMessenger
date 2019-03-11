@@ -33,7 +33,6 @@
 #include "Firestore/core/src/firebase/firestore/local/leveldb_key.h"
 #include "Firestore/core/src/firebase/firestore/local/leveldb_transaction.h"
 #include "Firestore/core/src/firebase/firestore/local/leveldb_util.h"
-#include "Firestore/core/src/firebase/firestore/model/mutation_batch.h"
 #include "Firestore/core/src/firebase/firestore/model/resource_path.h"
 #include "Firestore/core/src/firebase/firestore/util/hard_assert.h"
 #include "Firestore/core/src/firebase/firestore/util/string_apple.h"
@@ -53,7 +52,6 @@ using firebase::firestore::local::LevelDbMutationQueueKey;
 using firebase::firestore::local::LevelDbTransaction;
 using firebase::firestore::local::MakeStringView;
 using firebase::firestore::model::BatchId;
-using firebase::firestore::model::kBatchIdUnknown;
 using firebase::firestore::model::DocumentKey;
 using firebase::firestore::model::DocumentKeySet;
 using firebase::firestore::model::ResourcePath;
@@ -88,8 +86,7 @@ using leveldb::WriteOptions;
 @end
 
 @implementation FSTLevelDBMutationQueue {
-  // This instance is owned by FSTLevelDB; avoid a retain cycle.
-  __weak FSTLevelDB *_db;
+  FSTLevelDB *_db;
 
   /** The normalized userID (e.g. nil UID => @"" userID) used in our LevelDB keys. */
   std::string _userID;
@@ -117,13 +114,31 @@ using leveldb::WriteOptions;
 }
 
 - (void)start {
-  self.nextBatchID = [FSTLevelDBMutationQueue loadNextBatchIDFromDB:_db.ptr];
+  BatchId nextBatchID = [FSTLevelDBMutationQueue loadNextBatchIDFromDB:_db.ptr];
 
+  // On restart, nextBatchId may end up lower than lastAcknowledgedBatchId since it's computed from
+  // the queue contents, and there may be no mutations in the queue. In this case, we need to reset
+  // lastAcknowledgedBatchId (which is safe since the queue must be empty).
   std::string key = [self keyForCurrentMutationQueue];
   FSTPBMutationQueue *metadata = [self metadataForKey:key];
   if (!metadata) {
     metadata = [FSTPBMutationQueue message];
+
+    // proto3's default value for lastAcknowledgedBatchId is zero, but that would consider the first
+    // entry in the queue to be acknowledged without that acknowledgement actually happening.
+    metadata.lastAcknowledgedBatchId = kFSTBatchIDUnknown;
+  } else {
+    BatchId lastAcked = metadata.lastAcknowledgedBatchId;
+    if (lastAcked >= nextBatchID) {
+      HARD_ASSERT([self isEmpty], "Reset nextBatchID is only possible when the queue is empty");
+      lastAcked = kFSTBatchIDUnknown;
+
+      metadata.lastAcknowledgedBatchId = lastAcked;
+      _db.currentTransaction->Put([self keyForCurrentMutationQueue], metadata);
+    }
   }
+
+  self.nextBatchID = nextBatchID;
   self.metadata = metadata;
 }
 
@@ -135,7 +150,7 @@ using leveldb::WriteOptions;
   auto tableKey = LevelDbMutationKey::KeyPrefix();
 
   LevelDbMutationKey rowKey;
-  BatchId maxBatchID = kBatchIdUnknown;
+  BatchId maxBatchID = kFSTBatchIDUnknown;
 
   BOOL moreUserIDs = NO;
   std::string nextUserID;
@@ -204,8 +219,17 @@ using leveldb::WriteOptions;
   return empty;
 }
 
+- (BatchId)highestAcknowledgedBatchID {
+  return self.metadata.lastAcknowledgedBatchId;
+}
+
 - (void)acknowledgeBatch:(FSTMutationBatch *)batch streamToken:(nullable NSData *)streamToken {
+  BatchId batchID = batch.batchID;
+  HARD_ASSERT(batchID > self.highestAcknowledgedBatchID,
+              "Mutation batchIDs must be acknowledged in order");
+
   FSTPBMutationQueue *metadata = self.metadata;
+  metadata.lastAcknowledgedBatchId = batchID;
   metadata.lastStreamToken = streamToken;
 
   _db.currentTransaction->Put([self keyForCurrentMutationQueue], metadata);
@@ -279,7 +303,10 @@ using leveldb::WriteOptions;
 }
 
 - (nullable FSTMutationBatch *)nextMutationBatchAfterBatchID:(BatchId)batchID {
-  BatchId nextBatchID = batchID + 1;
+  // All batches with batchID <= self.metadata.lastAcknowledgedBatchId have been acknowledged so
+  // the first unacknowledged batch after batchID will have a batchID larger than both of these
+  // values.
+  BatchId nextBatchID = MAX(batchID, self.metadata.lastAcknowledgedBatchId) + 1;
 
   std::string key = [self mutationKeyForBatchID:nextBatchID];
   auto it = _db.currentTransaction->NewIterator();
@@ -336,10 +363,10 @@ using leveldb::WriteOptions;
     std::string mutationKey = LevelDbMutationKey::Key(_userID, rowKey.batch_id());
     mutationIterator->Seek(mutationKey);
     if (!mutationIterator->Valid() || mutationIterator->key() != mutationKey) {
-      HARD_FAIL("Dangling document-mutation reference found: "
-                "%s points to %s; seeking there found %s",
-                DescribeKey(indexIterator), DescribeKey(mutationKey),
-                DescribeKey(mutationIterator));
+      HARD_FAIL(
+          "Dangling document-mutation reference found: "
+          "%s points to %s; seeking there found %s",
+          DescribeKey(indexIterator), DescribeKey(mutationKey), DescribeKey(mutationIterator));
     }
 
     [result addObject:[self decodedMutationBatch:mutationIterator->value()]];
@@ -446,9 +473,10 @@ using leveldb::WriteOptions;
     std::string mutationKey = LevelDbMutationKey::Key(_userID, batchID);
     mutationIterator->Seek(mutationKey);
     if (!mutationIterator->Valid() || mutationIterator->key() != mutationKey) {
-      HARD_FAIL("Dangling document-mutation reference found: "
-                "Missing batch %s; seeking there found %s",
-                DescribeKey(mutationKey), DescribeKey(mutationIterator));
+      HARD_FAIL(
+          "Dangling document-mutation reference found: "
+          "Missing batch %s; seeking there found %s",
+          DescribeKey(mutationKey), DescribeKey(mutationIterator));
     }
 
     [result addObject:[self decodedMutationBatch:mutationIterator->value()]];
@@ -529,9 +557,8 @@ using leveldb::WriteOptions;
 
 /** Parses the MutationQueue metadata from the given LevelDB row contents. */
 - (FSTPBMutationQueue *)parsedMetadata:(Slice)slice {
-  NSData *data = [[NSData alloc] initWithBytesNoCopy:(void *)slice.data()
-                                              length:slice.size()
-                                        freeWhenDone:NO];
+  NSData *data =
+      [[NSData alloc] initWithBytesNoCopy:(void *)slice.data() length:slice.size() freeWhenDone:NO];
 
   NSError *error;
   FSTPBMutationQueue *proto = [FSTPBMutationQueue parseFromData:data error:&error];

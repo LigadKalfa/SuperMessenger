@@ -16,57 +16,15 @@
 
 #import <Foundation/Foundation.h>
 
-#include <string>
-
-#import "FIRFirestoreSettings.h"
 #import "Firestore/Source/Local/FSTQueryData.h"
 #include "Firestore/core/src/firebase/firestore/model/document_key.h"
 #include "Firestore/core/src/firebase/firestore/model/types.h"
 
+@protocol FSTQueryCache;
+
 @class FSTLRUGarbageCollector;
 
 extern const firebase::firestore::model::ListenSequenceNumber kFSTListenSequenceNumberInvalid;
-
-namespace firebase {
-namespace firestore {
-namespace local {
-
-struct LruParams {
-  static const int64_t CacheSizeUnlimited = -1;
-
-  static LruParams Default() {
-    return LruParams{100 * 1024 * 1024, 10, 1000};
-  }
-
-  static LruParams Disabled() {
-    return LruParams{kFIRFirestoreCacheSizeUnlimited, 0, 0};
-  }
-
-  static LruParams WithCacheSize(int64_t cacheSize) {
-    LruParams params = Default();
-    params.minBytesThreshold = cacheSize;
-    return params;
-  }
-
-  int64_t minBytesThreshold;
-  int percentileToCollect;
-  int maximumSequenceNumbersToCollect;
-};
-
-struct LruResults {
-  static LruResults DidNotRun() {
-    return LruResults{/* didRun= */ false, 0, 0, 0};
-  }
-
-  bool didRun;
-  int sequenceNumbersCollected;
-  int targetsRemoved;
-  int documentsRemoved;
-};
-
-}  // namespace local
-}  // namespace firestore
-}  // namespace firebase
 
 /**
  * Persistence layers intending to use LRU Garbage collection should implement this protocol. This
@@ -105,9 +63,6 @@ struct LruResults {
 
 - (size_t)byteSize;
 
-/** Returns the number of targets and orphaned documents cached. */
-- (size_t)sequenceNumberCount;
-
 /** Access to the underlying LRU Garbage collector instance. */
 @property(strong, nonatomic, readonly) FSTLRUGarbageCollector *gc;
 
@@ -119,11 +74,8 @@ struct LruResults {
  */
 @interface FSTLRUGarbageCollector : NSObject
 
-- (instancetype)initWithDelegate:(id<FSTLRUDelegate>)delegate
-                          params:(firebase::firestore::local::LruParams)params
-    NS_DESIGNATED_INITIALIZER;
-
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithQueryCache:(id<FSTQueryCache>)queryCache
+                          delegate:(id<FSTLRUDelegate>)delegate;
 
 /**
  * Given a target percentile, return the number of queries that make up that percentage of the
@@ -154,8 +106,5 @@ struct LruResults {
     (firebase::firestore::model::ListenSequenceNumber)sequenceNumber;
 
 - (size_t)byteSize;
-
-- (firebase::firestore::local::LruResults)collectWithLiveTargets:
-    (NSDictionary<NSNumber *, FSTQueryData *> *)liveTargets;
 
 @end
