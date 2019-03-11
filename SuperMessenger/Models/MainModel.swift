@@ -14,7 +14,7 @@ class MainModel {
     static let instance:MainModel = MainModel()
     
     var firebaseModel = FirebaseModel();
-    //var sqlModel = SqlModel();
+    var sqlModel = SqlModel();
     
     var User:UserInfo? = nil
     
@@ -37,7 +37,6 @@ class MainModel {
     
     
     func getUserInfo(_ uid:String, callback:@escaping (UserInfo?) -> Void) {
-        
         firebaseModel.getUserInfo(uid) { (info:UserInfo?) in
                 callback(info)
         }
@@ -53,12 +52,12 @@ class MainModel {
         }
     }
     
-//    func saveImageToFile(image:UIImage, name:String){
-//        if let data = image.jpegData(compressionQuality: 0.8) {
-//            //let filename = getDocumentsDirectory().appendingPathComponent(name)
-//            //try? data.write(to: filename)
-//        }
-//    }
+    func saveImageToFile(image:UIImage, name:String){
+        if let data = image.pngData() {
+            let filename = getDocumentsDirectory().appendingPathComponent(name)
+            try? data.write(to: filename)
+        }
+    }
     
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in:
@@ -96,6 +95,11 @@ class MainModel {
     
     func getUserFriendsInfo(callback:@escaping ([UserInfo]?) -> Void){
         firebaseModel.getUserFriendsInfo(SystemUser.currentUser!.userUID,{(users:[UserInfo]?) in
+            if let friends = users {
+                for friend in friends {
+                    self.sqlModel.insertToUsersTable(user: friend)
+                }
+            }
             callback(users)
         })
     }

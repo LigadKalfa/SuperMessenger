@@ -17,6 +17,7 @@ class UserInfo {
     var status : String
     var profileImageUrl : String?
     var profileImage : UIImage?
+    var lastUpdatedImage : Int?
     
     init(_userUID:String, _email:String, _fullName:String, _profileImageUrl:String?) {
         userUID = _userUID

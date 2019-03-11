@@ -12,8 +12,10 @@
 		841A7BF221B3FEF500709888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841A7BF021B3FEF500709888 /* LaunchScreen.storyboard */; };
 		841A7BFD21B3FEF600709888 /* SuperMessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A7BFC21B3FEF600709888 /* SuperMessengerTests.swift */; };
 		841A7C0821B3FEF600709888 /* SuperMessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A7C0721B3FEF600709888 /* SuperMessengerUITests.swift */; };
+		841C23AC2235721C00B5CA0A /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 841C23AA22356F5800B5CA0A /* libsqlite3.0.tbd */; };
 		841ECA7F21BAAD2D00433DDA /* background-seaPng.png in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA7E21BAAD2D00433DDA /* background-seaPng.png */; };
 		841ECA8121BAADF200433DDA /* background-Rock.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA8021BAADF200433DDA /* background-Rock.jpeg */; };
+		842DEE722236F4FC006FD65D /* SqlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DEE712236F4FC006FD65D /* SqlModel.swift */; };
 		843B65FD21DD5EDB0045883B /* FreindsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B65FC21DD5EDB0045883B /* FreindsViewController.swift */; };
 		843B65FF21DD5F010045883B /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B65FE21DD5F010045883B /* RequestsViewController.swift */; };
 		843B660321DD62B70045883B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B660221DD62B70045883B /* ProfileViewController.swift */; };
@@ -95,6 +97,7 @@
 		841C23AA22356F5800B5CA0A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		841ECA7E21BAAD2D00433DDA /* background-seaPng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-seaPng.png"; sourceTree = "<group>"; };
 		841ECA8021BAADF200433DDA /* background-Rock.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-Rock.jpeg"; sourceTree = "<group>"; };
+		842DEE712236F4FC006FD65D /* SqlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlModel.swift; sourceTree = "<group>"; };
 		843B65FC21DD5EDB0045883B /* FreindsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsViewController.swift; sourceTree = "<group>"; };
 		843B65FE21DD5F010045883B /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		843B660221DD62B70045883B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841C23AC2235721C00B5CA0A /* libsqlite3.0.tbd in Frameworks */,
 				D40E8D714314546B5F79EFC5 /* Pods_SuperMessenger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +253,14 @@
 			path = SuperMessengerUITests;
 			sourceTree = "<group>";
 		};
+		842DEE732236F6DD006FD65D /* SQL */ = {
+			isa = PBXGroup;
+			children = (
+				842DEE712236F4FC006FD65D /* SqlModel.swift */,
+			);
+			path = SQL;
+			sourceTree = "<group>";
+		};
 		847FDB8F21E12B5800E60DBC /* CoreDataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +333,7 @@
 		84A116A521C27B1F007DE2EC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				842DEE732236F6DD006FD65D /* SQL */,
 				84EBFB7C221F275F00DC86D5 /* Classes */,
 				84EBFB84221F285C00DC86D5 /* FirebaseModel.swift */,
 				84EBFB85221F285C00DC86D5 /* GlobalVariables.swift */,
@@ -682,6 +695,7 @@
 			files = (
 				8452435421E2971B002611BD /* ChatLogController.swift in Sources */,
 				84EBFB8F221F2DBC00DC86D5 /* Consts.swift in Sources */,
+				842DEE722236F4FC006FD65D /* SqlModel.swift in Sources */,
 				84FB31FB21DCC86F002BF7EC /* ExtensionsToFUIController.swift in Sources */,
 				847F47B921DE836000A68020 /* AllChatsController.swift in Sources */,
 				847FDB6021DF7B7E00E60DBC /* ChatCellModel.swift in Sources */,
