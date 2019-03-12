@@ -9,38 +9,107 @@
 import UIKit
 
 class RequestsViewController: UITableViewController {
-
+//UISearchBarDelegate ,UISearchControllerDelegate, FriendRequestCellDelegate
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    var allUsersInfo = [UserInfo]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+  
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 81
+        
+        tableView.register(UINib(nibName: "FriendRequestCell", bundle: nil), forCellReuseIdentifier: "FriendRequestCell")
+        
+        SystemUser.setUserFriendRequest { (did) in
+            self.tableView.reloadData()
+        }
     }
-
+    
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return SystemUser.userFriendRequest.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let currUser = SystemUser.userFriendRequest[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendRequestCell", for: indexPath) as! FriendRequestCell
+        cell.setCell(user: currUser)
+        //cell.delegate = self
+        
+        if let userImage = SystemUser.userFriendRequest[indexPath.row].profileImage {
+            cell.ProfileImage.image = userImage
+            self.tableView.reloadRows(at: [indexPath] , with: UITableView.RowAnimation.none)
+        }else{
+            if let imageUrl = currUser.profileImageUrl {
+                MainModel.instance.getImage(imageUrl, { (profileImage : UIImage?) in
+                    SystemUser.userFriendRequest[indexPath.row].profileImage = profileImage
+                    cell.ProfileImage.image = profileImage
+                    self.tableView.reloadRows(at: [indexPath] , with: UITableView.RowAnimation.none)
+                })
+            }
+        }
+        
         return cell
     }
-    */
+
+    func setCurrUserInfo(){
+        IJProgressView.shared.showProgressView()
+        MainModel.instance.getUserInfo(MainModel.instance.currentUser()!.uid, callback: {(userInfo:UserInfo?) in
+            if let user = userInfo {
+                SystemUser.currentUser = user
+            }
+            IJProgressView.shared.hideProgressView()
+        })
+    }
+    
+    func getAllRequests(){
+        MainModel.instance.getRequestUsersInfo(callback: {(users:[UserInfo]?) in
+            if let allUsers =  users {
+                self.allUsersInfo = allUsers
+                self.tableView.reloadData()
+            }
+        })
+    }
+}
+
+
+// MARK: - SearchBar
+
+//    func setupSearchBar(){
+//
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.searchBar.placeholder = "Search Freindes"
+//        navigationItem.searchController = searchController
+//        definesPresentationContext = true
+//
+//
+//    }
+//
+//    func searchBarSearchButtonClicked( _ searchBar: UISearchBar){
+//        print(searchController.searchBar.text!)
+//        print(searchController.searchBar.selectedScopeButtonIndex)
+//    }
+//
+//    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+//        print(searchController.searchBar.selectedScopeButtonIndex)
+//        //print(searchController.searchBar.scopeButtonTitles![selectedScope])
+//    }
+//
+//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+//        print("Show all")
+//    }
+
+
+//
+//    func updateTableView() {
+//        print("cool")
+//        self.tableView.reloadData()
+//    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -87,4 +156,3 @@ class RequestsViewController: UITableViewController {
     }
     */
 
-}

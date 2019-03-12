@@ -14,7 +14,7 @@ class MainModel {
     static let instance:MainModel = MainModel()
     
     var firebaseModel = FirebaseModel();
-    //var sqlModel = SqlModel();
+    var sqlModel = SqlModel();
     
     var User:UserInfo? = nil
     
@@ -35,21 +35,8 @@ class MainModel {
         firebaseModel.signOut(callback)
     }
     
-//    func getUserInfo(_ uid:String, callback:@escaping (UserInfo?) -> Void) -> UserInfo? {
-//        var currUser:UserInfo? = nil
-//
-//        firebaseModel.getUserInfo(uid) { (info:UserInfo?) in
-//            if(info != nil) {
-//                currUser = info
-//            }
-//        }
-//        return currUser
-//        //getUserInfoFromLocalAndNotify(uid, callback)
-//    }
-
     
     func getUserInfo(_ uid:String, callback:@escaping (UserInfo?) -> Void) {
-        
         firebaseModel.getUserInfo(uid) { (info:UserInfo?) in
                 callback(info)
         }
@@ -66,9 +53,9 @@ class MainModel {
     }
     
     func saveImageToFile(image:UIImage, name:String){
-        if let data = image.jpegData(compressionQuality: 0.8) {
-            //let filename = getDocumentsDirectory().appendingPathComponent(name)
-            //try? data.write(to: filename)
+        if let data = image.pngData() {
+            let filename = getDocumentsDirectory().appendingPathComponent(name)
+            try? data.write(to: filename)
         }
     }
     
@@ -87,4 +74,58 @@ class MainModel {
     func currentUser() -> User? {
         return firebaseModel.currentUser()
     }
+    
+    func getAllUsersInfo(callback:@escaping ([UserInfo]?) -> Void){
+        firebaseModel.getAllUsersInfo({(users:[UserInfo]?) in
+            callback(users)
+        })
+    }
+    
+    func getRequestUsersInfo(callback:@escaping ([UserInfo]?) -> Void){
+        firebaseModel.getRequestsUsersInfo(SystemUser.currentUser!.userUID,{(users:[UserInfo]?) in
+            callback(users)
+        })
+    }
+    
+    func getSentedRequestsUsersInfo(callback:@escaping ([UserInfo]?) -> Void){
+        firebaseModel.getSentedRequestsUsersInfo(SystemUser.currentUser!.userUID,{(users:[UserInfo]?) in
+            callback(users)
+        })
+    }
+    
+    func getUserFriendsInfo(callback:@escaping ([UserInfo]?) -> Void){
+        firebaseModel.getUserFriendsInfo(SystemUser.currentUser!.userUID,{(users:[UserInfo]?) in
+            if let friends = users {
+                for friend in friends {
+                    self.sqlModel.insertToUsersTable(user: friend)
+                }
+            }
+            callback(users)
+        })
+    }
+    
+    func sendRequest(senderUser:UserInfo, sendTo:UserInfo,  _ completionBlock:@escaping (Bool) -> Void) {
+        firebaseModel.sendRequest(senderUser, sendTo, {(ifSet:Bool) in
+            completionBlock(ifSet)
+        })
+        
+    }
+    
+    func cencelRequest(senderUser:UserInfo, sendTo:UserInfo,  _ completionBlock:@escaping (Bool) -> Void) {
+        firebaseModel.cencelRequest(senderUser, sendTo, {(ifSet:Bool) in
+            completionBlock(ifSet)
+        })
+    }
+    
+    func declineRequest(senderUser:UserInfo, sendTo:UserInfo,  _ completionBlock:@escaping (Bool) -> Void)  {
+        firebaseModel.declineRequest(senderUser, sendTo, {(ifSet:Bool) in
+            completionBlock(ifSet)
+        })
+    }
+    func confirmRequest(senderUser:UserInfo, sendTo:UserInfo,  _ completionBlock:@escaping (Bool) -> Void){
+        firebaseModel.confirmRequest(senderUser, sendTo, {(ifSet:Bool) in
+            completionBlock(ifSet)
+        })
+    }
+    
 }

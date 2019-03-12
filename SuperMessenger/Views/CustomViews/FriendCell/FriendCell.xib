@@ -25,7 +25,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FullName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQq-dn-6G8">
-                        <rect key="frame" x="82" y="10" width="76" height="22"/>
+                        <rect key="frame" x="82" y="15" width="76" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="veO-vl-wEq"/>
                         </constraints>
@@ -45,9 +45,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="PYd-4e-2Z7" secondAttribute="bottom" constant="10.5" id="5V4-5A-MRJ"/>
-                    <constraint firstItem="o1S-S1-vs5" firstAttribute="top" secondItem="fQq-dn-6G8" secondAttribute="bottom" constant="15" id="ATO-8b-qg8"/>
+                    <constraint firstItem="o1S-S1-vs5" firstAttribute="top" secondItem="fQq-dn-6G8" secondAttribute="bottom" constant="10" id="ATO-8b-qg8"/>
                     <constraint firstItem="fQq-dn-6G8" firstAttribute="leading" secondItem="PYd-4e-2Z7" secondAttribute="trailing" constant="12" id="GqI-K2-6ed"/>
-                    <constraint firstItem="fQq-dn-6G8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="J2n-C2-Bts"/>
+                    <constraint firstItem="fQq-dn-6G8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="J2n-C2-Bts"/>
                     <constraint firstAttribute="bottom" secondItem="o1S-S1-vs5" secondAttribute="bottom" constant="15.5" id="Xrg-qO-AQw"/>
                     <constraint firstItem="PYd-4e-2Z7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="e9P-hn-coD"/>
                     <constraint firstItem="o1S-S1-vs5" firstAttribute="leading" secondItem="PYd-4e-2Z7" secondAttribute="trailing" constant="12" id="nE5-k5-NWl"/>
@@ -59,7 +59,7 @@
                 <outlet property="ProfileImage" destination="PYd-4e-2Z7" id="45w-EQ-BDu"/>
                 <outlet property="StatusLabel" destination="o1S-S1-vs5" id="D6a-Pk-HVD"/>
             </connections>
-            <point key="canvasLocation" x="41.600000000000001" y="46.326836581709152"/>
+            <point key="canvasLocation" x="162" y="-10"/>
         </tableViewCell>
     </objects>
 </document>

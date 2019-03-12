@@ -38,7 +38,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @objc func handleSingOut(){
-        
+        MainModel.instance.signOut {
+            SystemUser.currentUser = nil
+            let LogInController = LoginViewController()
+            //self.present(LogInController, animated: true, completion: nil)
+            self.performSegue(withIdentifier: "FromProfileToLogIn", sender: self)
+            
+        }
     }
     
     func getUserInfo(){
@@ -49,7 +55,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 self.userProfileData = user
                 let imageURL = self.userProfileData!.profileImageUrl!
                 MainModel.instance.getImage(imageURL, {(image) in
-                    self.updateView(user: self.userProfileData!, image : image!)
+                    if let profileImage = image{
+                        self.updateView(user: self.userProfileData!, image : profileImage)
+                    }
+                    else {
+                        self.updateView(user: self.userProfileData!, image : UIImage(named: "Profile")!)
+                    }
+                    
                     IJProgressView.shared.hideProgressView()
                 })
             }else{

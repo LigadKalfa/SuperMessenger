@@ -101,8 +101,16 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
             
             MainModel.instance.signUp(email, password, fullName, image, {(res) in
                 if(res){
-                    self.performSegue(withIdentifier: "FromRegisterToTabBar", sender: self)
-                    IJProgressView.shared.hideProgressView()
+                    SystemUser.setCurrUserInfo({ (did) in
+                        if did {
+                            self.performSegue(withIdentifier: "FromRegisterToTabBar", sender: self)
+                            IJProgressView.shared.hideProgressView()
+                        }else{
+                            self.alertError(error: "Error occured")
+                            IJProgressView.shared.hideProgressView()
+                        }
+                    })
+                    
                 }else{
                     self.alertError(error: "Error occured")
                     IJProgressView.shared.hideProgressView()

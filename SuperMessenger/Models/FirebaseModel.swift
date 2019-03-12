@@ -123,4 +123,158 @@ class FirebaseModel {
     func currentUser() -> User? {
         return Auth.auth().currentUser
     }
+    
+    
+    //MARK:- UserFunctons
+    
+    func getAllUsersInfo(_ callback:@escaping ([UserInfo]?) -> Void) {
+        self.databaseRef!.child(consts.names.userInfoTableName).observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            var users = [UserInfo]()
+            if snapshot.exists() {
+                let value = snapshot.value as! [String:[String:Any]]
+                
+                for val  in value{
+                    let user = UserInfo(_uid: val.key , json: val.value)
+                    if user.userUID != self.currentUser()?.uid {
+                        users.append(user)
+                    }
+                }
+
+                callback(users)
+            }
+            else {
+                callback(nil)
+            }
+        })
+    }
+    
+    
+    func getRequestsUsersInfo(_ userUid : String,_ callback:@escaping ([UserInfo]?) -> Void) {
+        
+//        self.databaseRef!.child(consts.names.userInfoTableName).child(userUid).child(consts.names.userRequests).observeSingleEvent(of: .value
+        
+        self.databaseRef!.child(consts.names.userInfoTableName).child(userUid).child(consts.names.userRequests).observe(.value,  with: {
+            (snapshot) in
+            var users = [UserInfo]()
+            if snapshot.exists() {
+                let value = snapshot.value as! [String:[String:Any]]
+                
+                for val  in value{
+                    let user = UserInfo(_uid: val.key , json: val.value)
+                    users.append(user)
+                }
+                
+                callback(users)
+            }
+            else {
+                callback(nil)
+            }
+        })
+        
+    }
+    
+    func getSentedRequestsUsersInfo(_ userUid : String,_ callback:@escaping ([UserInfo]?) -> Void) {
+        
+//      self.databaseRef!.child(consts.names.userInfoTableName).child(userUid).child(consts.names.sentedRequests).observeSingleEvent(of: .value
+        self.databaseRef!.child(consts.names.userInfoTableName).child(userUid).child(consts.names.sentedRequests).observe(.value,  with: {
+            (snapshot) in
+            var users = [UserInfo]()
+            if snapshot.exists() {
+                let value = snapshot.value as! [String:[String:Any]]
+                
+                for val  in value{
+                    let user = UserInfo(_uid: val.key , json: val.value)
+                    users.append(user)
+                }
+                
+                callback(users)
+            }
+            else {
+                callback(nil)
+            }
+        })
+
+    }
+    
+    func getUserFriendsInfo(_ userUid : String,_ callback:@escaping ([UserInfo]?) -> Void) {
+        
+        self.databaseRef!.child(consts.names.userInfoTableName).child(userUid).child(consts.names.userFriends).observe(.value, with: {
+            (snapshot) in
+            var users = [UserInfo]()
+            if snapshot.exists() {
+                let value = snapshot.value as! [String:[String:Any]]
+                
+                for val  in value{
+                    let user = UserInfo(_uid: val.key , json: val.value)
+                    users.append(user)
+                }
+                
+                callback(users)
+            }
+            else {
+                callback(nil)
+            }
+        })
+    }
+    
+    //MARK:- friendRequesrFunc
+    
+    func sendRequest(_ senderUser: UserInfo,_ sendTo : UserInfo, _ completionBlock:@escaping (Bool) -> Void) {
+        let childUpdates = ["/\(senderUser.userUID)/\(consts.names.sentedRequests)/\(sendTo.userUID)": sendTo.toJson(),
+                            "/\(sendTo.userUID)/\(consts.names.userRequests)/\(senderUser.userUID)": senderUser.toJson()] as [String : Any]
+        
+        self.databaseRef!.child(consts.names.userInfoTableName).updateChildValues(childUpdates){(error:Error?, ref:DatabaseReference) in
+            if error != nil{
+                completionBlock(false)
+            } else {
+                completionBlock(true)
+            }
+        }
+    }
+    
+    func cencelRequest(_ senderUser: UserInfo,_ sendTo : UserInfo, _ completionBlock:@escaping (Bool) -> Void) {
+        let childUpdates = ["/\(senderUser.userUID)/\(consts.names.sentedRequests)/\(sendTo.userUID)": nil,
+                            "/\(sendTo.userUID)/\(consts.names.userRequests)/\(senderUser.userUID)": nil] as [String : Any?]
+        
+        self.databaseRef!.child(consts.names.userInfoTableName).updateChildValues(childUpdates){(error:Error?, ref:DatabaseReference) in
+            if error != nil{
+                completionBlock(false)
+            } else {
+                completionBlock(true)
+            }
+        }
+    }
+    
+    
+    
+    func declineRequest(_ senderUser: UserInfo,_ sendTo : UserInfo, _ completionBlock:@escaping (Bool) -> Void) {
+        let childUpdates = ["/\(senderUser.userUID)/\(consts.names.sentedRequests)/\(sendTo.userUID)": nil,
+                            "/\(sendTo.userUID)/\(consts.names.userRequests)/\(senderUser.userUID)": nil] as [String : Any?]
+        
+        self.databaseRef!.child(consts.names.userInfoTableName).updateChildValues(childUpdates){(error:Error?, ref:DatabaseReference) in
+            if error != nil{
+                completionBlock(false)
+            } else {
+                completionBlock(true)
+            }
+        }
+    }
+    
+    func confirmRequest(_ senderUser: UserInfo,_ sendTo : UserInfo, _ completionBlock:@escaping (Bool) -> Void) {
+        let childUpdates = ["/\(senderUser.userUID)/\(consts.names.sentedRequests)/\(sendTo.userUID)": nil,
+                            "/\(sendTo.userUID)/\(consts.names.userRequests)/\(senderUser.userUID)": nil,
+                            "/\(senderUser.userUID)/\(consts.names.userFriends)/\(sendTo.userUID)": sendTo.toJson(),
+                            "/\(sendTo.userUID)/\(consts.names.userFriends)/\(senderUser.userUID)": senderUser.toJson()]
+            
+            as [String : Any?]
+        
+        self.databaseRef!.child(consts.names.userInfoTableName).updateChildValues(childUpdates){(error:Error?, ref:DatabaseReference) in
+            if error != nil{
+                completionBlock(false)
+            } else {
+                completionBlock(true)
+            }
+        }
+    }
 }
