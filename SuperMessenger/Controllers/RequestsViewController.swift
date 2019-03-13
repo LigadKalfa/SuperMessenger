@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RequestsViewController: UITableViewController {
 //UISearchBarDelegate ,UISearchControllerDelegate, FriendRequestCellDelegate
@@ -46,11 +47,31 @@ class RequestsViewController: UITableViewController {
             self.tableView.reloadRows(at: [indexPath] , with: UITableView.RowAnimation.none)
         }else{
             if let imageUrl = currUser.profileImageUrl {
-                MainModel.instance.getImage(imageUrl, { (profileImage : UIImage?) in
-                    SystemUser.userFriendRequest[indexPath.row].profileImage = profileImage
-                    cell.ProfileImage.image = profileImage
-                    self.tableView.reloadRows(at: [indexPath] , with: UITableView.RowAnimation.none)
-                })
+                let cache = ImageCache.default
+                
+                if (cache.isCached(forKey: imageUrl)){
+                    
+                    cache.retrieveImage(forKey: imageUrl) { result in
+                        switch result {
+                        case .success(let profileCacheImage):
+                            SystemUser.userFriendRequest[indexPath.row].profileImage = profileCacheImage.image
+                            cell.ProfileImage.image = profileCacheImage.image
+                            self.tableView.reloadRows(at: [indexPath] , with: UITableView.RowAnimation.none)
+
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                }
+                else{
+                    MainModel.instance.getImage(imageUrl, { (profileImage : UIImage?) in
+                        SystemUser.userFriendRequest[indexPath.row].profileImage = profileImage
+                        cell.ProfileImage.image = profileImage
+                        self.tableView.reloadRows(at: [indexPath] , with: UITableView.RowAnimation.none)
+                        
+                        cache.store(profileImage!, forKey: imageUrl)
+                    })
+                }
             }
         }
         

@@ -58,7 +58,7 @@
                   moduleName = "SuperMessenger"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SuperMessenger/SuperMessenger/Controllers/RegisterViewController.swift"
-                  timestampString = "574116682.7110569"
+                  timestampString = "574202530.225458"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "102"
@@ -73,7 +73,7 @@
                   moduleName = "SuperMessenger"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SuperMessenger/SuperMessenger/Controllers/RegisterViewController.swift"
-                  timestampString = "574116682.714216"
+                  timestampString = "574202530.242062"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "103"
@@ -91,7 +91,6 @@
             continueAfterRunningActions = "No"
             filePath = "SuperMessenger/Controllers/RegisterViewController.swift"
             timestampString = "572654929.1477309"
-            timestampString = "573927718.326396"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -106,13 +105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SuperMessenger/Models/SQL/SqlModel.swift"
-            timestampString = "574035650.101197"
+            filePath = "SuperMessenger/Views/CustomViews/AddFriendCell/AddFriendCell.swift"
+            timestampString = "574202528.209101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "getFromUsersTable(userID:)"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "AddButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,13 +121,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SuperMessenger/Models/SQL/SqlModel.swift"
-            timestampString = "574035651.945097"
+            filePath = "SuperMessenger/Views/CustomViews/AddFriendCell/AddFriendCell.swift"
+            timestampString = "574202528.209185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "getFromUsersTable(userID:)"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "AddButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,13 +137,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SuperMessenger/Models/SQL/SqlModel.swift"
-            timestampString = "574035653.323234"
+            filePath = "SuperMessenger/Controllers/RequestsViewController.swift"
+            timestampString = "574202528.209398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "getFromUsersTable(userID:)"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,14 +153,62 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SuperMessenger/Models/SQL/SqlModel.swift"
-            timestampString = "574035654.22719"
+            filePath = "SuperMessenger/Controllers/ProfileViewController.swift"
+            timestampString = "574202528.209464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "getFromUsersTable(userID:)"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "getUserInfo()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperMessenger/Controllers/FreindsViewController.swift"
+            timestampString = "574202592.533278"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SuperMessenger.FreindsViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "SuperMessenger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/SuperMessenger/SuperMessenger/Controllers/FreindsViewController.swift"
+                  timestampString = "574202592.564551"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "2173">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Kingfisher.Result&lt;Kingfisher.ImageCacheResult, Kingfisher.KingfisherError&gt;) -&gt; () in SuperMessenger.FreindsViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "SuperMessenger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/SuperMessenger/SuperMessenger/Controllers/FreindsViewController.swift"
+                  timestampString = "574202592.5677921"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "70">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

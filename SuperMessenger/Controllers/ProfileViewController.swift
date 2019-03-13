@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import Kingfisher
+
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var ProfileImage: UIImageView!
@@ -54,16 +56,43 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             if(user != nil){
                 self.userProfileData = user
                 let imageURL = self.userProfileData!.profileImageUrl!
-                MainModel.instance.getImage(imageURL, {(image) in
-                    if let profileImage = image{
-                        self.updateView(user: self.userProfileData!, image : profileImage)
-                    }
-                    else {
-                        self.updateView(user: self.userProfileData!, image : UIImage(named: "Profile")!)
-                    }
+                
+                let cache = ImageCache.default
+                
+                if (cache.isCached(forKey: imageURL)){
                     
-                    IJProgressView.shared.hideProgressView()
-                })
+                    cache.retrieveImage(forKey: imageURL) { result in
+                        switch result {
+                            
+                        case .success(let profileCacheImage):
+                            if let profileImage = profileCacheImage.image{
+                                self.updateView(user: self.userProfileData!, image : profileImage)
+                            }
+                            else {
+                                self.updateView(user: self.userProfileData!, image : UIImage(named: "Profile")!)
+                            }
+                            
+                            IJProgressView.shared.hideProgressView()
+
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                }
+                else{
+                    MainModel.instance.getImage(imageURL, {(image) in
+                        if let profileImage = image{
+                            self.updateView(user: self.userProfileData!, image : profileImage)
+                            
+                            cache.store(image!, forKey: imageURL)
+                        }
+                        else {
+                            self.updateView(user: self.userProfileData!, image : UIImage(named: "Profile")!)
+                        }
+                        
+                        IJProgressView.shared.hideProgressView()
+                    })
+                }
             }else{
                 //ToDo - Alert Error
                 IJProgressView.shared.hideProgressView()
