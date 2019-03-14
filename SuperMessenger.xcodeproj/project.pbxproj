@@ -16,6 +16,11 @@
 		841C23AC2235721C00B5CA0A /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 841C23AA22356F5800B5CA0A /* libsqlite3.0.tbd */; };
 		841ECA7F21BAAD2D00433DDA /* background-seaPng.png in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA7E21BAAD2D00433DDA /* background-seaPng.png */; };
 		841ECA8121BAADF200433DDA /* background-Rock.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 841ECA8021BAADF200433DDA /* background-Rock.jpeg */; };
+		842DDEFA2239DB5400DA133C /* Messege.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DDEF92239DB5400DA133C /* Messege.swift */; };
+		842DDEFC2239DB7900DA133C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DDEFB2239DB7900DA133C /* ChatViewController.swift */; };
+		842DDEFE2239DC9A00DA133C /* MessegeCell in Resources */ = {isa = PBXBuildFile; fileRef = 842DDEFD2239DC9A00DA133C /* MessegeCell */; };
+		842DDF012239DEFE00DA133C /* MessegeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842DDF002239DEFE00DA133C /* MessegeCell.xib */; };
+		842DDF032239DF1500DA133C /* MessegeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DDF022239DF1500DA133C /* MessegeCell.swift */; };
 		842DEE722236F4FC006FD65D /* SqlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DEE712236F4FC006FD65D /* SqlModel.swift */; };
 		843B65FD21DD5EDB0045883B /* FreindsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B65FC21DD5EDB0045883B /* FreindsViewController.swift */; };
 		843B65FF21DD5F010045883B /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B65FE21DD5F010045883B /* RequestsViewController.swift */; };
@@ -30,7 +35,7 @@
 		847FDB6221DF88D300E60DBC /* someProfile.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 847FDB6121DF88D300E60DBC /* someProfile.jpeg */; };
 		847FDB6821E1204F00E60DBC /* ExtensionAllChatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847FDB6721E1204F00E60DBC /* ExtensionAllChatsController.swift */; };
 		847FDB6A21E1221000E60DBC /* boy.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 847FDB6921E1221000E60DBC /* boy.jpeg */; };
-		847FDB8E21E12B3500E60DBC /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		847FDB8E21E12B3500E60DBC /* (null) in Sources */ = {isa = PBXBuildFile; };
 		848F10162227247100BB3A51 /* AddFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F10142227247100BB3A51 /* AddFriendCell.swift */; };
 		848F10172227247200BB3A51 /* AddFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848F10152227247100BB3A51 /* AddFriendCell.xib */; };
 		84B88F1821DC13EA00768D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B88F1721DC13EA00768D7F /* Assets.xcassets */; };
@@ -42,7 +47,7 @@
 		84D626FD21BD4F5500DCB6B5 /* SimpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D626FC21BD4F5500DCB6B5 /* SimpTextField.swift */; };
 		84D6270921BDC3CF00DCB6B5 /* sm-final-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270821BDC3CF00DCB6B5 /* sm-final-logo.png */; };
 		84D6270F21BDC6B700DCB6B5 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D6270E21BDC6B700DCB6B5 /* Logo.png */; };
-		84D6271121C181B900DCB6B5 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
+		84D6271121C181B900DCB6B5 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		84E4D2BB21DF6AC200544AC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84E4D2BA21DF6AC200544AC5 /* GoogleService-Info.plist */; };
 		84E4D2BD21DF6E0B00544AC5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4D2BC21DF6E0B00544AC5 /* LoginViewController.swift */; };
 		84EBFB83221F280A00DC86D5 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBFB81221F280A00DC86D5 /* FriendCell.swift */; };
@@ -98,6 +103,11 @@
 		841C23AA22356F5800B5CA0A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		841ECA7E21BAAD2D00433DDA /* background-seaPng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-seaPng.png"; sourceTree = "<group>"; };
 		841ECA8021BAADF200433DDA /* background-Rock.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-Rock.jpeg"; sourceTree = "<group>"; };
+		842DDEF92239DB5400DA133C /* Messege.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messege.swift; sourceTree = "<group>"; };
+		842DDEFB2239DB7900DA133C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		842DDEFD2239DC9A00DA133C /* MessegeCell */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MessegeCell; sourceTree = "<group>"; };
+		842DDF002239DEFE00DA133C /* MessegeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessegeCell.xib; sourceTree = "<group>"; };
+		842DDF022239DF1500DA133C /* MessegeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessegeCell.swift; sourceTree = "<group>"; };
 		842DEE712236F4FC006FD65D /* SqlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlModel.swift; sourceTree = "<group>"; };
 		843B65FC21DD5EDB0045883B /* FreindsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsViewController.swift; sourceTree = "<group>"; };
 		843B65FE21DD5F010045883B /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +261,15 @@
 			path = SuperMessengerUITests;
 			sourceTree = "<group>";
 		};
+		842DDEFF2239DEE800DA133C /* MessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				842DDF002239DEFE00DA133C /* MessegeCell.xib */,
+				842DDF022239DF1500DA133C /* MessegeCell.swift */,
+			);
+			path = MessageCell;
+			sourceTree = "<group>";
+		};
 		842DEE732236F6DD006FD65D /* SQL */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +307,7 @@
 		84A116A221C27A03007DE2EC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				842DDEFB2239DB7900DA133C /* ChatViewController.swift */,
 				84FB31FA21DCC86F002BF7EC /* ExtensionsToFUIController.swift */,
 				847F47B821DE836000A68020 /* AllChatsController.swift */,
 				847FDB6721E1204F00E60DBC /* ExtensionAllChatsController.swift */,
@@ -360,6 +380,8 @@
 		84D626F921BD492200DCB6B5 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				842DDEFF2239DEE800DA133C /* MessageCell */,
+				842DDEFD2239DC9A00DA133C /* MessegeCell */,
 				84CB471222343D96008A7CEA /* FriendRequestCell */,
 				848F1019222724D000BB3A51 /* AddFriendCell */,
 				848F101A222724FE00BB3A51 /* FriendCell */,
@@ -381,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				84EBFB8C221F2D7300DC86D5 /* UserInfo.swift */,
+				842DDEF92239DB5400DA133C /* Messege.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -511,10 +534,12 @@
 				847FDB6A21E1221000E60DBC /* boy.jpeg in Resources */,
 				84FE7C4B21BA9D20003FC5A3 /* background-seaNrocks.jpg in Resources */,
 				84D6270921BDC3CF00DCB6B5 /* sm-final-logo.png in Resources */,
+				842DDF012239DEFE00DA133C /* MessegeCell.xib in Resources */,
 				84D43AA8221DDD4700B81DC1 /* Mama.jpeg in Resources */,
+				842DDEFE2239DC9A00DA133C /* MessegeCell in Resources */,
 				8452435221E28ED4002611BD /* bijo.jpeg in Resources */,
 				841A7BF221B3FEF500709888 /* LaunchScreen.storyboard in Resources */,
-				84D6271121C181B900DCB6B5 /* BuildFile in Resources */,
+				84D6271121C181B900DCB6B5 /* (null) in Resources */,
 				847FDB6221DF88D300E60DBC /* someProfile.jpeg in Resources */,
 				84D6270F21BDC6B700DCB6B5 /* Logo.png in Resources */,
 				84E4D2BB21DF6AC200544AC5 /* GoogleService-Info.plist in Resources */,
@@ -701,6 +726,7 @@
 				84559DBC21DE54DF00412AA3 /* RegisterViewController.swift in Sources */,
 				843B65FF21DD5F010045883B /* RequestsViewController.swift in Sources */,
 				84EBFB8D221F2D7300DC86D5 /* UserInfo.swift in Sources */,
+				842DDF032239DF1500DA133C /* MessegeCell.swift in Sources */,
 				84EBFB89221F285C00DC86D5 /* GlobalVariables.swift in Sources */,
 				84EBFB88221F285C00DC86D5 /* FirebaseModel.swift in Sources */,
 				84EBFB8B221F285C00DC86D5 /* MainModel.swift in Sources */,
@@ -715,9 +741,11 @@
 				847FDB6821E1204F00E60DBC /* ExtensionAllChatsController.swift in Sources */,
 				84120BF6222863CB00A6C59D /* SuperMessenger.xcdatamodeld in Sources */,
 				84CB471522345841008A7CEA /* FriendRequestCell.swift in Sources */,
-				847FDB8E21E12B3500E60DBC /* BuildFile in Sources */,
+				847FDB8E21E12B3500E60DBC /* (null) in Sources */,
 				843B660321DD62B70045883B /* ProfileViewController.swift in Sources */,
+				842DDEFA2239DB5400DA133C /* Messege.swift in Sources */,
 				84E4D2BD21DF6E0B00544AC5 /* LoginViewController.swift in Sources */,
+				842DDEFC2239DB7900DA133C /* ChatViewController.swift in Sources */,
 				84EBFB83221F280A00DC86D5 /* FriendCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

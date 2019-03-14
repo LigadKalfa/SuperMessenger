@@ -67,3 +67,28 @@ struct SystemUser {
         })
     }
 }
+
+struct GlobalFuncs {
+    static func fromStringToDate (str_date : String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        let date = dateFormatter.date(from:str_date)!
+        return date
+    }
+    
+    static func fromDateToString (date : Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let myString = formatter.string(from: date) // string purpose I add here
+        // convert your string to date
+        //        let yourDate = formatter.date(from: myString)
+        //        //then again set the date format whhich type of output you need
+        //        formatter.dateFormat = "dd-MMM-yyyy"
+        //        // again convert your date to string
+        //        let myStringafd = formatter.string(from: yourDate!)
+        
+        return myString
+    }
+}
+

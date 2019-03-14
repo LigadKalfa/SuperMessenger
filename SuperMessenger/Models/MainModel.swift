@@ -128,4 +128,16 @@ class MainModel {
         })
     }
     
+    func sendMessege(senderUser:UserInfo, sendTo:UserInfo, messege : Messege, _ completionBlock:@escaping (Bool) -> Void) {
+        firebaseModel.sendMesege(senderUser, sendTo, messege, {(ifSet:Bool) in
+            completionBlock(ifSet)
+        })        
+    }
+    
+    func getMesseges(chatWith:UserInfo,callback:@escaping ([Messege]?) -> Void){
+        firebaseModel.getMesseges(SystemUser.currentUser!.userUID, chatWith.userUID, {(msgs:[Messege]?) in
+            callback(msgs)
+        })
+    }
+    
 }

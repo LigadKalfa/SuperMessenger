@@ -10,11 +10,11 @@ import UIKit
 import Kingfisher
 
 //UISearchBarDelegate ,UISearchControllerDelegate, AddFriendCellDelegate
-class FreindsViewController: UITableViewController {
+class FreindsViewController: UITableViewController, AddFriendCellDelegate {
 
     let searchController = UISearchController(searchResultsController: nil)
     var allUsersInfo = [UserInfo]()
-    
+    var goToChatWith : UserInfo?
     var didRequestsGeted : Bool = false
     var didFriendsGeted : Bool = false
     var didSentedRequestsGeted : Bool = false
@@ -40,6 +40,7 @@ class FreindsViewController: UITableViewController {
         let currUser = allUsersInfo[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddFriendCell", for: indexPath) as! AddFriendCell
         cell.setCell(user: currUser)
+        cell.delegate = self
         //cell.delegate = self
         
         //Chek if Image Exist
@@ -110,6 +111,19 @@ class FreindsViewController: UITableViewController {
     func updateTabel(){
         if(didRequestsGeted && didFriendsGeted && didSentedRequestsGeted){
             self.tableView.reloadData()
+        }
+    }
+    
+    func goToChat(user: UserInfo) {
+        goToChatWith = user
+        performSegue(withIdentifier: "GoToChatFromFriend", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "GoToChatFromFriend"){
+            let chatVC = segue.destination as! ChatViewController
+            chatVC.user = goToChatWith
         }
     }
 }

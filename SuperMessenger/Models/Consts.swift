@@ -16,7 +16,7 @@ struct consts{
         static let userRequests: String = "requests"
         static let sentedRequests: String = "sentedRequests"
         static let userFriends: String = "friends"
-        
+        static let chatTable: String = "chat"
         static let chatLabel = "Chat"
         static let cencelRequestLabel = "Cencel"
         static let AddFriendLabel = "Add"

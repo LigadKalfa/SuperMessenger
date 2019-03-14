@@ -277,4 +277,45 @@ class FirebaseModel {
             }
         }
     }
+    
+    
+    func sendMesege(_ senderUser: UserInfo,_ sendTo : UserInfo,_ messege :Messege, _ completionBlock:@escaping (Bool) -> Void) {
+        let senderPath = "/\(senderUser.userUID)/\(consts.names.userFriends)/\(sendTo.userUID)/\(consts.names.chatLabel)"
+        let sentToPath = "/\(sendTo.userUID)/\(consts.names.userFriends)/\(senderUser.userUID)/\(consts.names.chatLabel)"
+        
+        let messegeSenderKey = databaseRef!.child(consts.names.userInfoTableName).child(senderPath).childByAutoId().key
+        let messegeSendToKey = databaseRef!.child(consts.names.userInfoTableName).child(sentToPath).childByAutoId().key
+        
+        let childUpdates = ["/\(senderPath)/\(String(describing: messegeSenderKey))": messege.toJson(), "/\(sentToPath)/\(String(describing: messegeSendToKey))": messege.toJson()] as [String : Any?]
+        
+        self.databaseRef!.child(consts.names.userInfoTableName).updateChildValues(childUpdates){(error:Error?, ref:DatabaseReference) in
+            if error != nil{
+                completionBlock(false)
+            } else {
+                completionBlock(true)
+            }
+        }
+    }
+    
+    func getMesseges(_ systemuserID : String,_ chatWirhId : String,_ callback:@escaping ([Messege]?) -> Void) {
+        
+        //      self.databaseRef!.child(consts.names.userInfoTableName).child(userUid).child(consts.names.sentedRequests).observeSingleEvent(of: .value
+        self.databaseRef!.child(consts.names.userInfoTableName).child(systemuserID).child(consts.names.userFriends).child(chatWirhId).child(consts.names.chatLabel).observe(.value,  with: {
+            (snapshot) in
+            var messeges = [Messege]()
+            if snapshot.exists() {
+                let value = snapshot.value as! [String:[String:Any]]
+                for val  in value {
+                    let msg = Messege(json: val.value)
+                    messeges.append(msg)
+                }
+
+                callback(messeges)
+            }
+            else {
+                callback(nil)
+            }
+        })
+        
+    }
 }

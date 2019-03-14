@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol AddFriendCellDelegate {
+    func goToChat(user : UserInfo)
+}
 
 class AddFriendCell : UITableViewCell {
     
@@ -17,7 +20,7 @@ class AddFriendCell : UITableViewCell {
     @IBOutlet weak var StatusLabel: UILabel!
     @IBOutlet weak var AddButton: UIButton!
     @IBOutlet weak var ButtonLabel: UILabel!
-    
+    var delegate : AddFriendCellDelegate?
     var currUserInfo : UserInfo?
     var relishenship : String?
     
@@ -67,7 +70,7 @@ class AddFriendCell : UITableViewCell {
         if(ButtonLabel.text == consts.names.cencelRequestLabel){
             cencelSendedRequest()
         }else if (ButtonLabel.text == consts.names.chatLabel){
-            //Go To Chat
+            self.delegate?.goToChat(user: currUserInfo!)
         }else{            
             sendRequest()
         }
