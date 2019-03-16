@@ -30,13 +30,39 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         return view
     }()
     
-    let sendButton: UIButton = {
+    lazy var sendButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Send", for: UIControl.State(rawValue: ([.normal] as UIControl.State).rawValue))
         let titleColor = UIColor(red: 0, green: 137/255, blue: 249/255, alpha: 1)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.addTarget(self, action: #selector(handleSend), for: .touchUpInside)
         return button
     }()
+    
+    @objc func handleSend(){
+        if (inputTextField.text != nil){
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let context = delegate.persistentContainer.viewContext
+        let message = AllChatsController.createMessageWithText(text: inputTextField.text!, friend: friend!, minutesAgo: 0, context: context, isSender: true)
+            
+        do{
+            try context.save()
+            
+            messages?.append(message)
+            
+            let item = messages!.count - 1
+            let insertionIndexPath = IndexPath(item: item, section: 0)
+            
+            collectionView?.insertItems(at: [insertionIndexPath])
+            collectionView?.scrollToItem(at: insertionIndexPath, at: .bottom, animated: true)
+            inputTextField.text = nil
+            
+        } catch let err {
+            print(err)
+        }
+        }
+    }
+    
     
     let inputTextField: UITextField = {
         let textField = UITextField()

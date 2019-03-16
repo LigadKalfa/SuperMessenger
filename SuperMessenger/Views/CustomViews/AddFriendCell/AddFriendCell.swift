@@ -6,7 +6,9 @@
 //  Copyright © 2019 LigadKalfa&DanielPichhadze. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import CoreData
 
 protocol AddFriendCellDelegate {
     func goToChat(user : UserInfo)
@@ -70,8 +72,59 @@ class AddFriendCell : UITableViewCell {
         if(ButtonLabel.text == consts.names.cencelRequestLabel){
             cencelSendedRequest()
         }else if (ButtonLabel.text == consts.names.chatLabel){
-            self.delegate?.goToChat(user: currUserInfo!)
-        }else{            
+            //Go To Chat
+            var isStoredUser = false
+            let user = currUserInfo
+            let currUser = SystemUser.currentUser
+            
+            var allFriendsInCoreData = AllChatsController.fetchFriends()
+            let layout = UICollectionViewFlowLayout()
+            let controller = ChatLogController(collectionViewLayout: layout)
+            
+            for friend in allFriendsInCoreData!{
+                if(friend.userUID == user?.userUID){
+                    isStoredUser = true
+                    controller.friend = friend
+                }                                
+            }
+            //let ViewController2 = ViewController2(nibName: "ViewController2", bundle: nil)
+            //self.navigationController.pushViewController(ViewController2, animated: true)
+            
+            if (isStoredUser){
+                if var topController = UIApplication.shared.keyWindow?.rootViewController {
+                    while let presentedViewController = topController.presentedViewController {
+                        topController = presentedViewController
+                    }
+                    
+                    // topController should now be your topmost view controller
+                }
+
+                //navigationController?.pushViewController(controller, animated: true)
+            }
+            
+            if (!isStoredUser)
+            {
+                let delegate = UIApplication.shared.delegate as? AppDelegate
+                
+                if let context = delegate?.persistentContainer.viewContext {
+                    
+                    let newFriend = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
+                    newFriend.name = user?.fullName
+                    newFriend.profileImageName = user?.profileImageUrl
+                    
+                    AllChatsController.createMessageWithText(text: "dfd", friend: newFriend, minutesAgo: 0, context: context, isSender: false)
+
+                    do {
+                        try(context.save())
+                    } catch let err {
+                        print(err)
+                    }
+                }
+
+               // controller.friend = friend
+            }
+            
+        }else{
             sendRequest()
         }
     }
