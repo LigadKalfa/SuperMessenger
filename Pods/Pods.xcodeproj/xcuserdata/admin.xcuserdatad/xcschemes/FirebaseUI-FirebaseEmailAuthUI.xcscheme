@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5450D83ABDF0294C4BB3E1C56812D5D"
-               BuildableName = "gRPCCertificates.bundle"
-               BlueprintName = "FirebaseFirestore-gRPCCertificates"
+               BlueprintIdentifier = "257D5B3498DADF2311E2D039E0E474EE"
+               BuildableName = "FirebaseEmailAuthUI.bundle"
+               BlueprintName = "FirebaseUI-FirebaseEmailAuthUI"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C5450D83ABDF0294C4BB3E1C56812D5D"
-            BuildableName = "gRPCCertificates.bundle"
-            BlueprintName = "FirebaseFirestore-gRPCCertificates"
+            BlueprintIdentifier = "257D5B3498DADF2311E2D039E0E474EE"
+            BuildableName = "FirebaseEmailAuthUI.bundle"
+            BlueprintName = "FirebaseUI-FirebaseEmailAuthUI"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
